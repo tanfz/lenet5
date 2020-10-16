@@ -15,4 +15,5 @@ _, predicted = torch.max(predict_labels.data, 1)
 print("the number is :%d" % predicted.numpy()[0])
 cv2.imshow("img", img)
 
+
 cv2.waitKey(0)
