@@ -3,6 +3,7 @@ import struct
 #步骤三：将./pamameter/txt/目录下的txt文件转换为二进制保存在./pamameter/bin/目录下
 dirroot = "./parameter/txt/"
 newdirroot = "./parameter/bin/"
+#txt转换为二进制文件
 for dirname in os.listdir(dirroot):
     if dirname.split('.')[-1] != 'txt':
         continue
@@ -24,3 +25,25 @@ for dirname in os.listdir(dirroot):
             fileNew.write(parsedata)
     fileNew.close()
     file.close()
+
+#合并二进制文件
+W_filename = "WEIGHT.bin"
+fileNew = open(newdirroot + '\\' + W_filename, 'wb')
+for dirname in os.listdir(newdirroot):
+    if dirname.split('.')[-2] != 'weight':
+        continue
+    file = open(newdirroot + '\\' + dirname, 'rb')
+    bin = file.read()
+    fileNew.write(bin)
+    file.close()
+fileNew.close()
+B_filename = "BIAS.bin"
+fileNew = open(newdirroot + '\\' + B_filename, 'wb')
+for dirname in os.listdir(newdirroot):
+    if dirname.split('.')[-2] != 'bias':
+        continue
+    file = open(newdirroot + '\\' + dirname, 'rb')
+    bin = file.read()
+    fileNew.write(bin)
+    file.close()
+fileNew.close()
