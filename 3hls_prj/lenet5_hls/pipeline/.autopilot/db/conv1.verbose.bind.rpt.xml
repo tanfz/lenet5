@@ -1,0 +1,52 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'conv1'" level="0">
+<item name = "Date">Sun Oct 18 11:45:55 2020
+</item>
+<item name = "Version">2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)</item>
+<item name = "Project">lenet5_hls</item>
+<item name = "Solution">pipeline</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020clg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 8.750, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">987907, 987907, 987907, 987907, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- memcpy.B_CONV1.gep.BIAS">6, 6, 2, 1, 1, 6, yes</column>
+<column name="- memcpy.pic_in.gep.FM_DDR_BUFF1">1025, 1025, 3, 1, 1, 1024, yes</column>
+<column name="- memcpy.W_CONV1.gep.WEIGHT">151, 151, 3, 1, 1, 150, yes</column>
+<column name="- L_L_L_conv1_label1">940804, 940804, 13, 8, 1, 117600, yes</column>
+<column name="- L_L_conv1_label2">42336, 42336, 10, 9, 1, 4704, yes</column>
+<column name="- L_L_conv1_label3">2372, 2372, 23, 2, 1, 1176, yes</column>
+<column name="- memcpy.FM_DDR_BUFF2.conv_out1.gep">1177, 1177, 3, 1, 1, 1176, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

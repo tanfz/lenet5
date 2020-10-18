@@ -1,0 +1,123 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [
+        {
+          "functionName": "conv1",
+          "label": "conv1_label0",
+          "functionLabel": "",
+          "pragma": {"name": "UNROLL"}
+        },
+        {
+          "functionName": "conv_top",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "INTERFACE",
+            "option": [
+              {
+                "name": "m_axi",
+                "value": "",
+                "positionalBoolean": "mode"
+              },
+              {
+                "name": "depth",
+                "value": "32"
+              },
+              {
+                "name": "port",
+                "value": "FM_DDR_BUFF1",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "bundle",
+                "value": "data"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "conv_top",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "INTERFACE",
+            "option": [
+              {
+                "name": "m_axi",
+                "value": "",
+                "positionalBoolean": "mode"
+              },
+              {
+                "name": "depth",
+                "value": "32"
+              },
+              {
+                "name": "port",
+                "value": "FM_DDR_BUFF2",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "bundle",
+                "value": "data"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "conv_top",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "INTERFACE",
+            "option": [
+              {
+                "name": "m_axi",
+                "value": "",
+                "positionalBoolean": "mode"
+              },
+              {
+                "name": "depth",
+                "value": "32"
+              },
+              {
+                "name": "port",
+                "value": "WEIGHT",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "bundle",
+                "value": "data"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "conv_top",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "INTERFACE",
+            "option": [
+              {
+                "name": "m_axi",
+                "value": "",
+                "positionalBoolean": "mode"
+              },
+              {
+                "name": "depth",
+                "value": "32"
+              },
+              {
+                "name": "port",
+                "value": "BIAS",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "bundle",
+                "value": "data"
+              }
+            ]
+          }
+        }
+      ]
+    }]}

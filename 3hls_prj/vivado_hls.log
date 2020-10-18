@@ -1,0 +1,419 @@
+INFO: [HLS 200-10] Running 'E:/program_files/xilinx/Vivado/2018.3/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user 'T' on host 't' (Windows NT_amd64 version 6.2) on Sun Oct 18 11:49:52 +0800 2020
+INFO: [HLS 200-10] In directory 'C:/Users/T/Desktop/lenet5/3hls_prj'
+INFO: [HLS 200-10] Opening project 'C:/Users/T/Desktop/lenet5/3hls_prj/lenet5_hls'.
+INFO: [HLS 200-10] Adding design file '../2C_prj/lenet5/conv.cpp' to the project
+INFO: [HLS 200-10] Adding design file '../2C_prj/lenet5/conv.h' to the project
+INFO: [HLS 200-10] Adding test bench file '../2C_prj/lenet5/main.cpp' to the project
+INFO: [HLS 200-10] Opening solution 'C:/Users/T/Desktop/lenet5/3hls_prj/lenet5_hls/pipline_rewind'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file '../2C_prj/lenet5/conv.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 105.016 ; gain = 19.844
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 105.016 ; gain = 19.844
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 106.773 ; gain = 21.602
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 107.281 ; gain = 22.109
+INFO: [XFORM 203-101] Partitioning array 'B_CONV2'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'W_CONV2'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv2_buff'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_out2'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'B_CONV1'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'W_CONV1'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv1_buff'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_out1'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'W_CONV2'  in dimension 2 completely.
+INFO: [XFORM 203-603] Inlining function 'aesl_mux_load.6floatP.i3' into 'conv1' (../2C_prj/lenet5/conv.cpp:60).
+INFO: [XFORM 203-603] Inlining function 'aesl_mux_load.16floatP.i4' into 'conv2' (../2C_prj/lenet5/conv.cpp:102).
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 132.996 ; gain = 47.824
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-4.1.1.1.1' (../2C_prj/lenet5/conv.cpp:87:26) in function 'conv2'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-4.1.1.1' (../2C_prj/lenet5/conv.cpp:86:19) in function 'conv2'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-4.1.1' (../2C_prj/lenet5/conv.cpp:85:18) in function 'conv2'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-4.1' (../2C_prj/lenet5/conv.cpp:84:18) in function 'conv2'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-4' (../2C_prj/lenet5/conv.cpp:83:17) in function 'conv2'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-5.1' (../2C_prj/lenet5/conv.cpp:99:17) in function 'conv2'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-5' (../2C_prj/lenet5/conv.cpp:98:16) in function 'conv2'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-6.1' (../2C_prj/lenet5/conv.cpp:109:17) in function 'conv2'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-6' (../2C_prj/lenet5/conv.cpp:108:16) in function 'conv2'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-4.1.1.1' (../2C_prj/lenet5/conv.cpp:46:19) in function 'conv1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-4.1.1' (../2C_prj/lenet5/conv.cpp:45:18) in function 'conv1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-4.1' (../2C_prj/lenet5/conv.cpp:44:18) in function 'conv1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-4' (../2C_prj/lenet5/conv.cpp:43:17) in function 'conv1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-5.1' (../2C_prj/lenet5/conv.cpp:57:17) in function 'conv1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-5' (../2C_prj/lenet5/conv.cpp:56:16) in function 'conv1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-6.1' (../2C_prj/lenet5/conv.cpp:67:17) in function 'conv1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-6' (../2C_prj/lenet5/conv.cpp:66:16) in function 'conv1'.
+WARNING: [XFORM 203-803] Cannot bundle argument 'FM_DDR_BUFF1' (../2C_prj/lenet5/conv.cpp:30:1) to m_axi port 'data' since its offset mode is off.
+WARNING: [XFORM 203-803] Cannot bundle argument 'FM_DDR_BUFF2' (../2C_prj/lenet5/conv.cpp:30:1) to m_axi port 'data' since its offset mode is off.
+WARNING: [XFORM 203-803] Cannot bundle argument 'WEIGHT' (../2C_prj/lenet5/conv.cpp:30:1) to m_axi port 'data' since its offset mode is off.
+WARNING: [XFORM 203-803] Cannot bundle argument 'BIAS' (../2C_prj/lenet5/conv.cpp:30:1) to m_axi port 'data' since its offset mode is off.
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 1176 on port 'FM_DDR_BUFF2' (../2C_prj/lenet5/conv.cpp:80:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 16 on port 'BIAS' (../2C_prj/lenet5/conv.cpp:79:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 2400 on port 'WEIGHT' (../2C_prj/lenet5/conv.cpp:81:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 400 on port 'FM_DDR_BUFF1' (../2C_prj/lenet5/conv.cpp:116:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 1024 on port 'FM_DDR_BUFF1' (../2C_prj/lenet5/conv.cpp:40:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 150 on port 'WEIGHT' (../2C_prj/lenet5/conv.cpp:41:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 6 on port 'BIAS' (../2C_prj/lenet5/conv.cpp:39:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 1176 on port 'FM_DDR_BUFF2' (../2C_prj/lenet5/conv.cpp:74:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+WARNING: [XFORM 203-532] Unable to perform loop rewinding: Function 'conv2' (../2C_prj/lenet5/conv.cpp:77) contains multiple loops.
+WARNING: [XFORM 203-532] Unable to perform loop rewinding: Function 'conv1' (../2C_prj/lenet5/conv.cpp:36) contains multiple loops.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:04 ; elapsed = 00:00:12 . Memory (MB): peak = 156.152 ; gain = 70.980
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'conv_top' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'memcpy.B_CONV1.gep.BIAS'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'memcpy.pic_in.gep.FM_DDR_BUFF1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'memcpy.W_CONV1.gep.WEIGHT'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'L_L_L_conv1_label1'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv1': Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'store' operation (../2C_prj/lenet5/conv.cpp:49) of variable 'tmp_65', ../2C_prj/lenet5/conv.cpp:49 on array 'conv1_buff_0' and 'load' operation ('conv1_buff_0_load_5', ../2C_prj/lenet5/conv.cpp:49) on array 'conv1_buff_0'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv1': Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'store' operation (../2C_prj/lenet5/conv.cpp:49) of variable 'tmp_65', ../2C_prj/lenet5/conv.cpp:49 on array 'conv1_buff_0' and 'load' operation ('conv1_buff_0_load_5', ../2C_prj/lenet5/conv.cpp:49) on array 'conv1_buff_0'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv1': Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'store' operation (../2C_prj/lenet5/conv.cpp:49) of variable 'tmp_65', ../2C_prj/lenet5/conv.cpp:49 on array 'conv1_buff_0' and 'load' operation ('conv1_buff_0_load_5', ../2C_prj/lenet5/conv.cpp:49) on array 'conv1_buff_0'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv1': Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'store' operation (../2C_prj/lenet5/conv.cpp:49) of variable 'tmp_65', ../2C_prj/lenet5/conv.cpp:49 on array 'conv1_buff_0' and 'load' operation ('conv1_buff_0_load_5', ../2C_prj/lenet5/conv.cpp:49) on array 'conv1_buff_0'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv1': Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1)
+   between 'store' operation (../2C_prj/lenet5/conv.cpp:49) of variable 'tmp_65', ../2C_prj/lenet5/conv.cpp:49 on array 'conv1_buff_0' and 'load' operation ('conv1_buff_0_load_5', ../2C_prj/lenet5/conv.cpp:49) on array 'conv1_buff_0'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 13.
+INFO: [SCHED 204-61] Pipelining loop 'L_L_conv1_label2'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv1': Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'store' operation (../2C_prj/lenet5/conv.cpp:61) of variable 'tmp_43', ../2C_prj/lenet5/conv.cpp:61 on array 'conv1_buff_0' and 'load' operation ('conv1_buff_0_load', ../2C_prj/lenet5/conv.cpp:60) on array 'conv1_buff_0'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv1': Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'store' operation (../2C_prj/lenet5/conv.cpp:61) of variable 'tmp_43', ../2C_prj/lenet5/conv.cpp:61 on array 'conv1_buff_0' and 'load' operation ('conv1_buff_0_load', ../2C_prj/lenet5/conv.cpp:60) on array 'conv1_buff_0'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv1': Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'store' operation (../2C_prj/lenet5/conv.cpp:61) of variable 'tmp_43', ../2C_prj/lenet5/conv.cpp:61 on array 'conv1_buff_0' and 'load' operation ('conv1_buff_0_load', ../2C_prj/lenet5/conv.cpp:60) on array 'conv1_buff_0'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv1': Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'store' operation (../2C_prj/lenet5/conv.cpp:61) of variable 'tmp_43', ../2C_prj/lenet5/conv.cpp:61 on array 'conv1_buff_0' and 'load' operation ('conv1_buff_0_load', ../2C_prj/lenet5/conv.cpp:60) on array 'conv1_buff_0'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv1': Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1)
+   between 'store' operation (../2C_prj/lenet5/conv.cpp:61) of variable 'tmp_43', ../2C_prj/lenet5/conv.cpp:61 on array 'conv1_buff_0' and 'load' operation ('conv1_buff_0_load', ../2C_prj/lenet5/conv.cpp:60) on array 'conv1_buff_0'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv1': Unable to enforce a carried dependence constraint (II = 8, distance = 1, offset = 1)
+   between 'store' operation (../2C_prj/lenet5/conv.cpp:61) of variable 'tmp_43', ../2C_prj/lenet5/conv.cpp:61 on array 'conv1_buff_0' and 'load' operation ('conv1_buff_0_load', ../2C_prj/lenet5/conv.cpp:60) on array 'conv1_buff_0'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 9, Depth = 10.
+INFO: [SCHED 204-61] Pipelining loop 'L_L_conv1_label3'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('conv1_buff_0_load_3', ../2C_prj/lenet5/conv.cpp:70) on array 'conv1_buff_0' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'conv1_buff_0'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 2, Depth = 23.
+INFO: [SCHED 204-61] Pipelining loop 'memcpy.FM_DDR_BUFF2.conv_out1.gep'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 13.729 seconds; current allocated memory: 111.787 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.54 seconds; current allocated memory: 114.205 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'memcpy.B_CONV2.gep.BIAS'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'memcpy.conv_out1.gep.FM_DDR_BUFF2'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'memcpy.W_CONV2.gep.WEIGHT'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 12.
+INFO: [SCHED 204-61] Pipelining loop 'L_L_L_conv2_label1'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv2': Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'store' operation (../2C_prj/lenet5/conv.cpp:90) of variable 'tmp_37', ../2C_prj/lenet5/conv.cpp:90 on array 'conv2_buff_0' and 'load' operation ('conv2_buff_0_load_5', ../2C_prj/lenet5/conv.cpp:90) on array 'conv2_buff_0'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv2': Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'store' operation (../2C_prj/lenet5/conv.cpp:90) of variable 'tmp_37', ../2C_prj/lenet5/conv.cpp:90 on array 'conv2_buff_0' and 'load' operation ('conv2_buff_0_load_5', ../2C_prj/lenet5/conv.cpp:90) on array 'conv2_buff_0'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv2': Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'store' operation (../2C_prj/lenet5/conv.cpp:90) of variable 'tmp_37', ../2C_prj/lenet5/conv.cpp:90 on array 'conv2_buff_0' and 'load' operation ('conv2_buff_0_load_5', ../2C_prj/lenet5/conv.cpp:90) on array 'conv2_buff_0'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv2': Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'store' operation (../2C_prj/lenet5/conv.cpp:90) of variable 'tmp_37', ../2C_prj/lenet5/conv.cpp:90 on array 'conv2_buff_0' and 'load' operation ('conv2_buff_0_load_5', ../2C_prj/lenet5/conv.cpp:90) on array 'conv2_buff_0'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv2': Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1)
+   between 'store' operation (../2C_prj/lenet5/conv.cpp:90) of variable 'tmp_37', ../2C_prj/lenet5/conv.cpp:90 on array 'conv2_buff_0' and 'load' operation ('conv2_buff_0_load_5', ../2C_prj/lenet5/conv.cpp:90) on array 'conv2_buff_0'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 13.
+INFO: [SCHED 204-61] Pipelining loop 'L_L_conv2_label2'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv2': Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'store' operation (../2C_prj/lenet5/conv.cpp:103) of variable 'tmp_10', ../2C_prj/lenet5/conv.cpp:103 on array 'conv2_buff_0' and 'load' operation ('conv2_buff_0_load', ../2C_prj/lenet5/conv.cpp:102) on array 'conv2_buff_0'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv2': Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'store' operation (../2C_prj/lenet5/conv.cpp:103) of variable 'tmp_10', ../2C_prj/lenet5/conv.cpp:103 on array 'conv2_buff_0' and 'load' operation ('conv2_buff_0_load', ../2C_prj/lenet5/conv.cpp:102) on array 'conv2_buff_0'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv2': Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'store' operation (../2C_prj/lenet5/conv.cpp:103) of variable 'tmp_10', ../2C_prj/lenet5/conv.cpp:103 on array 'conv2_buff_0' and 'load' operation ('conv2_buff_0_load', ../2C_prj/lenet5/conv.cpp:102) on array 'conv2_buff_0'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv2': Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'store' operation (../2C_prj/lenet5/conv.cpp:103) of variable 'tmp_10', ../2C_prj/lenet5/conv.cpp:103 on array 'conv2_buff_0' and 'load' operation ('conv2_buff_0_load', ../2C_prj/lenet5/conv.cpp:102) on array 'conv2_buff_0'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv2': Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1)
+   between 'store' operation (../2C_prj/lenet5/conv.cpp:103) of variable 'tmp_10', ../2C_prj/lenet5/conv.cpp:103 on array 'conv2_buff_0' and 'load' operation ('conv2_buff_0_load', ../2C_prj/lenet5/conv.cpp:102) on array 'conv2_buff_0'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv2': Unable to enforce a carried dependence constraint (II = 8, distance = 1, offset = 1)
+   between 'store' operation (../2C_prj/lenet5/conv.cpp:103) of variable 'tmp_10', ../2C_prj/lenet5/conv.cpp:103 on array 'conv2_buff_0' and 'load' operation ('conv2_buff_0_load', ../2C_prj/lenet5/conv.cpp:102) on array 'conv2_buff_0'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 9, Depth = 10.
+INFO: [SCHED 204-61] Pipelining loop 'L_L_conv2_label3'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('conv2_buff_0_load_3', ../2C_prj/lenet5/conv.cpp:112) on array 'conv2_buff_0' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'conv2_buff_0'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 2, Depth = 22.
+INFO: [SCHED 204-61] Pipelining loop 'memcpy.FM_DDR_BUFF1.conv_out2.gep'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 4.875 seconds; current allocated memory: 118.411 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 3.659 seconds; current allocated memory: 126.439 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv_top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 3.437 seconds; current allocated memory: 126.646 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 2.09 seconds; current allocated memory: 127.219 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Register 'B_CONV1_5' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'B_CONV1_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'B_CONV1_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'B_CONV1_2' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'B_CONV1_3' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'B_CONV1_4' is power-on initialization.
+INFO: [SYN 201-210] Renamed object name 'conv_top_fadd_32ns_32ns_32_5_full_dsp_1' to 'conv_top_fadd_32nbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_top_fmul_32ns_32ns_32_4_max_dsp_1' to 'conv_top_fmul_32ncud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_top_fcmp_32ns_32ns_1_1_1' to 'conv_top_fcmp_32ndEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_top_mux_63_32_1_1' to 'conv_top_mux_63_3eOg' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'conv_top_fadd_32nbkb': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_top_fcmp_32ndEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_top_fmul_32ncud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_top_mux_63_3eOg': 6 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv1'.
+INFO: [HLS 200-111]  Elapsed time: 2.234 seconds; current allocated memory: 131.142 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Register 'B_CONV2_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'B_CONV2_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'B_CONV2_2' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'B_CONV2_3' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'B_CONV2_4' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'B_CONV2_5' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'B_CONV2_6' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'B_CONV2_7' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'B_CONV2_8' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'B_CONV2_9' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'B_CONV2_10' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'B_CONV2_11' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'B_CONV2_12' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'B_CONV2_13' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'B_CONV2_14' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'B_CONV2_15' is power-on initialization.
+INFO: [SYN 201-210] Renamed object name 'conv_top_mux_164_32_1_1' to 'conv_top_mux_164_fYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_top_urem_8ns_6ns_5_12_1' to 'conv_top_urem_8nsg8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_top_mux_967_32_1_1' to 'conv_top_mux_967_hbi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'conv_top_fadd_32nbkb': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_top_fcmp_32ndEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_top_fmul_32ncud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_top_mux_164_fYi': 5 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_top_mux_63_3eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_top_mux_967_hbi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'conv_top_urem_8nsg8j': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv2'.
+INFO: [HLS 200-111]  Elapsed time: 7.656 seconds; current allocated memory: 140.409 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv_top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv_top/data' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv_top/data1' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv_top/data2' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv_top/data3' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'conv_top' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Global array 'W_CONV1_0' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV1_1' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV1_2' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV1_3' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV1_4' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV1_5' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv1_buff_0' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv1_buff_1' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv1_buff_2' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv1_buff_3' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv1_buff_4' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv1_buff_5' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'B_CONV1_5' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'B_CONV1_0' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'B_CONV1_1' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'B_CONV1_2' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'B_CONV1_3' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'B_CONV1_4' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_out1_0' will not be exposed as RTL port.
+INFO: [SYN 201-210] Renamed object name 'conv_top_conv_out1_0' to 'conv_top_conv_outibs' due to the length limit 20
+WARNING: [RTGEN 206-101] Global array 'conv_out1_1' will not be exposed as RTL port.
+INFO: [SYN 201-210] Renamed object name 'conv_top_conv_out1_1' to 'conv_top_conv_outjbC' due to the length limit 20
+WARNING: [RTGEN 206-101] Global array 'conv_out1_2' will not be exposed as RTL port.
+INFO: [SYN 201-210] Renamed object name 'conv_top_conv_out1_2' to 'conv_top_conv_outkbM' due to the length limit 20
+WARNING: [RTGEN 206-101] Global array 'conv_out1_3' will not be exposed as RTL port.
+INFO: [SYN 201-210] Renamed object name 'conv_top_conv_out1_3' to 'conv_top_conv_outlbW' due to the length limit 20
+WARNING: [RTGEN 206-101] Global array 'conv_out1_4' will not be exposed as RTL port.
+INFO: [SYN 201-210] Renamed object name 'conv_top_conv_out1_4' to 'conv_top_conv_outmb6' due to the length limit 20
+WARNING: [RTGEN 206-101] Global array 'conv_out1_5' will not be exposed as RTL port.
+INFO: [SYN 201-210] Renamed object name 'conv_top_conv_out1_5' to 'conv_top_conv_outncg' due to the length limit 20
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_0_0' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_0_1' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_0_2' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_0_3' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_0_4' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_0_5' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_1_0' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_1_1' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_1_2' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_1_3' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_1_4' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_1_5' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_2_0' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_2_1' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_2_2' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_2_3' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_2_4' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_2_5' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_3_0' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_3_1' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_3_2' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_3_3' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_3_4' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_3_5' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_4_0' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_4_1' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_4_2' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_4_3' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_4_4' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_4_5' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_5_0' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_5_1' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_5_2' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_5_3' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_5_4' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_5_5' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_6_0' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_6_1' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_6_2' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_6_3' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_6_4' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_6_5' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_7_0' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_7_1' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_7_2' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_7_3' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_7_4' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_7_5' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_8_0' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_8_1' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_8_2' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_8_3' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_8_4' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_8_5' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_9_0' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_9_1' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_9_2' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_9_3' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_9_4' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_9_5' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_10_0' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_10_1' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_10_2' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_10_3' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_10_4' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_10_5' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_11_0' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_11_1' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_11_2' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_11_3' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_11_4' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_11_5' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_12_0' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_12_1' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_12_2' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_12_3' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_12_4' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_12_5' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_13_0' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_13_1' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_13_2' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_13_3' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_13_4' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_13_5' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_14_0' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_14_1' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_14_2' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_14_3' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_14_4' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_14_5' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_15_0' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_15_1' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_15_2' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_15_3' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_15_4' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'W_CONV2_15_5' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv2_buff_0' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv2_buff_1' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv2_buff_2' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv2_buff_3' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv2_buff_4' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv2_buff_5' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv2_buff_6' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv2_buff_7' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv2_buff_8' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv2_buff_9' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv2_buff_10' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv2_buff_11' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv2_buff_12' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv2_buff_13' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv2_buff_14' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv2_buff_15' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_0' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_1' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_2' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_3' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_4' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_5' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_6' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_7' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_8' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_9' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_10' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_11' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_12' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_13' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_14' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_15' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_out2_0' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_out2_1' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_out2_2' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_out2_3' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_out2_4' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_out2_5' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_out2_6' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_out2_7' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_out2_8' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_out2_9' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_out2_10' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_out2_11' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_out2_12' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_out2_13' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_out2_14' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'conv_out2_15' will not be exposed as RTL port.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_top'.
+INFO: [HLS 200-111]  Elapsed time: 17.503 seconds; current allocated memory: 146.815 MB.
+INFO: [RTMG 210-278] Implementing memory 'conv1_pic_in_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'conv1_W_CONV1_0_ram (RAM)' using distributed RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'conv1_conv1_buff_0_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-282] Generating pipelined core: 'conv_top_urem_8nsg8j_div'
+INFO: [RTMG 210-278] Implementing memory 'conv2_conv2_buff_0_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'conv_top_conv_outibs_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:25 ; elapsed = 00:01:07 . Memory (MB): peak = 235.719 ; gain = 150.547
+INFO: [SYSC 207-301] Generating SystemC RTL for conv_top.
+INFO: [VHDL 208-304] Generating VHDL RTL for conv_top.
+INFO: [VLOG 209-307] Generating Verilog RTL for conv_top.
+INFO: [HLS 200-112] Total elapsed time: 67.328 seconds; peak allocated memory: 146.815 MB.

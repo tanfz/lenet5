@@ -1,0 +1,1946 @@
+{
+  "Top": "conv_top",
+  "RtlTop": "conv_top",
+  "RtlPrefix": "",
+  "SourceLanguage": "cpp",
+  "ResetStyle": "control",
+  "GenerateBdFiles": "0",
+  "HostMachineBits": "64",
+  "Target": {
+    "Family": "zynq",
+    "Device": "xc7z020",
+    "Package": "clg484",
+    "Speed": "-1"
+  },
+  "HlsSolution": {
+    "DirectiveTcl": [
+      "set_directive_array_partition conv1 ",
+      "set_directive_array_partition conv1 ",
+      "set_directive_array_partition conv1 ",
+      "set_directive_array_partition conv1 ",
+      "set_directive_pipeline conv1\/conv1_label2 -rewind",
+      "set_directive_pipeline conv1\/conv1_label3 -rewind",
+      "set_directive_pipeline conv1\/conv1_label4 ",
+      "set_directive_array_partition conv2 ",
+      "set_directive_array_partition conv2 ",
+      "set_directive_array_partition conv2 ",
+      "set_directive_array_partition conv2 ",
+      "set_directive_array_partition conv2 ",
+      "set_directive_pipeline conv2\/conv2_label5 ",
+      "set_directive_pipeline conv2\/conv2_label6 ",
+      "set_directive_pipeline conv1\/conv1_label1 -rewind",
+      "set_directive_pipeline conv2\/conv2_label2 -rewind",
+      "set_directive_pipeline conv2\/conv2_label3 -rewind",
+      "set_directive_array_partition conv3 ",
+      "set_directive_array_partition conv3 ",
+      "set_directive_array_partition conv3 ",
+      "set_directive_array_partition conv3 ",
+      "set_directive_array_partition conv3 ",
+      "set_directive_pipeline conv2\/conv2_label1 -rewind",
+      "set_directive_pipeline conv3\/conv3_label1 ",
+      "set_directive_pipeline conv3\/conv3_label2 ",
+      "set_directive_array_partition fc1 ",
+      "set_directive_array_partition fc1 ",
+      "set_directive_array_partition fc1 ",
+      "set_directive_array_partition fc1 ",
+      "set_directive_pipeline fc1\/fc1_label1 ",
+      "set_directive_pipeline fc1\/fc1_label2 ",
+      "set_directive_array_partition fc2 ",
+      "set_directive_array_partition fc2 ",
+      "set_directive_array_partition fc2 ",
+      "set_directive_array_partition fc2 ",
+      "set_directive_array_partition fc2 ",
+      "set_directive_pipeline fc2\/fc2_label1 ",
+      "set_directive_pipeline fc2\/fc2_label2 ",
+      "set_directive_interface conv_top ",
+      "set_directive_interface conv_top ",
+      "set_directive_interface conv_top ",
+      "set_directive_interface conv_top "
+    ],
+    "DirectiveInfo": [
+      "array_partition conv1 {{partition positionBooleanCmd} {variable positionBooleanTextRequiredW_CONV1} {complete positionBoolean0type} {dim 1}} {}",
+      "array_partition conv1 {{partition positionBooleanCmd} {variable positionBooleanTextRequiredconv1_buff} {complete positionBoolean0type} {dim 1}} {}",
+      "array_partition conv1 {{partition positionBooleanCmd} {variable positionBooleanTextRequiredB_CONV1} {complete positionBoolean0type} {dim 1}} {}",
+      "array_partition conv1 {{partition positionBooleanCmd} {variable positionBooleanTextRequiredconv_out1} {complete positionBoolean0type} {dim 1}} {}",
+      "pipeline conv1\/conv1_label2 {{rewind positionBoolean1}} {}",
+      "pipeline conv1\/conv1_label3 {{rewind positionBoolean1}} {}",
+      "pipeline conv1\/conv1_label4 {} {}",
+      "array_partition conv2 {{partition positionBooleanCmd} {variable positionBooleanTextRequiredW_CONV2} {complete positionBoolean0type} {dim 1}} {}",
+      "array_partition conv2 {{partition positionBooleanCmd} {variable positionBooleanTextRequiredconv2_buff} {complete positionBoolean0type} {dim 1}} {}",
+      "array_partition conv2 {{partition positionBooleanCmd} {variable positionBooleanTextRequiredconv_out2} {complete positionBoolean0type} {dim 1}} {}",
+      "array_partition conv2 {{partition positionBooleanCmd} {variable positionBooleanTextRequiredW_CONV2} {complete positionBoolean0type} {dim 2}} {}",
+      "array_partition conv2 {{partition positionBooleanCmd} {variable positionBooleanTextRequiredB_CONV2} {complete positionBoolean0type} {dim 1}} {}",
+      "pipeline conv2\/conv2_label5 {} {}",
+      "pipeline conv2\/conv2_label6 {} {}",
+      "pipeline conv1\/conv1_label1 {{rewind positionBoolean1}} {}",
+      "pipeline conv2\/conv2_label2 {{rewind positionBoolean1}} {}",
+      "pipeline conv2\/conv2_label3 {{rewind positionBoolean1}} {}",
+      "array_partition conv3 {{partition positionBooleanCmd} {variable positionBooleanTextRequiredW_CONV3} {complete positionBoolean0type} {dim 1}} {}",
+      "array_partition conv3 {{partition positionBooleanCmd} {variable positionBooleanTextRequiredW_CONV3} {complete positionBoolean0type} {dim 2}} {}",
+      "array_partition conv3 {{partition positionBooleanCmd} {variable positionBooleanTextRequiredconv3_buff} {complete positionBoolean0type} {dim 1}} {}",
+      "array_partition conv3 {{partition positionBooleanCmd} {variable positionBooleanTextRequiredB_CONV3} {complete positionBoolean0type} {dim 1}} {}",
+      "array_partition conv3 {{partition positionBooleanCmd} {variable positionBooleanTextRequiredconv_out3} {complete positionBoolean0type} {dim 1}} {}",
+      "pipeline conv2\/conv2_label1 {{rewind positionBoolean1}} {}",
+      "pipeline conv3\/conv3_label1 {} {}",
+      "pipeline conv3\/conv3_label2 {} {}",
+      "array_partition fc1 {{partition positionBooleanCmd} {variable positionBooleanTextRequiredW_FC1} {complete positionBoolean0type} {dim 1}} {}",
+      "array_partition fc1 {{partition positionBooleanCmd} {variable positionBooleanTextRequiredW_FC1} {complete positionBoolean0type} {dim 2}} {}",
+      "array_partition fc1 {{partition positionBooleanCmd} {variable positionBooleanTextRequiredfc1_tmp} {complete positionBoolean0type} {dim 1}} {}",
+      "array_partition fc1 {{partition positionBooleanCmd} {variable positionBooleanTextRequiredfc1_out} {complete positionBoolean0type} {dim 1}} {}",
+      "pipeline fc1\/fc1_label1 {} {}",
+      "pipeline fc1\/fc1_label2 {} {}",
+      "array_partition fc2 {{partition positionBooleanCmd} {variable positionBooleanTextRequiredW_FC2} {complete positionBoolean0type} {dim 1}} {}",
+      "array_partition fc2 {{partition positionBooleanCmd} {variable positionBooleanTextRequiredW_FC2} {complete positionBoolean0type} {dim 2}} {}",
+      "array_partition fc2 {{partition positionBooleanCmd} {variable positionBooleanTextRequiredfc2_tmp} {complete positionBoolean0type} {dim 1}} {}",
+      "array_partition fc2 {{partition positionBooleanCmd} {variable positionBooleanTextRequiredB_FC2} {complete positionBoolean0type} {dim 1}} {}",
+      "array_partition fc2 {{partition positionBooleanCmd} {variable positionBooleanTextRequiredfc2_out} {complete positionBoolean0type} {dim 1}} {}",
+      "pipeline fc2\/fc2_label1 {} {}",
+      "pipeline fc2\/fc2_label2 {} {}",
+      "interface conv_top {{m_axi positionBoolean0mode} {depth 32} {port positionBooleanTextRequiredFM_DDR_BUFF1} {bundle data}} {}",
+      "interface conv_top {{m_axi positionBoolean0mode} {depth 32} {port positionBooleanTextRequiredFM_DDR_BUFF2} {bundle data}} {}",
+      "interface conv_top {{m_axi positionBoolean0mode} {depth 32} {port positionBooleanTextRequiredWEIGHT} {bundle data}} {}",
+      "interface conv_top {{m_axi positionBoolean0mode} {depth 32} {port positionBooleanTextRequiredBIAS} {bundle data}} {}"
+    ]
+  },
+  "ClockInfo": {
+    "ClockName": "ap_clk",
+    "ClockPeriod": "10",
+    "IsCombLogic": "0",
+    "II": "x",
+    "Latency": "2927173",
+    "Uncertainty": "1.25"
+  },
+  "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
+  "Ipx": {
+    "Vendor": "xilinx.com",
+    "Library": "hls",
+    "Name": "conv_top",
+    "Version": "1.0",
+    "DisplayName": "Conv_top",
+    "Revision": "",
+    "Description": "An IP generated by Vivado HLS",
+    "Taxonomy": "\/VIVADO_HLS_IP",
+    "AutoFamilySupport": ""
+  },
+  "Files": {
+    "CSource": ["..\/..\/..\/2C_prj\/lenet5\/conv.cpp"],
+    "Vhdl": [
+      "impl\/vhdl\/conv1.vhd",
+      "impl\/vhdl\/conv1_conv1_buff_0.vhd",
+      "impl\/vhdl\/conv1_pic_in.vhd",
+      "impl\/vhdl\/conv1_W_CONV1_0.vhd",
+      "impl\/vhdl\/conv2.vhd",
+      "impl\/vhdl\/conv2_conv2_buff_0.vhd",
+      "impl\/vhdl\/conv_top_conv_outibs.vhd",
+      "impl\/vhdl\/conv_top_data1_m_axi.vhd",
+      "impl\/vhdl\/conv_top_data2_m_axi.vhd",
+      "impl\/vhdl\/conv_top_data3_m_axi.vhd",
+      "impl\/vhdl\/conv_top_data_m_axi.vhd",
+      "impl\/vhdl\/conv_top_fadd_32nbkb.vhd",
+      "impl\/vhdl\/conv_top_fcmp_32ndEe.vhd",
+      "impl\/vhdl\/conv_top_fmul_32ncud.vhd",
+      "impl\/vhdl\/conv_top_mux_63_3eOg.vhd",
+      "impl\/vhdl\/conv_top_mux_164_fYi.vhd",
+      "impl\/vhdl\/conv_top_mux_967_hbi.vhd",
+      "impl\/vhdl\/conv_top_urem_8nsg8j.vhd",
+      "impl\/vhdl\/conv_top.vhd"
+    ],
+    "Verilog": [
+      "impl\/verilog\/conv1.v",
+      "impl\/verilog\/conv1_conv1_buff_0.v",
+      "impl\/verilog\/conv1_conv1_buff_0_ram.dat",
+      "impl\/verilog\/conv1_pic_in.v",
+      "impl\/verilog\/conv1_pic_in_ram.dat",
+      "impl\/verilog\/conv1_W_CONV1_0.v",
+      "impl\/verilog\/conv1_W_CONV1_0_ram.dat",
+      "impl\/verilog\/conv2.v",
+      "impl\/verilog\/conv2_conv2_buff_0.v",
+      "impl\/verilog\/conv2_conv2_buff_0_ram.dat",
+      "impl\/verilog\/conv_top_conv_outibs.v",
+      "impl\/verilog\/conv_top_conv_outibs_ram.dat",
+      "impl\/verilog\/conv_top_data1_m_axi.v",
+      "impl\/verilog\/conv_top_data2_m_axi.v",
+      "impl\/verilog\/conv_top_data3_m_axi.v",
+      "impl\/verilog\/conv_top_data_m_axi.v",
+      "impl\/verilog\/conv_top_fadd_32nbkb.v",
+      "impl\/verilog\/conv_top_fcmp_32ndEe.v",
+      "impl\/verilog\/conv_top_fmul_32ncud.v",
+      "impl\/verilog\/conv_top_mux_63_3eOg.v",
+      "impl\/verilog\/conv_top_mux_164_fYi.v",
+      "impl\/verilog\/conv_top_mux_967_hbi.v",
+      "impl\/verilog\/conv_top_urem_8nsg8j.v",
+      "impl\/verilog\/conv_top.v"
+    ],
+    "Misc": ["impl\/misc\/logo.png"],
+    "Subcore": [
+      "impl\/misc\/conv_top_ap_fadd_3_full_dsp_32_ip.tcl",
+      "impl\/misc\/conv_top_ap_fcmp_0_no_dsp_32_ip.tcl",
+      "impl\/misc\/conv_top_ap_fmul_2_max_dsp_32_ip.tcl"
+    ],
+    "DesignXml": "C:\/Users\/T\/Desktop\/lenet5\/3hls_prj\/lenet5_hls\/pipline_rewind\/.autopilot\/db\/conv_top.design.xml"
+  },
+  "SubcoreInfo": {
+    "HasXpmMemory": false,
+    "HasClockedDsp": false,
+    "IP": [
+      {
+        "name": "conv_top_ap_fadd_3_full_dsp_32",
+        "vlnv": "xilinx.com:ip:floating_point:7.1",
+        "params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Add CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 3 CONFIG.c_mult_usage Full_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name conv_top_ap_fadd_3_full_dsp_32 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Add_Subtract CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+      },
+      {
+        "name": "conv_top_ap_fcmp_0_no_dsp_32",
+        "vlnv": "xilinx.com:ip:floating_point:7.1",
+        "params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 0 CONFIG.c_mult_usage No_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 1 CONFIG.c_result_fraction_width 0 CONFIG.component_name conv_top_ap_fcmp_0_no_dsp_32 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken false CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Compare CONFIG.result_precision_type Custom CONFIG.result_tlast_behv Null"
+      },
+      {
+        "name": "conv_top_ap_fmul_2_max_dsp_32",
+        "vlnv": "xilinx.com:ip:floating_point:7.1",
+        "params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 2 CONFIG.c_mult_usage Max_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name conv_top_ap_fmul_2_max_dsp_32 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Multiply CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+      }
+    ]
+  },
+  "Interfaces": {
+    "ap_clk": {
+      "type": "clock",
+      "ctype": {"CLK": {"Type": "bool"}},
+      "buses": "m_axi_data m_axi_data1 m_axi_data2 m_axi_data3",
+      "reset": "ap_rst_n"
+    },
+    "ap_ctrl": {
+      "type": "ap_ctrl",
+      "ctrl_ports": "ap_start ap_done ap_idle ap_ready",
+      "ctype": {
+        "start": {"Type": "bool"},
+        "done": {"Type": "bool"},
+        "idle": {"Type": "bool"},
+        "ready": {"Type": "bool"}
+      }
+    },
+    "ap_rst_n": {
+      "type": "reset",
+      "polarity": "ACTIVE_LOW",
+      "ctype": {"RST": {"Type": "bool"}}
+    },
+    "m_axi_data": {
+      "type": "native_axim",
+      "is_adaptor": "true",
+      "mode": "master",
+      "port_prefix": "m_axi_data",
+      "data_width": "32",
+      "param_prefix": "C_M_AXI_DATA",
+      "ctype": {
+        "AWLEN": {
+          "Type": "integer unsigned",
+          "Width": "8"
+        },
+        "AWSIZE": {
+          "Type": "integer unsigned",
+          "Width": "3"
+        },
+        "AWBURST": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "AWLOCK": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "AWREGION": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "AWCACHE": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "AWPROT": {
+          "Type": "integer unsigned",
+          "Width": "3"
+        },
+        "AWQOS": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "AWVALID": {"Type": "bool"},
+        "AWREADY": {"Type": "bool"},
+        "WLAST": {"Type": "bool"},
+        "WVALID": {"Type": "bool"},
+        "WREADY": {"Type": "bool"},
+        "BVALID": {"Type": "bool"},
+        "BREADY": {"Type": "bool"},
+        "BRESP": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "ARLEN": {
+          "Type": "integer unsigned",
+          "Width": "8"
+        },
+        "ARSIZE": {
+          "Type": "integer unsigned",
+          "Width": "3"
+        },
+        "ARBURST": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "ARLOCK": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "ARREGION": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "ARCACHE": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "ARPROT": {
+          "Type": "integer unsigned",
+          "Width": "3"
+        },
+        "ARQOS": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "ARVALID": {"Type": "bool"},
+        "ARREADY": {"Type": "bool"},
+        "RLAST": {"Type": "bool"},
+        "RVALID": {"Type": "bool"},
+        "RREADY": {"Type": "bool"},
+        "RRESP": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "AWADDR": {
+          "Type": "integer unsigned",
+          "Width": "32"
+        },
+        "AWID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "AWUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "WDATA": {
+          "Type": "real float",
+          "Width": "32"
+        },
+        "WSTRB": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "WID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "WUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "ARADDR": {
+          "Type": "integer unsigned",
+          "Width": "32"
+        },
+        "ARID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "ARUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "RDATA": {
+          "Type": "real float",
+          "Width": "32"
+        },
+        "RID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "RUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "BID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "BUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        }
+      },
+      "HasOffset": "0",
+      "preferred_usage_value": "MEMORY",
+      "has_dependant_on": "0",
+      "offset_slave_name": "",
+      "NUM_READ_OUTSTANDING": "16",
+      "NUM_WRITE_OUTSTANDING": "16",
+      "MAX_READ_BURST_LENGTH": "16",
+      "MAX_WRITE_BURST_LENGTH": "16",
+      "port_width": {
+        "ARADDR": "32",
+        "ARID": "1",
+        "ARUSER": "1",
+        "AWADDR": "32",
+        "AWID": "1",
+        "AWUSER": "1",
+        "BID": "1",
+        "BUSER": "1",
+        "RDATA": "32",
+        "RID": "1",
+        "RUSER": "1",
+        "WDATA": "32",
+        "WID": "1",
+        "WSTRB": "4",
+        "WUSER": "1"
+      }
+    },
+    "m_axi_data1": {
+      "type": "native_axim",
+      "is_adaptor": "true",
+      "mode": "master",
+      "port_prefix": "m_axi_data1",
+      "data_width": "32",
+      "param_prefix": "C_M_AXI_DATA1",
+      "ctype": {
+        "AWLEN": {
+          "Type": "integer unsigned",
+          "Width": "8"
+        },
+        "AWSIZE": {
+          "Type": "integer unsigned",
+          "Width": "3"
+        },
+        "AWBURST": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "AWLOCK": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "AWREGION": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "AWCACHE": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "AWPROT": {
+          "Type": "integer unsigned",
+          "Width": "3"
+        },
+        "AWQOS": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "AWVALID": {"Type": "bool"},
+        "AWREADY": {"Type": "bool"},
+        "WLAST": {"Type": "bool"},
+        "WVALID": {"Type": "bool"},
+        "WREADY": {"Type": "bool"},
+        "BVALID": {"Type": "bool"},
+        "BREADY": {"Type": "bool"},
+        "BRESP": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "ARLEN": {
+          "Type": "integer unsigned",
+          "Width": "8"
+        },
+        "ARSIZE": {
+          "Type": "integer unsigned",
+          "Width": "3"
+        },
+        "ARBURST": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "ARLOCK": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "ARREGION": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "ARCACHE": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "ARPROT": {
+          "Type": "integer unsigned",
+          "Width": "3"
+        },
+        "ARQOS": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "ARVALID": {"Type": "bool"},
+        "ARREADY": {"Type": "bool"},
+        "RLAST": {"Type": "bool"},
+        "RVALID": {"Type": "bool"},
+        "RREADY": {"Type": "bool"},
+        "RRESP": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "AWADDR": {
+          "Type": "integer unsigned",
+          "Width": "32"
+        },
+        "AWID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "AWUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "WDATA": {
+          "Type": "real float",
+          "Width": "32"
+        },
+        "WSTRB": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "WID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "WUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "ARADDR": {
+          "Type": "integer unsigned",
+          "Width": "32"
+        },
+        "ARID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "ARUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "RDATA": {
+          "Type": "real float",
+          "Width": "32"
+        },
+        "RID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "RUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "BID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "BUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        }
+      },
+      "HasOffset": "0",
+      "preferred_usage_value": "MEMORY",
+      "has_dependant_on": "0",
+      "offset_slave_name": "",
+      "NUM_READ_OUTSTANDING": "16",
+      "NUM_WRITE_OUTSTANDING": "16",
+      "MAX_READ_BURST_LENGTH": "16",
+      "MAX_WRITE_BURST_LENGTH": "16",
+      "port_width": {
+        "ARADDR": "32",
+        "ARID": "1",
+        "ARUSER": "1",
+        "AWADDR": "32",
+        "AWID": "1",
+        "AWUSER": "1",
+        "BID": "1",
+        "BUSER": "1",
+        "RDATA": "32",
+        "RID": "1",
+        "RUSER": "1",
+        "WDATA": "32",
+        "WID": "1",
+        "WSTRB": "4",
+        "WUSER": "1"
+      }
+    },
+    "m_axi_data2": {
+      "type": "native_axim",
+      "is_adaptor": "true",
+      "mode": "master",
+      "port_prefix": "m_axi_data2",
+      "data_width": "32",
+      "param_prefix": "C_M_AXI_DATA2",
+      "ctype": {
+        "AWLEN": {
+          "Type": "integer unsigned",
+          "Width": "8"
+        },
+        "AWSIZE": {
+          "Type": "integer unsigned",
+          "Width": "3"
+        },
+        "AWBURST": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "AWLOCK": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "AWREGION": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "AWCACHE": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "AWPROT": {
+          "Type": "integer unsigned",
+          "Width": "3"
+        },
+        "AWQOS": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "AWVALID": {"Type": "bool"},
+        "AWREADY": {"Type": "bool"},
+        "WLAST": {"Type": "bool"},
+        "WVALID": {"Type": "bool"},
+        "WREADY": {"Type": "bool"},
+        "BVALID": {"Type": "bool"},
+        "BREADY": {"Type": "bool"},
+        "BRESP": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "ARLEN": {
+          "Type": "integer unsigned",
+          "Width": "8"
+        },
+        "ARSIZE": {
+          "Type": "integer unsigned",
+          "Width": "3"
+        },
+        "ARBURST": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "ARLOCK": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "ARREGION": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "ARCACHE": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "ARPROT": {
+          "Type": "integer unsigned",
+          "Width": "3"
+        },
+        "ARQOS": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "ARVALID": {"Type": "bool"},
+        "ARREADY": {"Type": "bool"},
+        "RLAST": {"Type": "bool"},
+        "RVALID": {"Type": "bool"},
+        "RREADY": {"Type": "bool"},
+        "RRESP": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "AWADDR": {
+          "Type": "integer unsigned",
+          "Width": "32"
+        },
+        "AWID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "AWUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "WDATA": {
+          "Type": "real float",
+          "Width": "32"
+        },
+        "WSTRB": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "WID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "WUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "ARADDR": {
+          "Type": "integer unsigned",
+          "Width": "32"
+        },
+        "ARID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "ARUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "RDATA": {
+          "Type": "real float",
+          "Width": "32"
+        },
+        "RID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "RUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "BID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "BUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        }
+      },
+      "HasOffset": "0",
+      "preferred_usage_value": "MEMORY",
+      "has_dependant_on": "0",
+      "offset_slave_name": "",
+      "NUM_READ_OUTSTANDING": "16",
+      "NUM_WRITE_OUTSTANDING": "16",
+      "MAX_READ_BURST_LENGTH": "16",
+      "MAX_WRITE_BURST_LENGTH": "16",
+      "port_width": {
+        "ARADDR": "32",
+        "ARID": "1",
+        "ARUSER": "1",
+        "AWADDR": "32",
+        "AWID": "1",
+        "AWUSER": "1",
+        "BID": "1",
+        "BUSER": "1",
+        "RDATA": "32",
+        "RID": "1",
+        "RUSER": "1",
+        "WDATA": "32",
+        "WID": "1",
+        "WSTRB": "4",
+        "WUSER": "1"
+      }
+    },
+    "m_axi_data3": {
+      "type": "native_axim",
+      "is_adaptor": "true",
+      "mode": "master",
+      "port_prefix": "m_axi_data3",
+      "data_width": "32",
+      "param_prefix": "C_M_AXI_DATA3",
+      "ctype": {
+        "AWLEN": {
+          "Type": "integer unsigned",
+          "Width": "8"
+        },
+        "AWSIZE": {
+          "Type": "integer unsigned",
+          "Width": "3"
+        },
+        "AWBURST": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "AWLOCK": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "AWREGION": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "AWCACHE": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "AWPROT": {
+          "Type": "integer unsigned",
+          "Width": "3"
+        },
+        "AWQOS": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "AWVALID": {"Type": "bool"},
+        "AWREADY": {"Type": "bool"},
+        "WLAST": {"Type": "bool"},
+        "WVALID": {"Type": "bool"},
+        "WREADY": {"Type": "bool"},
+        "BVALID": {"Type": "bool"},
+        "BREADY": {"Type": "bool"},
+        "BRESP": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "ARLEN": {
+          "Type": "integer unsigned",
+          "Width": "8"
+        },
+        "ARSIZE": {
+          "Type": "integer unsigned",
+          "Width": "3"
+        },
+        "ARBURST": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "ARLOCK": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "ARREGION": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "ARCACHE": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "ARPROT": {
+          "Type": "integer unsigned",
+          "Width": "3"
+        },
+        "ARQOS": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "ARVALID": {"Type": "bool"},
+        "ARREADY": {"Type": "bool"},
+        "RLAST": {"Type": "bool"},
+        "RVALID": {"Type": "bool"},
+        "RREADY": {"Type": "bool"},
+        "RRESP": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "AWADDR": {
+          "Type": "integer unsigned",
+          "Width": "32"
+        },
+        "AWID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "AWUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "WDATA": {
+          "Type": "real float",
+          "Width": "32"
+        },
+        "WSTRB": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "WID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "WUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "ARADDR": {
+          "Type": "integer unsigned",
+          "Width": "32"
+        },
+        "ARID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "ARUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "RDATA": {
+          "Type": "real float",
+          "Width": "32"
+        },
+        "RID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "RUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "BID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "BUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        }
+      },
+      "HasOffset": "0",
+      "preferred_usage_value": "MEMORY",
+      "has_dependant_on": "0",
+      "offset_slave_name": "",
+      "NUM_READ_OUTSTANDING": "16",
+      "NUM_WRITE_OUTSTANDING": "16",
+      "MAX_READ_BURST_LENGTH": "16",
+      "MAX_WRITE_BURST_LENGTH": "16",
+      "port_width": {
+        "ARADDR": "32",
+        "ARID": "1",
+        "ARUSER": "1",
+        "AWADDR": "32",
+        "AWID": "1",
+        "AWUSER": "1",
+        "BID": "1",
+        "BUSER": "1",
+        "RDATA": "32",
+        "RID": "1",
+        "RUSER": "1",
+        "WDATA": "32",
+        "WID": "1",
+        "WSTRB": "4",
+        "WUSER": "1"
+      }
+    }
+  },
+  "RtlPorts": {
+    "ap_clk": {
+      "dir": "in",
+      "width": "1"
+    },
+    "ap_rst_n": {
+      "dir": "in",
+      "width": "1"
+    },
+    "ap_start": {
+      "dir": "in",
+      "width": "1"
+    },
+    "ap_done": {
+      "dir": "out",
+      "width": "1"
+    },
+    "ap_idle": {
+      "dir": "out",
+      "width": "1"
+    },
+    "ap_ready": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_data_AWVALID": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_data_AWREADY": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_data_AWADDR": {
+      "dir": "out",
+      "width": "32"
+    },
+    "m_axi_data_AWID": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data_AWLEN": {
+      "dir": "out",
+      "width": "8"
+    },
+    "m_axi_data_AWSIZE": {
+      "dir": "out",
+      "width": "3"
+    },
+    "m_axi_data_AWBURST": {
+      "dir": "out",
+      "width": "2"
+    },
+    "m_axi_data_AWLOCK": {
+      "dir": "out",
+      "width": "2"
+    },
+    "m_axi_data_AWCACHE": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_data_AWPROT": {
+      "dir": "out",
+      "width": "3"
+    },
+    "m_axi_data_AWQOS": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_data_AWREGION": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_data_AWUSER": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data_WVALID": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_data_WREADY": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_data_WDATA": {
+      "dir": "out",
+      "width": "32"
+    },
+    "m_axi_data_WSTRB": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_data_WLAST": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_data_WID": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data_WUSER": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data_ARVALID": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_data_ARREADY": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_data_ARADDR": {
+      "dir": "out",
+      "width": "32"
+    },
+    "m_axi_data_ARID": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data_ARLEN": {
+      "dir": "out",
+      "width": "8"
+    },
+    "m_axi_data_ARSIZE": {
+      "dir": "out",
+      "width": "3"
+    },
+    "m_axi_data_ARBURST": {
+      "dir": "out",
+      "width": "2"
+    },
+    "m_axi_data_ARLOCK": {
+      "dir": "out",
+      "width": "2"
+    },
+    "m_axi_data_ARCACHE": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_data_ARPROT": {
+      "dir": "out",
+      "width": "3"
+    },
+    "m_axi_data_ARQOS": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_data_ARREGION": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_data_ARUSER": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data_RVALID": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_data_RREADY": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_data_RDATA": {
+      "dir": "in",
+      "width": "32"
+    },
+    "m_axi_data_RLAST": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_data_RID": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data_RUSER": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data_RRESP": {
+      "dir": "in",
+      "width": "2"
+    },
+    "m_axi_data_BVALID": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_data_BREADY": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_data_BRESP": {
+      "dir": "in",
+      "width": "2"
+    },
+    "m_axi_data_BID": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data_BUSER": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data1_AWVALID": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_data1_AWREADY": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_data1_AWADDR": {
+      "dir": "out",
+      "width": "32"
+    },
+    "m_axi_data1_AWID": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data1_AWLEN": {
+      "dir": "out",
+      "width": "8"
+    },
+    "m_axi_data1_AWSIZE": {
+      "dir": "out",
+      "width": "3"
+    },
+    "m_axi_data1_AWBURST": {
+      "dir": "out",
+      "width": "2"
+    },
+    "m_axi_data1_AWLOCK": {
+      "dir": "out",
+      "width": "2"
+    },
+    "m_axi_data1_AWCACHE": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_data1_AWPROT": {
+      "dir": "out",
+      "width": "3"
+    },
+    "m_axi_data1_AWQOS": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_data1_AWREGION": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_data1_AWUSER": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data1_WVALID": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_data1_WREADY": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_data1_WDATA": {
+      "dir": "out",
+      "width": "32"
+    },
+    "m_axi_data1_WSTRB": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_data1_WLAST": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_data1_WID": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data1_WUSER": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data1_ARVALID": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_data1_ARREADY": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_data1_ARADDR": {
+      "dir": "out",
+      "width": "32"
+    },
+    "m_axi_data1_ARID": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data1_ARLEN": {
+      "dir": "out",
+      "width": "8"
+    },
+    "m_axi_data1_ARSIZE": {
+      "dir": "out",
+      "width": "3"
+    },
+    "m_axi_data1_ARBURST": {
+      "dir": "out",
+      "width": "2"
+    },
+    "m_axi_data1_ARLOCK": {
+      "dir": "out",
+      "width": "2"
+    },
+    "m_axi_data1_ARCACHE": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_data1_ARPROT": {
+      "dir": "out",
+      "width": "3"
+    },
+    "m_axi_data1_ARQOS": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_data1_ARREGION": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_data1_ARUSER": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data1_RVALID": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_data1_RREADY": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_data1_RDATA": {
+      "dir": "in",
+      "width": "32"
+    },
+    "m_axi_data1_RLAST": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_data1_RID": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data1_RUSER": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data1_RRESP": {
+      "dir": "in",
+      "width": "2"
+    },
+    "m_axi_data1_BVALID": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_data1_BREADY": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_data1_BRESP": {
+      "dir": "in",
+      "width": "2"
+    },
+    "m_axi_data1_BID": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data1_BUSER": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data2_AWVALID": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_data2_AWREADY": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_data2_AWADDR": {
+      "dir": "out",
+      "width": "32"
+    },
+    "m_axi_data2_AWID": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data2_AWLEN": {
+      "dir": "out",
+      "width": "8"
+    },
+    "m_axi_data2_AWSIZE": {
+      "dir": "out",
+      "width": "3"
+    },
+    "m_axi_data2_AWBURST": {
+      "dir": "out",
+      "width": "2"
+    },
+    "m_axi_data2_AWLOCK": {
+      "dir": "out",
+      "width": "2"
+    },
+    "m_axi_data2_AWCACHE": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_data2_AWPROT": {
+      "dir": "out",
+      "width": "3"
+    },
+    "m_axi_data2_AWQOS": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_data2_AWREGION": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_data2_AWUSER": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data2_WVALID": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_data2_WREADY": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_data2_WDATA": {
+      "dir": "out",
+      "width": "32"
+    },
+    "m_axi_data2_WSTRB": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_data2_WLAST": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_data2_WID": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data2_WUSER": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data2_ARVALID": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_data2_ARREADY": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_data2_ARADDR": {
+      "dir": "out",
+      "width": "32"
+    },
+    "m_axi_data2_ARID": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data2_ARLEN": {
+      "dir": "out",
+      "width": "8"
+    },
+    "m_axi_data2_ARSIZE": {
+      "dir": "out",
+      "width": "3"
+    },
+    "m_axi_data2_ARBURST": {
+      "dir": "out",
+      "width": "2"
+    },
+    "m_axi_data2_ARLOCK": {
+      "dir": "out",
+      "width": "2"
+    },
+    "m_axi_data2_ARCACHE": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_data2_ARPROT": {
+      "dir": "out",
+      "width": "3"
+    },
+    "m_axi_data2_ARQOS": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_data2_ARREGION": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_data2_ARUSER": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data2_RVALID": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_data2_RREADY": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_data2_RDATA": {
+      "dir": "in",
+      "width": "32"
+    },
+    "m_axi_data2_RLAST": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_data2_RID": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data2_RUSER": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data2_RRESP": {
+      "dir": "in",
+      "width": "2"
+    },
+    "m_axi_data2_BVALID": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_data2_BREADY": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_data2_BRESP": {
+      "dir": "in",
+      "width": "2"
+    },
+    "m_axi_data2_BID": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data2_BUSER": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data3_AWVALID": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_data3_AWREADY": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_data3_AWADDR": {
+      "dir": "out",
+      "width": "32"
+    },
+    "m_axi_data3_AWID": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data3_AWLEN": {
+      "dir": "out",
+      "width": "8"
+    },
+    "m_axi_data3_AWSIZE": {
+      "dir": "out",
+      "width": "3"
+    },
+    "m_axi_data3_AWBURST": {
+      "dir": "out",
+      "width": "2"
+    },
+    "m_axi_data3_AWLOCK": {
+      "dir": "out",
+      "width": "2"
+    },
+    "m_axi_data3_AWCACHE": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_data3_AWPROT": {
+      "dir": "out",
+      "width": "3"
+    },
+    "m_axi_data3_AWQOS": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_data3_AWREGION": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_data3_AWUSER": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data3_WVALID": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_data3_WREADY": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_data3_WDATA": {
+      "dir": "out",
+      "width": "32"
+    },
+    "m_axi_data3_WSTRB": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_data3_WLAST": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_data3_WID": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data3_WUSER": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data3_ARVALID": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_data3_ARREADY": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_data3_ARADDR": {
+      "dir": "out",
+      "width": "32"
+    },
+    "m_axi_data3_ARID": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data3_ARLEN": {
+      "dir": "out",
+      "width": "8"
+    },
+    "m_axi_data3_ARSIZE": {
+      "dir": "out",
+      "width": "3"
+    },
+    "m_axi_data3_ARBURST": {
+      "dir": "out",
+      "width": "2"
+    },
+    "m_axi_data3_ARLOCK": {
+      "dir": "out",
+      "width": "2"
+    },
+    "m_axi_data3_ARCACHE": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_data3_ARPROT": {
+      "dir": "out",
+      "width": "3"
+    },
+    "m_axi_data3_ARQOS": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_data3_ARREGION": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_data3_ARUSER": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data3_RVALID": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_data3_RREADY": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_data3_RDATA": {
+      "dir": "in",
+      "width": "32"
+    },
+    "m_axi_data3_RLAST": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_data3_RID": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data3_RUSER": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data3_RRESP": {
+      "dir": "in",
+      "width": "2"
+    },
+    "m_axi_data3_BVALID": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_data3_BREADY": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_data3_BRESP": {
+      "dir": "in",
+      "width": "2"
+    },
+    "m_axi_data3_BID": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_data3_BUSER": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    }
+  },
+  "CPorts": {
+    "ap_ctrl": {
+      "interfaceRef": "ap_ctrl",
+      "dir": "out"
+    },
+    "data": {
+      "interfaceRef": "m_axi_data",
+      "dir": "inout"
+    },
+    "data1": {
+      "interfaceRef": "m_axi_data1",
+      "dir": "inout"
+    },
+    "data2": {
+      "interfaceRef": "m_axi_data2",
+      "dir": "inout"
+    },
+    "data3": {
+      "interfaceRef": "m_axi_data3",
+      "dir": "inout"
+    }
+  },
+  "ModuleInfo": {
+    "Hierarchy": {
+      "ModuleName": "conv_top",
+      "Instances": [
+        {
+          "ModuleName": "conv2",
+          "InstanceName": "grp_conv2_fu_370"
+        },
+        {
+          "ModuleName": "conv1",
+          "InstanceName": "grp_conv1_fu_682"
+        }
+      ]
+    },
+    "Metrics": {
+      "conv1": {
+        "Latency": {
+          "LatencyBest": "987907",
+          "LatencyAvg": "987907",
+          "LatencyWorst": "987907",
+          "PipelineII": "987907",
+          "PipelineDepth": "",
+          "PipelineType": "none"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "8.750"
+        },
+        "Loops": [
+          {
+            "Name": "memcpy.B_CONV1.gep.BIAS",
+            "TripCount": "6",
+            "Latency": "6",
+            "PipelineII": "1",
+            "PipelineDepth": "2"
+          },
+          {
+            "Name": "memcpy.pic_in.gep.FM_DDR_BUFF1",
+            "TripCount": "1024",
+            "Latency": "1025",
+            "PipelineII": "1",
+            "PipelineDepth": "3"
+          },
+          {
+            "Name": "memcpy.W_CONV1.gep.WEIGHT",
+            "TripCount": "150",
+            "Latency": "151",
+            "PipelineII": "1",
+            "PipelineDepth": "3"
+          },
+          {
+            "Name": "L_L_L_conv1_label1",
+            "TripCount": "117600",
+            "Latency": "940804",
+            "PipelineII": "8",
+            "PipelineDepth": "13"
+          },
+          {
+            "Name": "L_L_conv1_label2",
+            "TripCount": "4704",
+            "Latency": "42336",
+            "PipelineII": "9",
+            "PipelineDepth": "10"
+          },
+          {
+            "Name": "L_L_conv1_label3",
+            "TripCount": "1176",
+            "Latency": "2372",
+            "PipelineII": "2",
+            "PipelineDepth": "23"
+          },
+          {
+            "Name": "memcpy.FM_DDR_BUFF2.conv_out1.gep",
+            "TripCount": "1176",
+            "Latency": "1177",
+            "PipelineII": "1",
+            "PipelineDepth": "3"
+          }
+        ],
+        "Area": {
+          "BRAM_18K": "14",
+          "DSP48E": "7",
+          "FF": "2787",
+          "LUT": "5053"
+        }
+      },
+      "conv2": {
+        "Latency": {
+          "LatencyBest": "1939263",
+          "LatencyAvg": "1939263",
+          "LatencyWorst": "1939263",
+          "PipelineII": "1939263",
+          "PipelineDepth": "",
+          "PipelineType": "none"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "8.750"
+        },
+        "Loops": [
+          {
+            "Name": "memcpy.B_CONV2.gep.BIAS",
+            "TripCount": "16",
+            "Latency": "16",
+            "PipelineII": "1",
+            "PipelineDepth": "2"
+          },
+          {
+            "Name": "memcpy.conv_out1.gep.FM_DDR_BUFF2",
+            "TripCount": "1176",
+            "Latency": "1177",
+            "PipelineII": "1",
+            "PipelineDepth": "3"
+          },
+          {
+            "Name": "memcpy.W_CONV2.gep.WEIGHT",
+            "TripCount": "2400",
+            "Latency": "2410",
+            "PipelineII": "1",
+            "PipelineDepth": "12"
+          },
+          {
+            "Name": "L_L_L_conv2_label1",
+            "TripCount": "240000",
+            "Latency": "1920004",
+            "PipelineII": "8",
+            "PipelineDepth": "13"
+          },
+          {
+            "Name": "L_L_conv2_label2",
+            "TripCount": "1600",
+            "Latency": "14400",
+            "PipelineII": "9",
+            "PipelineDepth": "10"
+          },
+          {
+            "Name": "L_L_conv2_label3",
+            "TripCount": "400",
+            "Latency": "819",
+            "PipelineII": "2",
+            "PipelineDepth": "22"
+          },
+          {
+            "Name": "memcpy.FM_DDR_BUFF1.conv_out2.gep",
+            "TripCount": "400",
+            "Latency": "401",
+            "PipelineII": "1",
+            "PipelineDepth": "3"
+          }
+        ],
+        "Area": {
+          "BRAM_18K": "32",
+          "DSP48E": "7",
+          "FF": "10391",
+          "LUT": "9066"
+        }
+      },
+      "conv_top": {
+        "Latency": {
+          "LatencyBest": "2927173",
+          "LatencyAvg": "2927173",
+          "LatencyWorst": "2927173",
+          "PipelineII": "2927174",
+          "PipelineDepth": "",
+          "PipelineType": "none"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "8.750"
+        },
+        "Area": {
+          "BRAM_18K": "60",
+          "DSP48E": "14",
+          "FF": "15232",
+          "LUT": "17306"
+        }
+      }
+    }
+  },
+  "Sdx": {
+    "Target": "none",
+    "ProfileOption": "0",
+    "ProfileType": "none",
+    "XO": "",
+    "KernelName": "conv_top",
+    "EnableXoSwEmu": "1"
+  },
+  "GenData": {
+    "DataVersion": "0.1",
+    "Time": "2020-10-18 11:50:58 +0800",
+    "ToolName": "vivado_hls",
+    "ToolVersion": "2018.3"
+  }
+}

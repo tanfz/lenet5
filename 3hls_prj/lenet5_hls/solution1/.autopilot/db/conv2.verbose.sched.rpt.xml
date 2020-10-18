@@ -1,0 +1,61 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'conv2'" level="0">
+<item name = "Date">Sun Oct 18 11:15:23 2020
+</item>
+<item name = "Version">2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)</item>
+<item name = "Project">lenet5_hls</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020clg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 8.750, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">3235069, 3235069, 3235069, 3235069, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- memcpy.B_CONV2.gep.BIAS">17, 17, 3, 1, 1, 16, yes</column>
+<column name="- memcpy.conv_out1.gep.FM_DDR_BUFF2">1177, 1177, 3, 1, 1, 1176, yes</column>
+<column name="- memcpy.W_CONV2.gep.WEIGHT">2401, 2401, 3, 1, 1, 2400, yes</column>
+<column name="- Loop 4">3205560, 3205560, 641112, -, -, 5, no</column>
+<column name=" + Loop 4.1">641110, 641110, 128222, -, -, 5, no</column>
+<column name="  ++ Loop 4.1.1">128220, 128220, 12822, -, -, 10, no</column>
+<column name="   +++ Loop 4.1.1.1">12820, 12820, 1282, -, -, 10, no</column>
+<column name="    ++++ Loop 4.1.1.1.1">1280, 1280, 80, -, -, 16, no</column>
+<column name="     +++++ conv2_label1">78, 78, 13, -, -, 6, no</column>
+<column name="- Loop 5">16220, 16220, 1622, -, -, 10, no</column>
+<column name=" + Loop 5.1">1620, 1620, 162, -, -, 10, no</column>
+<column name="  ++ conv2_label2">160, 160, 10, -, -, 16, no</column>
+<column name="- Loop 6">9260, 9260, 1852, -, -, 5, no</column>
+<column name=" + Loop 6.1">1850, 1850, 370, -, -, 5, no</column>
+<column name="  ++ conv2_label3">368, 368, 23, -, -, 16, no</column>
+<column name="- memcpy.FM_DDR_BUFF1.conv_out2.gep">401, 401, 3, 1, 1, 400, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

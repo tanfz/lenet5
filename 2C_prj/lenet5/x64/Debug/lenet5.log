@@ -1,3 +1,14 @@
 ﻿  conv.cpp
-C:\Users\T\Desktop\lenet5\2C_prj\lenet5\conv.cpp(154,21): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+C:\Users\T\Desktop\lenet5\2C_prj\lenet5\conv.cpp(46,18): warning C4102: “conv1_label1”: 未引用的标签
+C:\Users\T\Desktop\lenet5\2C_prj\lenet5\conv.cpp(57,16): warning C4102: “conv1_label2”: 未引用的标签
+C:\Users\T\Desktop\lenet5\2C_prj\lenet5\conv.cpp(67,16): warning C4102: “conv1_label3”: 未引用的标签
+C:\Users\T\Desktop\lenet5\2C_prj\lenet5\conv.cpp(86,18): warning C4102: “conv2_label1”: 未引用的标签
+C:\Users\T\Desktop\lenet5\2C_prj\lenet5\conv.cpp(99,16): warning C4102: “conv2_label2”: 未引用的标签
+C:\Users\T\Desktop\lenet5\2C_prj\lenet5\conv.cpp(109,16): warning C4102: “conv2_label3”: 未引用的标签
+C:\Users\T\Desktop\lenet5\2C_prj\lenet5\conv.cpp(126,16): warning C4102: “conv3_label1”: 未引用的标签
+C:\Users\T\Desktop\lenet5\2C_prj\lenet5\conv.cpp(135,14): warning C4102: “conv3_label2”: 未引用的标签
+C:\Users\T\Desktop\lenet5\2C_prj\lenet5\conv.cpp(149,12): warning C4102: “fc1_label1”: 未引用的标签
+C:\Users\T\Desktop\lenet5\2C_prj\lenet5\conv.cpp(156,16): warning C4102: “relufc1_label2”: 未引用的标签
+C:\Users\T\Desktop\lenet5\2C_prj\lenet5\conv.cpp(170,12): warning C4102: “fc2_label1”: 未引用的标签
+C:\Users\T\Desktop\lenet5\2C_prj\lenet5\conv.cpp(177,12): warning C4102: “fc2_label2”: 未引用的标签
   lenet5.vcxproj -> C:\Users\T\Desktop\lenet5\2C_prj\lenet5\x64\Debug\lenet5.exe

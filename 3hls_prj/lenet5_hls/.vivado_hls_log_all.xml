@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_out2_15' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:48.059+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_out2_14' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.861+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_out2_13' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.836+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_out2_12' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.825+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_out2_11' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.814+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_out2_10' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.802+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_out2_9' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.793+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_out2_8' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.780+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_out2_7' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.766+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_out2_6' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.757+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_out2_5' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.745+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_out2_4' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.732+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_out2_3' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.724+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_out2_2' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.713+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_out2_1' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.704+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv_out2_0' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.691+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_15' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.678+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_14' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.665+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_13' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.659+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_12' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.647+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_11' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.640+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_10' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.619+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_9' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.598+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_8' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.568+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_7' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.557+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_6' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.542+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_5' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.530+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_4' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.522+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_3' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.510+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_2' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.498+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_1' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.489+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'B_CONV2_0' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.479+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv2_buff_15' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.467+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv2_buff_14' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.458+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv2_buff_13' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.446+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv2_buff_12' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.436+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv2_buff_11' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.427+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv2_buff_10' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.421+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv2_buff_9' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.412+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv2_buff_8' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.405+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv2_buff_7' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.397+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv2_buff_6' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.387+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv2_buff_5' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.378+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv2_buff_4' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.366+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv2_buff_3' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.359+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv2_buff_2' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.352+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv2_buff_1' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.344+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'conv2_buff_0' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.337+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_15_5' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.329+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_15_4' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.319+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_15_3' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.312+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_15_2' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.306+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_15_1' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.295+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_15_0' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.284+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_14_5' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.277+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_14_4' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.264+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_14_3' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.248+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_14_2' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.239+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_14_1' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.226+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_14_0' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.211+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_13_5' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.200+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_13_4' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.191+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_13_3' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.178+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_13_2' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.165+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_13_1' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.156+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_13_0' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.143+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_12_5' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.130+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_12_4' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.117+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_12_3' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.101+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_12_2' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.078+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_12_1' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.048+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_12_0' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.038+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_11_5' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.027+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_11_4' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.018+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_11_3' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:47.007+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_11_2' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.996+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_11_1' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.986+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_11_0' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.977+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_10_5' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.965+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_10_4' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.956+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_10_3' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.940+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_10_2' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.927+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_10_1' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.915+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_10_0' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.900+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_9_5' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.887+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_9_4' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.878+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_9_3' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.864+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_9_2' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.858+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_9_1' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.843+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_9_0' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.832+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_8_5' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.822+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_8_4' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.813+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_8_3' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.806+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_8_2' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.797+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_8_1' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.789+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_8_0' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.780+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_7_5' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.772+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_7_4' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.765+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_7_3' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.759+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_7_2' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.749+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_7_1' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.742+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_7_0' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.733+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_6_5' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.725+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_6_4' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.716+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_6_3' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.706+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_6_2' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.696+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_6_1' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.691+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global array 'W_CONV2_6_0' will not be exposed as RTL port." projectName="lenet5_hls" solutionName="pipline_rewind" date="2020-10-18T11:50:46.687+0800" type="Warning"/>
+      </synLog>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

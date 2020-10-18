@@ -29,12 +29,13 @@ void conv_top(float* FM_DDR_BUFF1, float* FM_DDR_BUFF2, float* WEIGHT, float* BI
 {
 	conv1(FM_DDR_BUFF1, FM_DDR_BUFF2, WEIGHT, BIAS);
 	conv2(FM_DDR_BUFF1, FM_DDR_BUFF2, WEIGHT, BIAS);
-	conv3(FM_DDR_BUFF1, FM_DDR_BUFF2, WEIGHT, BIAS);
+	/*conv3(FM_DDR_BUFF1, FM_DDR_BUFF2, WEIGHT, BIAS);
 	fc1(FM_DDR_BUFF1, FM_DDR_BUFF2, WEIGHT, BIAS);
-	fc2(FM_DDR_BUFF1, FM_DDR_BUFF2, WEIGHT, BIAS);
+	fc2(FM_DDR_BUFF1, FM_DDR_BUFF2, WEIGHT, BIAS);*/
 }
 void conv1(float* FM_DDR_BUFF1, float* FM_DDR_BUFF2, float* WEIGHT, float* BIAS)
 {
+
 	memcpy((void*)B_CONV1, (const void*)(BIAS), sizeof(float) * 6);
 	memcpy((void*)pic_in, (const void*)(FM_DDR_BUFF1), sizeof(float) * sizeof(pic_in) / 4);
 	memcpy((void*)W_CONV1, (const void*)(WEIGHT), sizeof(float) * 6*5*5);
@@ -83,8 +84,8 @@ void conv2(float* FM_DDR_BUFF1, float* FM_DDR_BUFF2, float* WEIGHT, float* BIAS)
 		for (int kc = 0; kc < 5; kc++) {
 			for (int r = 0; r < 10; r++) {
 				for (int c = 0; c < 10; c++) {
-					conv2_label1:
 					for (int chl_out = 0; chl_out < 16; chl_out++) {
+						conv2_label1:
 						for (int chl_in = 0; chl_in < 6; chl_in++) {
 							conv2_buff[chl_out][r][c] += conv_out1[chl_in][r + kr][c + kc] * W_CONV2[chl_out][chl_in][kr][kc];
 						}

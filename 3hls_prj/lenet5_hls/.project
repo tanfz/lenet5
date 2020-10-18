@@ -42,6 +42,11 @@
 			<location>C:/Users/T/Desktop/lenet5/3hls_prj/lenet5_hls/pipeline/.tcls</location>
 		</link>
 		<link>
+			<name>pipline_rewind/constraints</name>
+			<type>2</type>
+			<location>C:/Users/T/Desktop/lenet5/3hls_prj/lenet5_hls/pipline_rewind/.tcls</location>
+		</link>
+		<link>
 			<name>solution1/constraints</name>
 			<type>2</type>
 			<location>C:/Users/T/Desktop/lenet5/3hls_prj/lenet5_hls/solution1/.tcls</location>
@@ -75,6 +80,21 @@
 			<name>pipeline/constraints/script.tcl</name>
 			<type>1</type>
 			<location>C:/Users/T/Desktop/lenet5/3hls_prj/lenet5_hls/pipeline/script.tcl</location>
+		</link>
+		<link>
+			<name>pipline_rewind/constraints/.xml.directive</name>
+			<type>1</type>
+			<location>C:/Users/T/Desktop/lenet5/3hls_prj/lenet5_hls/pipline_rewind/pipline_rewind.directive</location>
+		</link>
+		<link>
+			<name>pipline_rewind/constraints/directives.tcl</name>
+			<type>1</type>
+			<location>C:/Users/T/Desktop/lenet5/3hls_prj/lenet5_hls/pipline_rewind/directives.tcl</location>
+		</link>
+		<link>
+			<name>pipline_rewind/constraints/script.tcl</name>
+			<type>1</type>
+			<location>C:/Users/T/Desktop/lenet5/3hls_prj/lenet5_hls/pipline_rewind/script.tcl</location>
 		</link>
 		<link>
 			<name>solution1/constraints/.xml.directive</name>

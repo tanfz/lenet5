@@ -1,0 +1,1471 @@
+
+
+================================================================
+== Vivado HLS Report for 'conv1'
+================================================================
+* Date:           Sun Oct 18 11:15:21 2020
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        lenet5_hls
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.750|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +---------+---------+---------+---------+---------+
+    |      Latency      |      Interval     | Pipeline|
+    |   min   |   max   |   min   |   max   |   Type  |
+    +---------+---------+---------+---------+---------+
+    |  1667592|  1667592|  1667592|  1667592|   none  |
+    +---------+---------+---------+---------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                                     |      Latency      | Iteration|  Initiation Interval  | Trip |          |
+        |              Loop Name              |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- memcpy.B_CONV1.gep.BIAS            |        7|        7|         3|          1|          1|     6|    yes   |
+        |- memcpy.pic_in.gep.FM_DDR_BUFF1     |     1025|     1025|         3|          1|          1|  1024|    yes   |
+        |- memcpy.W_CONV1.gep.WEIGHT          |      158|      158|        10|          1|          1|   150|    yes   |
+        |- Loop 4                             |  1589060|  1589060|    317812|          -|          -|     5|    no    |
+        | + Loop 4.1                          |   317810|   317810|     63562|          -|          -|     5|    no    |
+        |  ++ Loop 4.1.1                      |    63560|    63560|      2270|          -|          -|    28|    no    |
+        |   +++ Loop 4.1.1.1                  |     2268|     2268|        81|          -|          -|    28|    no    |
+        |    ++++ conv1_label1                |       78|       78|        13|          -|          -|     6|    no    |
+        |- Loop 5                             |    48664|    48664|      1738|          -|          -|    28|    no    |
+        | + Loop 5.1                          |     1736|     1736|        62|          -|          -|    28|    no    |
+        |  ++ conv1_label2                    |       60|       60|        10|          -|          -|     6|    no    |
+        |- Loop 6                             |    27468|    27468|      1962|          -|          -|    14|    no    |
+        | + Loop 6.1                          |     1960|     1960|       140|          -|          -|    14|    no    |
+        |  ++ conv1_label3                    |      138|      138|        23|          -|          -|     6|    no    |
+        |- memcpy.FM_DDR_BUFF2.conv_out1.gep  |     1177|     1177|         3|          1|          1|  1176|    yes   |
+        +-------------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+  * Pipeline-1: initiation interval (II) = 1, depth = 3
+  * Pipeline-2: initiation interval (II) = 1, depth = 10
+  * Pipeline-3: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 101
+* Pipeline : 4
+  Pipeline-0 : II = 1, D = 3, States = { 8 9 10 }
+  Pipeline-1 : II = 1, D = 3, States = { 18 19 20 }
+  Pipeline-2 : II = 1, D = 10, States = { 28 29 30 31 32 33 34 35 36 37 }
+  Pipeline-3 : II = 1, D = 3, States = { 94 95 96 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	11  / (exitcond9)
+	9  / (!exitcond9)
+9 --> 
+	10  / true
+10 --> 
+	8  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	21  / (exitcond14)
+	19  / (!exitcond14)
+19 --> 
+	20  / true
+20 --> 
+	18  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	38  / (exitcond15)
+	29  / (!exitcond15)
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	33  / true
+33 --> 
+	34  / true
+34 --> 
+	35  / true
+35 --> 
+	36  / true
+36 --> 
+	37  / true
+37 --> 
+	28  / true
+38 --> 
+	39  / true
+39 --> 
+	40  / (!exitcond8)
+	57  / (exitcond8)
+40 --> 
+	41  / (!exitcond7)
+	39  / (exitcond7)
+41 --> 
+	42  / (!exitcond6)
+	40  / (exitcond6)
+42 --> 
+	43  / (!exitcond5)
+	41  / (exitcond5)
+43 --> 
+	44  / true
+44 --> 
+	45  / (!exitcond4)
+	42  / (exitcond4)
+45 --> 
+	46  / true
+46 --> 
+	47  / true
+47 --> 
+	48  / true
+48 --> 
+	49  / true
+49 --> 
+	50  / true
+50 --> 
+	51  / true
+51 --> 
+	52  / true
+52 --> 
+	53  / true
+53 --> 
+	54  / true
+54 --> 
+	55  / true
+55 --> 
+	56  / true
+56 --> 
+	44  / true
+57 --> 
+	58  / (!exitcond3)
+	69  / (exitcond3)
+58 --> 
+	59  / (!exitcond2)
+	57  / (exitcond2)
+59 --> 
+	60  / (!exitcond1)
+	58  / (exitcond1)
+60 --> 
+	61  / true
+61 --> 
+	62  / true
+62 --> 
+	63  / true
+63 --> 
+	64  / true
+64 --> 
+	65  / true
+65 --> 
+	66  / true
+66 --> 
+	67  / true
+67 --> 
+	68  / true
+68 --> 
+	59  / true
+69 --> 
+	70  / (tmp_38)
+	94  / (!tmp_38)
+70 --> 
+	71  / (tmp_45)
+	69  / (!tmp_45)
+71 --> 
+	72  / (!exitcond)
+	70  / (exitcond)
+72 --> 
+	73  / true
+73 --> 
+	74  / true
+74 --> 
+	75  / true
+75 --> 
+	76  / true
+76 --> 
+	77  / true
+77 --> 
+	78  / true
+78 --> 
+	79  / true
+79 --> 
+	80  / true
+80 --> 
+	81  / true
+81 --> 
+	82  / true
+82 --> 
+	83  / true
+83 --> 
+	84  / true
+84 --> 
+	85  / true
+85 --> 
+	86  / true
+86 --> 
+	87  / true
+87 --> 
+	88  / true
+88 --> 
+	89  / true
+89 --> 
+	90  / true
+90 --> 
+	91  / true
+91 --> 
+	92  / true
+92 --> 
+	93  / true
+93 --> 
+	71  / true
+94 --> 
+	97  / (exitcond16)
+	95  / (!exitcond16)
+95 --> 
+	96  / true
+96 --> 
+	94  / true
+97 --> 
+	98  / true
+98 --> 
+	99  / true
+99 --> 
+	100  / true
+100 --> 
+	101  / true
+101 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 8.75>
+ST_1 : Operation 102 [7/7] (8.75ns)   --->   "%BIAS_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %BIAS, i32 6) nounwind" [../2C_prj/lenet5/conv.cpp:38]   --->   Operation 102 'readreq' 'BIAS_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 2 <SV = 1> <Delay = 8.75>
+ST_2 : Operation 103 [6/7] (8.75ns)   --->   "%BIAS_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %BIAS, i32 6) nounwind" [../2C_prj/lenet5/conv.cpp:38]   --->   Operation 103 'readreq' 'BIAS_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 3 <SV = 2> <Delay = 8.75>
+ST_3 : Operation 104 [5/7] (8.75ns)   --->   "%BIAS_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %BIAS, i32 6) nounwind" [../2C_prj/lenet5/conv.cpp:38]   --->   Operation 104 'readreq' 'BIAS_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 4 <SV = 3> <Delay = 8.75>
+ST_4 : Operation 105 [4/7] (8.75ns)   --->   "%BIAS_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %BIAS, i32 6) nounwind" [../2C_prj/lenet5/conv.cpp:38]   --->   Operation 105 'readreq' 'BIAS_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 5 <SV = 4> <Delay = 8.75>
+ST_5 : Operation 106 [3/7] (8.75ns)   --->   "%BIAS_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %BIAS, i32 6) nounwind" [../2C_prj/lenet5/conv.cpp:38]   --->   Operation 106 'readreq' 'BIAS_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 6 <SV = 5> <Delay = 8.75>
+ST_6 : Operation 107 [2/7] (8.75ns)   --->   "%BIAS_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %BIAS, i32 6) nounwind" [../2C_prj/lenet5/conv.cpp:38]   --->   Operation 107 'readreq' 'BIAS_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 7 <SV = 6> <Delay = 8.75>
+ST_7 : Operation 108 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(float* %WEIGHT, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 32, [5 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind"   --->   Operation 108 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 109 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(float* %FM_DDR_BUFF2, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 32, [5 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind"   --->   Operation 109 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 110 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(float* %FM_DDR_BUFF1, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 32, [5 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind"   --->   Operation 110 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 111 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(float* %BIAS, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 32, [5 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind"   --->   Operation 111 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 112 [1/7] (8.75ns)   --->   "%BIAS_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %BIAS, i32 6) nounwind" [../2C_prj/lenet5/conv.cpp:38]   --->   Operation 112 'readreq' 'BIAS_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 113 [1/1] (1.76ns)   --->   "br label %burst.rd.header" [../2C_prj/lenet5/conv.cpp:38]   --->   Operation 113 'br' <Predicate = true> <Delay = 1.76>
+
+State 8 <SV = 7> <Delay = 1.65>
+ST_8 : Operation 114 [1/1] (0.00ns)   --->   "%indvar = phi i3 [ 0, %0 ], [ %indvar_next, %burst.rd.body ]" [../2C_prj/lenet5/conv.cpp:38]   --->   Operation 114 'phi' 'indvar' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 115 [1/1] (1.13ns)   --->   "%exitcond9 = icmp eq i3 %indvar, -2" [../2C_prj/lenet5/conv.cpp:38]   --->   Operation 115 'icmp' 'exitcond9' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 116 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 6, i64 6, i64 6) nounwind"   --->   Operation 116 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 117 [1/1] (1.65ns)   --->   "%indvar_next = add i3 %indvar, 1" [../2C_prj/lenet5/conv.cpp:38]   --->   Operation 117 'add' 'indvar_next' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 118 [1/1] (0.00ns)   --->   "br i1 %exitcond9, label %burst.rd.header16.preheader, label %burst.rd.body" [../2C_prj/lenet5/conv.cpp:38]   --->   Operation 118 'br' <Predicate = true> <Delay = 0.00>
+
+State 9 <SV = 8> <Delay = 8.75>
+ST_9 : Operation 119 [1/1] (8.75ns)   --->   "%BIAS_read = call float @_ssdm_op_Read.m_axi.floatP(float* %BIAS) nounwind" [../2C_prj/lenet5/conv.cpp:38]   --->   Operation 119 'read' 'BIAS_read' <Predicate = (!exitcond9)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 10 <SV = 9> <Delay = 2.32>
+ST_10 : Operation 120 [1/1] (0.00ns)   --->   "%burstread_rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_s) nounwind" [../2C_prj/lenet5/conv.cpp:38]   --->   Operation 120 'specregionbegin' 'burstread_rbegin' <Predicate = (!exitcond9)> <Delay = 0.00>
+ST_10 : Operation 121 [1/1] (0.00ns)   --->   "%empty_31 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str13) nounwind" [../2C_prj/lenet5/conv.cpp:38]   --->   Operation 121 'specpipeline' 'empty_31' <Predicate = (!exitcond9)> <Delay = 0.00>
+ST_10 : Operation 122 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([24 x i8]* @memcpy_OC_B_CONV1_OC)" [../2C_prj/lenet5/conv.cpp:38]   --->   Operation 122 'specloopname' <Predicate = (!exitcond9)> <Delay = 0.00>
+ST_10 : Operation 123 [1/1] (0.00ns)   --->   "%indvar9 = zext i3 %indvar to i64" [../2C_prj/lenet5/conv.cpp:38]   --->   Operation 123 'zext' 'indvar9' <Predicate = (!exitcond9)> <Delay = 0.00>
+ST_10 : Operation 124 [1/1] (0.00ns)   --->   "%B_CONV1_addr_1 = getelementptr [6 x float]* @B_CONV1, i64 0, i64 %indvar9" [../2C_prj/lenet5/conv.cpp:38]   --->   Operation 124 'getelementptr' 'B_CONV1_addr_1' <Predicate = (!exitcond9)> <Delay = 0.00>
+ST_10 : Operation 125 [1/1] (2.32ns)   --->   "store float %BIAS_read, float* %B_CONV1_addr_1, align 4" [../2C_prj/lenet5/conv.cpp:38]   --->   Operation 125 'store' <Predicate = (!exitcond9)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1176> <RAM>
+ST_10 : Operation 126 [1/1] (0.00ns)   --->   "%burstread_rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_s, i32 %burstread_rbegin) nounwind" [../2C_prj/lenet5/conv.cpp:38]   --->   Operation 126 'specregionend' 'burstread_rend' <Predicate = (!exitcond9)> <Delay = 0.00>
+ST_10 : Operation 127 [1/1] (0.00ns)   --->   "br label %burst.rd.header" [../2C_prj/lenet5/conv.cpp:38]   --->   Operation 127 'br' <Predicate = (!exitcond9)> <Delay = 0.00>
+
+State 11 <SV = 8> <Delay = 8.75>
+ST_11 : Operation 128 [7/7] (8.75ns)   --->   "%FM_DDR_BUFF1_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %FM_DDR_BUFF1, i32 1024) nounwind" [../2C_prj/lenet5/conv.cpp:39]   --->   Operation 128 'readreq' 'FM_DDR_BUFF1_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 12 <SV = 9> <Delay = 8.75>
+ST_12 : Operation 129 [6/7] (8.75ns)   --->   "%FM_DDR_BUFF1_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %FM_DDR_BUFF1, i32 1024) nounwind" [../2C_prj/lenet5/conv.cpp:39]   --->   Operation 129 'readreq' 'FM_DDR_BUFF1_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 13 <SV = 10> <Delay = 8.75>
+ST_13 : Operation 130 [5/7] (8.75ns)   --->   "%FM_DDR_BUFF1_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %FM_DDR_BUFF1, i32 1024) nounwind" [../2C_prj/lenet5/conv.cpp:39]   --->   Operation 130 'readreq' 'FM_DDR_BUFF1_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 14 <SV = 11> <Delay = 8.75>
+ST_14 : Operation 131 [4/7] (8.75ns)   --->   "%FM_DDR_BUFF1_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %FM_DDR_BUFF1, i32 1024) nounwind" [../2C_prj/lenet5/conv.cpp:39]   --->   Operation 131 'readreq' 'FM_DDR_BUFF1_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 15 <SV = 12> <Delay = 8.75>
+ST_15 : Operation 132 [3/7] (8.75ns)   --->   "%FM_DDR_BUFF1_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %FM_DDR_BUFF1, i32 1024) nounwind" [../2C_prj/lenet5/conv.cpp:39]   --->   Operation 132 'readreq' 'FM_DDR_BUFF1_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 16 <SV = 13> <Delay = 8.75>
+ST_16 : Operation 133 [2/7] (8.75ns)   --->   "%FM_DDR_BUFF1_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %FM_DDR_BUFF1, i32 1024) nounwind" [../2C_prj/lenet5/conv.cpp:39]   --->   Operation 133 'readreq' 'FM_DDR_BUFF1_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 17 <SV = 14> <Delay = 8.75>
+ST_17 : Operation 134 [1/7] (8.75ns)   --->   "%FM_DDR_BUFF1_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %FM_DDR_BUFF1, i32 1024) nounwind" [../2C_prj/lenet5/conv.cpp:39]   --->   Operation 134 'readreq' 'FM_DDR_BUFF1_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_17 : Operation 135 [1/1] (1.76ns)   --->   "br label %burst.rd.header16" [../2C_prj/lenet5/conv.cpp:39]   --->   Operation 135 'br' <Predicate = true> <Delay = 1.76>
+
+State 18 <SV = 15> <Delay = 1.88>
+ST_18 : Operation 136 [1/1] (0.00ns)   --->   "%indvar8 = phi i11 [ %indvar_next4, %burst.rd.body17 ], [ 0, %burst.rd.header16.preheader ]" [../2C_prj/lenet5/conv.cpp:39]   --->   Operation 136 'phi' 'indvar8' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 137 [1/1] (1.88ns)   --->   "%exitcond14 = icmp eq i11 %indvar8, -1024" [../2C_prj/lenet5/conv.cpp:39]   --->   Operation 137 'icmp' 'exitcond14' <Predicate = true> <Delay = 1.88> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 138 [1/1] (0.00ns)   --->   "%empty_32 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1024, i64 1024, i64 1024) nounwind"   --->   Operation 138 'speclooptripcount' 'empty_32' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 139 [1/1] (1.63ns)   --->   "%indvar_next4 = add i11 %indvar8, 1" [../2C_prj/lenet5/conv.cpp:39]   --->   Operation 139 'add' 'indvar_next4' <Predicate = true> <Delay = 1.63> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 140 [1/1] (0.00ns)   --->   "br i1 %exitcond14, label %burst.rd.header29.preheader, label %burst.rd.body17" [../2C_prj/lenet5/conv.cpp:39]   --->   Operation 140 'br' <Predicate = true> <Delay = 0.00>
+
+State 19 <SV = 16> <Delay = 8.75>
+ST_19 : Operation 141 [1/1] (8.75ns)   --->   "%FM_DDR_BUFF1_read = call float @_ssdm_op_Read.m_axi.floatP(float* %FM_DDR_BUFF1) nounwind" [../2C_prj/lenet5/conv.cpp:39]   --->   Operation 141 'read' 'FM_DDR_BUFF1_read' <Predicate = (!exitcond14)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 20 <SV = 17> <Delay = 3.25>
+ST_20 : Operation 142 [1/1] (0.00ns)   --->   "%burstread_rbegin3 = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_s) nounwind" [../2C_prj/lenet5/conv.cpp:39]   --->   Operation 142 'specregionbegin' 'burstread_rbegin3' <Predicate = (!exitcond14)> <Delay = 0.00>
+ST_20 : Operation 143 [1/1] (0.00ns)   --->   "%empty_33 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str14) nounwind" [../2C_prj/lenet5/conv.cpp:39]   --->   Operation 143 'specpipeline' 'empty_33' <Predicate = (!exitcond14)> <Delay = 0.00>
+ST_20 : Operation 144 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([31 x i8]* @memcpy_OC_pic_in_OC_s)" [../2C_prj/lenet5/conv.cpp:39]   --->   Operation 144 'specloopname' <Predicate = (!exitcond14)> <Delay = 0.00>
+ST_20 : Operation 145 [1/1] (0.00ns)   --->   "%indvar1 = zext i11 %indvar8 to i64" [../2C_prj/lenet5/conv.cpp:39]   --->   Operation 145 'zext' 'indvar1' <Predicate = (!exitcond14)> <Delay = 0.00>
+ST_20 : Operation 146 [1/1] (0.00ns)   --->   "%pic_in_addr_1 = getelementptr [1024 x float]* @pic_in, i64 0, i64 %indvar1" [../2C_prj/lenet5/conv.cpp:39]   --->   Operation 146 'getelementptr' 'pic_in_addr_1' <Predicate = (!exitcond14)> <Delay = 0.00>
+ST_20 : Operation 147 [1/1] (3.25ns)   --->   "store float %FM_DDR_BUFF1_read, float* %pic_in_addr_1, align 4" [../2C_prj/lenet5/conv.cpp:39]   --->   Operation 147 'store' <Predicate = (!exitcond14)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1176> <RAM>
+ST_20 : Operation 148 [1/1] (0.00ns)   --->   "%burstread_rend26 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_s, i32 %burstread_rbegin3) nounwind" [../2C_prj/lenet5/conv.cpp:39]   --->   Operation 148 'specregionend' 'burstread_rend26' <Predicate = (!exitcond14)> <Delay = 0.00>
+ST_20 : Operation 149 [1/1] (0.00ns)   --->   "br label %burst.rd.header16" [../2C_prj/lenet5/conv.cpp:39]   --->   Operation 149 'br' <Predicate = (!exitcond14)> <Delay = 0.00>
+
+State 21 <SV = 16> <Delay = 8.75>
+ST_21 : Operation 150 [7/7] (8.75ns)   --->   "%WEIGHT_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %WEIGHT, i32 150) nounwind" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 150 'readreq' 'WEIGHT_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 22 <SV = 17> <Delay = 8.75>
+ST_22 : Operation 151 [6/7] (8.75ns)   --->   "%WEIGHT_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %WEIGHT, i32 150) nounwind" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 151 'readreq' 'WEIGHT_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 23 <SV = 18> <Delay = 8.75>
+ST_23 : Operation 152 [5/7] (8.75ns)   --->   "%WEIGHT_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %WEIGHT, i32 150) nounwind" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 152 'readreq' 'WEIGHT_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 24 <SV = 19> <Delay = 8.75>
+ST_24 : Operation 153 [4/7] (8.75ns)   --->   "%WEIGHT_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %WEIGHT, i32 150) nounwind" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 153 'readreq' 'WEIGHT_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 25 <SV = 20> <Delay = 8.75>
+ST_25 : Operation 154 [3/7] (8.75ns)   --->   "%WEIGHT_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %WEIGHT, i32 150) nounwind" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 154 'readreq' 'WEIGHT_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 26 <SV = 21> <Delay = 8.75>
+ST_26 : Operation 155 [2/7] (8.75ns)   --->   "%WEIGHT_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %WEIGHT, i32 150) nounwind" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 155 'readreq' 'WEIGHT_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 27 <SV = 22> <Delay = 8.75>
+ST_27 : Operation 156 [1/7] (8.75ns)   --->   "%WEIGHT_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %WEIGHT, i32 150) nounwind" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 156 'readreq' 'WEIGHT_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_27 : Operation 157 [1/1] (1.76ns)   --->   "br label %burst.rd.header29" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 157 'br' <Predicate = true> <Delay = 1.76>
+
+State 28 <SV = 23> <Delay = 6.73>
+ST_28 : Operation 158 [1/1] (0.00ns)   --->   "%indvar2 = phi i8 [ %indvar_next5, %burst.rd.body30 ], [ 0, %burst.rd.header29.preheader ]" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 158 'phi' 'indvar2' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 159 [1/1] (0.00ns)   --->   "%phi_mul = phi i16 [ %next_mul, %burst.rd.body30 ], [ 0, %burst.rd.header29.preheader ]"   --->   Operation 159 'phi' 'phi_mul' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 160 [1/1] (0.00ns)   --->   "%phi_urem = phi i8 [ %idx_urem, %burst.rd.body30 ], [ 0, %burst.rd.header29.preheader ]"   --->   Operation 160 'phi' 'phi_urem' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 161 [1/1] (1.55ns)   --->   "%exitcond15 = icmp eq i8 %indvar2, -106" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 161 'icmp' 'exitcond15' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 162 [1/1] (0.00ns)   --->   "%empty_34 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 150, i64 150, i64 150) nounwind"   --->   Operation 162 'speclooptripcount' 'empty_34' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 163 [1/1] (1.91ns)   --->   "%indvar_next5 = add i8 %indvar2, 1" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 163 'add' 'indvar_next5' <Predicate = true> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 164 [1/1] (0.00ns)   --->   "br i1 %exitcond15, label %burst.rd.end28.preheader, label %burst.rd.body30" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 164 'br' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 165 [1/1] (1.91ns)   --->   "%next_urem = add i8 1, %phi_urem"   --->   Operation 165 'add' 'next_urem' <Predicate = (!exitcond15)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 166 [1/1] (1.55ns)   --->   "%tmp = icmp ult i8 %next_urem, 25"   --->   Operation 166 'icmp' 'tmp' <Predicate = (!exitcond15)> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 167 [1/1] (1.24ns)   --->   "%idx_urem = select i1 %tmp, i8 %next_urem, i8 0"   --->   Operation 167 'select' 'idx_urem' <Predicate = (!exitcond15)> <Delay = 1.24> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_28 : Operation 168 [1/1] (2.07ns)   --->   "%next_mul = add i16 328, %phi_mul"   --->   Operation 168 'add' 'next_mul' <Predicate = (!exitcond15)> <Delay = 2.07> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 169 [1/1] (0.00ns)   --->   "%tmp_70 = call i3 @_ssdm_op_PartSelect.i3.i16.i32.i32(i16 %phi_mul, i32 13, i32 15)" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 169 'partselect' 'tmp_70' <Predicate = (!exitcond15)> <Delay = 0.00>
+ST_28 : Operation 170 [1/1] (0.00ns)   --->   "%tmp_72 = trunc i8 %phi_urem to i5" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 170 'trunc' 'tmp_72' <Predicate = (!exitcond15)> <Delay = 0.00>
+ST_28 : Operation 171 [1/1] (1.36ns)   --->   "%tmp_74 = icmp ult i5 %tmp_72, -7" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 171 'icmp' 'tmp_74' <Predicate = (!exitcond15)> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 172 [1/1] (1.78ns)   --->   "%tmp_78 = add i5 7, %tmp_72" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 172 'add' 'tmp_78' <Predicate = (!exitcond15)> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 173 [1/1] (1.21ns)   --->   "%tmp_57 = select i1 %tmp_74, i5 %tmp_72, i5 %tmp_78" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 173 'select' 'tmp_57' <Predicate = (!exitcond15)> <Delay = 1.21> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_28 : Operation 174 [1/1] (0.00ns)   --->   "%zext_cast = zext i5 %tmp_57 to i12" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 174 'zext' 'zext_cast' <Predicate = (!exitcond15)> <Delay = 0.00>
+ST_28 : Operation 175 [1/1] (3.74ns)   --->   "%mul = mul i12 52, %zext_cast" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 175 'mul' 'mul' <Predicate = (!exitcond15)> <Delay = 3.74> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 3.74> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 176 [1/1] (0.00ns)   --->   "%tmp_79 = call i4 @_ssdm_op_PartSelect.i4.i12.i32.i32(i12 %mul, i32 8, i32 11)" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 176 'partselect' 'tmp_79' <Predicate = (!exitcond15)> <Delay = 0.00>
+ST_28 : Operation 177 [9/9] (3.20ns)   --->   "%tmp_63 = urem i5 %tmp_57, 5" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 177 'urem' 'tmp_63' <Predicate = (!exitcond15)> <Delay = 3.20> <Core = "DivnS">   --->   Core 23 'DivnS' <Latency = 8> <II = 1> <Delay = 3.20> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 29 <SV = 24> <Delay = 3.20>
+ST_29 : Operation 178 [8/9] (3.20ns)   --->   "%tmp_63 = urem i5 %tmp_57, 5" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 178 'urem' 'tmp_63' <Predicate = (!exitcond15)> <Delay = 3.20> <Core = "DivnS">   --->   Core 23 'DivnS' <Latency = 8> <II = 1> <Delay = 3.20> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 30 <SV = 25> <Delay = 3.20>
+ST_30 : Operation 179 [7/9] (3.20ns)   --->   "%tmp_63 = urem i5 %tmp_57, 5" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 179 'urem' 'tmp_63' <Predicate = (!exitcond15)> <Delay = 3.20> <Core = "DivnS">   --->   Core 23 'DivnS' <Latency = 8> <II = 1> <Delay = 3.20> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 31 <SV = 26> <Delay = 3.20>
+ST_31 : Operation 180 [6/9] (3.20ns)   --->   "%tmp_63 = urem i5 %tmp_57, 5" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 180 'urem' 'tmp_63' <Predicate = (!exitcond15)> <Delay = 3.20> <Core = "DivnS">   --->   Core 23 'DivnS' <Latency = 8> <II = 1> <Delay = 3.20> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 32 <SV = 27> <Delay = 3.20>
+ST_32 : Operation 181 [5/9] (3.20ns)   --->   "%tmp_63 = urem i5 %tmp_57, 5" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 181 'urem' 'tmp_63' <Predicate = (!exitcond15)> <Delay = 3.20> <Core = "DivnS">   --->   Core 23 'DivnS' <Latency = 8> <II = 1> <Delay = 3.20> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 33 <SV = 28> <Delay = 3.20>
+ST_33 : Operation 182 [4/9] (3.20ns)   --->   "%tmp_63 = urem i5 %tmp_57, 5" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 182 'urem' 'tmp_63' <Predicate = (!exitcond15)> <Delay = 3.20> <Core = "DivnS">   --->   Core 23 'DivnS' <Latency = 8> <II = 1> <Delay = 3.20> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 34 <SV = 29> <Delay = 3.20>
+ST_34 : Operation 183 [3/9] (3.20ns)   --->   "%tmp_63 = urem i5 %tmp_57, 5" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 183 'urem' 'tmp_63' <Predicate = (!exitcond15)> <Delay = 3.20> <Core = "DivnS">   --->   Core 23 'DivnS' <Latency = 8> <II = 1> <Delay = 3.20> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 35 <SV = 30> <Delay = 3.20>
+ST_35 : Operation 184 [2/9] (3.20ns)   --->   "%tmp_63 = urem i5 %tmp_57, 5" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 184 'urem' 'tmp_63' <Predicate = (!exitcond15)> <Delay = 3.20> <Core = "DivnS">   --->   Core 23 'DivnS' <Latency = 8> <II = 1> <Delay = 3.20> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 36 <SV = 31> <Delay = 8.75>
+ST_36 : Operation 185 [1/1] (8.75ns)   --->   "%WEIGHT_read = call float @_ssdm_op_Read.m_axi.floatP(float* %WEIGHT) nounwind" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 185 'read' 'WEIGHT_read' <Predicate = (!exitcond15)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_36 : Operation 186 [1/1] (0.00ns)   --->   "%tmp_51_cast = zext i3 %tmp_70 to i11" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 186 'zext' 'tmp_51_cast' <Predicate = (!exitcond15)> <Delay = 0.00>
+ST_36 : Operation 187 [1/1] (0.00ns)   --->   "%tmp_71 = call i5 @_ssdm_op_BitConcatenate.i5.i3.i2(i3 %tmp_70, i2 0)" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 187 'bitconcatenate' 'tmp_71' <Predicate = (!exitcond15)> <Delay = 0.00>
+ST_36 : Operation 188 [1/1] (0.00ns)   --->   "%p_shl1_cast = zext i5 %tmp_71 to i11" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 188 'zext' 'p_shl1_cast' <Predicate = (!exitcond15)> <Delay = 0.00>
+ST_36 : Operation 189 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp_s = add i11 %tmp_51_cast, %p_shl1_cast" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 189 'add' 'tmp_s' <Predicate = (!exitcond15)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.89> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_36 : Operation 190 [1/1] (0.00ns)   --->   "%div7 = sext i4 %tmp_79 to i5" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 190 'sext' 'div7' <Predicate = (!exitcond15)> <Delay = 0.00>
+ST_36 : Operation 191 [1/1] (0.00ns)   --->   "%tmp_59_cast = zext i5 %div7 to i11" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 191 'zext' 'tmp_59_cast' <Predicate = (!exitcond15)> <Delay = 0.00>
+ST_36 : Operation 192 [1/1] (3.49ns) (root node of TernaryAdder)   --->   "%tmp_80 = add i11 %tmp_s, %tmp_59_cast" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 192 'add' 'tmp_80' <Predicate = (!exitcond15)> <Delay = 3.49> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.89> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_36 : Operation 193 [1/1] (0.00ns)   --->   "%tmp_81 = trunc i11 %tmp_80 to i9" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 193 'trunc' 'tmp_81' <Predicate = (!exitcond15)> <Delay = 0.00>
+ST_36 : Operation 194 [1/1] (0.00ns)   --->   "%tmp_82 = trunc i11 %tmp_80 to i7" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 194 'trunc' 'tmp_82' <Predicate = (!exitcond15)> <Delay = 0.00>
+ST_36 : Operation 195 [1/1] (0.00ns)   --->   "%p_shl_cast = call i9 @_ssdm_op_BitConcatenate.i9.i7.i2(i7 %tmp_82, i2 0)" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 195 'bitconcatenate' 'p_shl_cast' <Predicate = (!exitcond15)> <Delay = 0.00>
+ST_36 : Operation 196 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp_83 = add i9 %tmp_81, %p_shl_cast" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 196 'add' 'tmp_83' <Predicate = (!exitcond15)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.89> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_36 : Operation 197 [1/9] (3.20ns)   --->   "%tmp_63 = urem i5 %tmp_57, 5" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 197 'urem' 'tmp_63' <Predicate = (!exitcond15)> <Delay = 3.20> <Core = "DivnS">   --->   Core 23 'DivnS' <Latency = 8> <II = 1> <Delay = 3.20> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 198 [1/1] (0.00ns)   --->   "%tmp_70_cast = zext i5 %tmp_63 to i9" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 198 'zext' 'tmp_70_cast' <Predicate = (!exitcond15)> <Delay = 0.00>
+ST_36 : Operation 199 [1/1] (3.69ns) (root node of TernaryAdder)   --->   "%tmp_84 = add i9 %tmp_83, %tmp_70_cast" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 199 'add' 'tmp_84' <Predicate = (!exitcond15)> <Delay = 3.69> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.89> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+
+State 37 <SV = 32> <Delay = 3.25>
+ST_37 : Operation 200 [1/1] (0.00ns)   --->   "%burstread_rbegin4 = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_s) nounwind" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 200 'specregionbegin' 'burstread_rbegin4' <Predicate = (!exitcond15)> <Delay = 0.00>
+ST_37 : Operation 201 [1/1] (0.00ns)   --->   "%empty_35 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str15) nounwind" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 201 'specpipeline' 'empty_35' <Predicate = (!exitcond15)> <Delay = 0.00>
+ST_37 : Operation 202 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([26 x i8]* @memcpy_OC_W_CONV1_OC)" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 202 'specloopname' <Predicate = (!exitcond15)> <Delay = 0.00>
+ST_37 : Operation 203 [1/1] (0.00ns)   --->   "%tmp_103_cast = zext i9 %tmp_84 to i64" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 203 'zext' 'tmp_103_cast' <Predicate = (!exitcond15)> <Delay = 0.00>
+ST_37 : Operation 204 [1/1] (0.00ns)   --->   "%W_CONV1_addr_1 = getelementptr [150 x float]* @W_CONV1, i64 0, i64 %tmp_103_cast" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 204 'getelementptr' 'W_CONV1_addr_1' <Predicate = (!exitcond15)> <Delay = 0.00>
+ST_37 : Operation 205 [1/1] (3.25ns)   --->   "store float %WEIGHT_read, float* %W_CONV1_addr_1, align 4" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 205 'store' <Predicate = (!exitcond15)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1176> <RAM>
+ST_37 : Operation 206 [1/1] (0.00ns)   --->   "%burstread_rend39 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_s, i32 %burstread_rbegin4) nounwind" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 206 'specregionend' 'burstread_rend39' <Predicate = (!exitcond15)> <Delay = 0.00>
+ST_37 : Operation 207 [1/1] (0.00ns)   --->   "br label %burst.rd.header29" [../2C_prj/lenet5/conv.cpp:40]   --->   Operation 207 'br' <Predicate = (!exitcond15)> <Delay = 0.00>
+
+State 38 <SV = 24> <Delay = 1.76>
+ST_38 : Operation 208 [1/1] (1.76ns)   --->   "br label %burst.rd.end28" [../2C_prj/lenet5/conv.cpp:42]   --->   Operation 208 'br' <Predicate = true> <Delay = 1.76>
+
+State 39 <SV = 25> <Delay = 2.10>
+ST_39 : Operation 209 [1/1] (0.00ns)   --->   "%kr = phi i3 [ %kr_2, %burst.rd.end28.loopexit ], [ 0, %burst.rd.end28.preheader ]"   --->   Operation 209 'phi' 'kr' <Predicate = true> <Delay = 0.00>
+ST_39 : Operation 210 [1/1] (0.00ns)   --->   "%kr_cast = zext i3 %kr to i5" [../2C_prj/lenet5/conv.cpp:42]   --->   Operation 210 'zext' 'kr_cast' <Predicate = true> <Delay = 0.00>
+ST_39 : Operation 211 [1/1] (1.13ns)   --->   "%exitcond8 = icmp eq i3 %kr, -3" [../2C_prj/lenet5/conv.cpp:42]   --->   Operation 211 'icmp' 'exitcond8' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 212 [1/1] (0.00ns)   --->   "%empty_36 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 5, i64 5, i64 5) nounwind"   --->   Operation 212 'speclooptripcount' 'empty_36' <Predicate = true> <Delay = 0.00>
+ST_39 : Operation 213 [1/1] (1.65ns)   --->   "%kr_2 = add i3 %kr, 1" [../2C_prj/lenet5/conv.cpp:42]   --->   Operation 213 'add' 'kr_2' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 214 [1/1] (0.00ns)   --->   "br i1 %exitcond8, label %.preheader13.preheader, label %.preheader17.preheader" [../2C_prj/lenet5/conv.cpp:42]   --->   Operation 214 'br' <Predicate = true> <Delay = 0.00>
+ST_39 : Operation 215 [1/1] (0.00ns)   --->   "%tmp_cast = zext i3 %kr to i6" [../2C_prj/lenet5/conv.cpp:43]   --->   Operation 215 'zext' 'tmp_cast' <Predicate = (!exitcond8)> <Delay = 0.00>
+ST_39 : Operation 216 [1/1] (1.76ns)   --->   "br label %.preheader17" [../2C_prj/lenet5/conv.cpp:43]   --->   Operation 216 'br' <Predicate = (!exitcond8)> <Delay = 1.76>
+ST_39 : Operation 217 [1/1] (1.76ns)   --->   "br label %.preheader13" [../2C_prj/lenet5/conv.cpp:55]   --->   Operation 217 'br' <Predicate = (exitcond8)> <Delay = 1.76>
+
+State 40 <SV = 26> <Delay = 2.10>
+ST_40 : Operation 218 [1/1] (0.00ns)   --->   "%kc = phi i3 [ 0, %.preheader17.preheader ], [ %kc_2, %.preheader17.loopexit ]"   --->   Operation 218 'phi' 'kc' <Predicate = true> <Delay = 0.00>
+ST_40 : Operation 219 [1/1] (0.00ns)   --->   "%kc_cast = zext i3 %kc to i5" [../2C_prj/lenet5/conv.cpp:43]   --->   Operation 219 'zext' 'kc_cast' <Predicate = true> <Delay = 0.00>
+ST_40 : Operation 220 [1/1] (1.13ns)   --->   "%exitcond7 = icmp eq i3 %kc, -3" [../2C_prj/lenet5/conv.cpp:43]   --->   Operation 220 'icmp' 'exitcond7' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_40 : Operation 221 [1/1] (0.00ns)   --->   "%empty_37 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 5, i64 5, i64 5) nounwind"   --->   Operation 221 'speclooptripcount' 'empty_37' <Predicate = true> <Delay = 0.00>
+ST_40 : Operation 222 [1/1] (1.65ns)   --->   "%kc_2 = add i3 %kc, 1" [../2C_prj/lenet5/conv.cpp:43]   --->   Operation 222 'add' 'kc_2' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_40 : Operation 223 [1/1] (0.00ns)   --->   "br i1 %exitcond7, label %burst.rd.end28.loopexit, label %.preheader16.preheader" [../2C_prj/lenet5/conv.cpp:43]   --->   Operation 223 'br' <Predicate = true> <Delay = 0.00>
+ST_40 : Operation 224 [1/1] (0.00ns)   --->   "%tmp_41_cast = zext i3 %kc to i9" [../2C_prj/lenet5/conv.cpp:44]   --->   Operation 224 'zext' 'tmp_41_cast' <Predicate = (!exitcond7)> <Delay = 0.00>
+ST_40 : Operation 225 [1/1] (1.76ns)   --->   "br label %.preheader16" [../2C_prj/lenet5/conv.cpp:44]   --->   Operation 225 'br' <Predicate = (!exitcond7)> <Delay = 1.76>
+ST_40 : Operation 226 [1/1] (0.00ns)   --->   "br label %burst.rd.end28"   --->   Operation 226 'br' <Predicate = (exitcond7)> <Delay = 0.00>
+
+State 41 <SV = 27> <Delay = 2.34>
+ST_41 : Operation 227 [1/1] (0.00ns)   --->   "%r = phi i5 [ 0, %.preheader16.preheader ], [ %r_6, %.preheader16.loopexit ]"   --->   Operation 227 'phi' 'r' <Predicate = true> <Delay = 0.00>
+ST_41 : Operation 228 [1/1] (1.36ns)   --->   "%exitcond6 = icmp eq i5 %r, -4" [../2C_prj/lenet5/conv.cpp:44]   --->   Operation 228 'icmp' 'exitcond6' <Predicate = true> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_41 : Operation 229 [1/1] (0.00ns)   --->   "%empty_38 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 28, i64 28, i64 28) nounwind"   --->   Operation 229 'speclooptripcount' 'empty_38' <Predicate = true> <Delay = 0.00>
+ST_41 : Operation 230 [1/1] (1.78ns)   --->   "%r_6 = add i5 %r, 1" [../2C_prj/lenet5/conv.cpp:44]   --->   Operation 230 'add' 'r_6' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_41 : Operation 231 [1/1] (0.00ns)   --->   "br i1 %exitcond6, label %.preheader17.loopexit, label %.preheader15.preheader" [../2C_prj/lenet5/conv.cpp:44]   --->   Operation 231 'br' <Predicate = true> <Delay = 0.00>
+ST_41 : Operation 232 [1/1] (1.78ns)   --->   "%tmp_50 = add i5 %kr_cast, %r" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 232 'add' 'tmp_50' <Predicate = (!exitcond6)> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_41 : Operation 233 [1/1] (0.00ns)   --->   "%tmp_52_cast = zext i5 %r to i10" [../2C_prj/lenet5/conv.cpp:45]   --->   Operation 233 'zext' 'tmp_52_cast' <Predicate = (!exitcond6)> <Delay = 0.00>
+ST_41 : Operation 234 [1/1] (1.76ns)   --->   "br label %.preheader15" [../2C_prj/lenet5/conv.cpp:45]   --->   Operation 234 'br' <Predicate = (!exitcond6)> <Delay = 1.76>
+ST_41 : Operation 235 [1/1] (0.00ns)   --->   "br label %.preheader17"   --->   Operation 235 'br' <Predicate = (exitcond6)> <Delay = 0.00>
+
+State 42 <SV = 28> <Delay = 5.03>
+ST_42 : Operation 236 [1/1] (0.00ns)   --->   "%c = phi i5 [ 0, %.preheader15.preheader ], [ %c_6, %.preheader15.loopexit ]"   --->   Operation 236 'phi' 'c' <Predicate = true> <Delay = 0.00>
+ST_42 : Operation 237 [1/1] (1.36ns)   --->   "%exitcond5 = icmp eq i5 %c, -4" [../2C_prj/lenet5/conv.cpp:45]   --->   Operation 237 'icmp' 'exitcond5' <Predicate = true> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 238 [1/1] (0.00ns)   --->   "%empty_39 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 28, i64 28, i64 28) nounwind"   --->   Operation 238 'speclooptripcount' 'empty_39' <Predicate = true> <Delay = 0.00>
+ST_42 : Operation 239 [1/1] (1.78ns)   --->   "%c_6 = add i5 %c, 1" [../2C_prj/lenet5/conv.cpp:45]   --->   Operation 239 'add' 'c_6' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 240 [1/1] (0.00ns)   --->   "br i1 %exitcond5, label %.preheader16.loopexit, label %.preheader14.preheader" [../2C_prj/lenet5/conv.cpp:45]   --->   Operation 240 'br' <Predicate = true> <Delay = 0.00>
+ST_42 : Operation 241 [1/1] (1.78ns)   --->   "%tmp_62 = add i5 %c, %kc_cast" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 241 'add' 'tmp_62' <Predicate = (!exitcond5)> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 242 [1/1] (0.00ns)   --->   "%tmp_96 = call i10 @_ssdm_op_BitConcatenate.i10.i5.i5(i5 %tmp_50, i5 %tmp_62)" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 242 'bitconcatenate' 'tmp_96' <Predicate = (!exitcond5)> <Delay = 0.00>
+ST_42 : Operation 243 [1/1] (0.00ns)   --->   "%tmp_97 = zext i10 %tmp_96 to i64" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 243 'zext' 'tmp_97' <Predicate = (!exitcond5)> <Delay = 0.00>
+ST_42 : Operation 244 [1/1] (0.00ns)   --->   "%pic_in_addr = getelementptr [1024 x float]* @pic_in, i64 0, i64 %tmp_97" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 244 'getelementptr' 'pic_in_addr' <Predicate = (!exitcond5)> <Delay = 0.00>
+ST_42 : Operation 245 [2/2] (3.25ns)   --->   "%pic_in_load = load float* %pic_in_addr, align 4" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 245 'load' 'pic_in_load' <Predicate = (!exitcond5)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1176> <RAM>
+ST_42 : Operation 246 [1/1] (0.00ns)   --->   "br label %.preheader16"   --->   Operation 246 'br' <Predicate = (exitcond5)> <Delay = 0.00>
+
+State 43 <SV = 29> <Delay = 3.25>
+ST_43 : Operation 247 [1/1] (0.00ns)   --->   "%tmp_64_cast = zext i5 %c to i14" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 247 'zext' 'tmp_64_cast' <Predicate = true> <Delay = 0.00>
+ST_43 : Operation 248 [1/2] (3.25ns)   --->   "%pic_in_load = load float* %pic_in_addr, align 4" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 248 'load' 'pic_in_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1176> <RAM>
+ST_43 : Operation 249 [1/1] (1.76ns)   --->   "br label %.preheader14" [../2C_prj/lenet5/conv.cpp:47]   --->   Operation 249 'br' <Predicate = true> <Delay = 1.76>
+
+State 44 <SV = 30> <Delay = 7.58>
+ST_44 : Operation 250 [1/1] (0.00ns)   --->   "%chl_out2 = phi i3 [ %chl_out_3, %1 ], [ 0, %.preheader14.preheader ]"   --->   Operation 250 'phi' 'chl_out2' <Predicate = true> <Delay = 0.00>
+ST_44 : Operation 251 [1/1] (1.13ns)   --->   "%exitcond4 = icmp eq i3 %chl_out2, -2" [../2C_prj/lenet5/conv.cpp:47]   --->   Operation 251 'icmp' 'exitcond4' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_44 : Operation 252 [1/1] (0.00ns)   --->   "%empty_40 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 6, i64 6, i64 6) nounwind"   --->   Operation 252 'speclooptripcount' 'empty_40' <Predicate = true> <Delay = 0.00>
+ST_44 : Operation 253 [1/1] (1.65ns)   --->   "%chl_out_3 = add i3 %chl_out2, 1" [../2C_prj/lenet5/conv.cpp:47]   --->   Operation 253 'add' 'chl_out_3' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_44 : Operation 254 [1/1] (0.00ns)   --->   "br i1 %exitcond4, label %.preheader15.loopexit, label %1" [../2C_prj/lenet5/conv.cpp:47]   --->   Operation 254 'br' <Predicate = true> <Delay = 0.00>
+ST_44 : Operation 255 [1/1] (0.00ns)   --->   "%tmp_67_cast = zext i3 %chl_out2 to i6" [../2C_prj/lenet5/conv.cpp:47]   --->   Operation 255 'zext' 'tmp_67_cast' <Predicate = (!exitcond4)> <Delay = 0.00>
+ST_44 : Operation 256 [1/1] (0.00ns)   --->   "%tmp_121 = call i5 @_ssdm_op_BitConcatenate.i5.i3.i2(i3 %chl_out2, i2 0)" [../2C_prj/lenet5/conv.cpp:47]   --->   Operation 256 'bitconcatenate' 'tmp_121' <Predicate = (!exitcond4)> <Delay = 0.00>
+ST_44 : Operation 257 [1/1] (0.00ns)   --->   "%p_shl10_cast1 = zext i5 %tmp_121 to i6" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 257 'zext' 'p_shl10_cast1' <Predicate = (!exitcond4)> <Delay = 0.00>
+ST_44 : Operation 258 [1/1] (0.00ns)   --->   "%p_shl10_cast = zext i5 %tmp_121 to i9" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 258 'zext' 'p_shl10_cast' <Predicate = (!exitcond4)> <Delay = 0.00>
+ST_44 : Operation 259 [1/1] (1.78ns)   --->   "%tmp_122 = add i6 %tmp_67_cast, %p_shl10_cast1" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 259 'add' 'tmp_122' <Predicate = (!exitcond4)> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_44 : Operation 260 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp_123 = add i6 5, %tmp_122" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 260 'add' 'tmp_123' <Predicate = (!exitcond4)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.89> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_44 : Operation 261 [1/1] (3.49ns) (root node of TernaryAdder)   --->   "%tmp_124 = add i6 %tmp_123, %tmp_cast" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 261 'add' 'tmp_124' <Predicate = (!exitcond4)> <Delay = 3.49> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.89> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_44 : Operation 262 [1/1] (0.00ns)   --->   "%tmp_128 = call i8 @_ssdm_op_BitConcatenate.i8.i3.i5(i3 %chl_out2, i5 0)" [../2C_prj/lenet5/conv.cpp:47]   --->   Operation 262 'bitconcatenate' 'tmp_128' <Predicate = (!exitcond4)> <Delay = 0.00>
+ST_44 : Operation 263 [1/1] (0.00ns)   --->   "%p_shl7_cast = zext i8 %tmp_128 to i9" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 263 'zext' 'p_shl7_cast' <Predicate = (!exitcond4)> <Delay = 0.00>
+ST_44 : Operation 264 [1/1] (1.91ns)   --->   "%tmp_129 = sub i9 %p_shl7_cast, %p_shl10_cast" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 264 'sub' 'tmp_129' <Predicate = (!exitcond4)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_44 : Operation 265 [1/1] (0.00ns)   --->   "%tmp_147_cast = sext i9 %tmp_129 to i10" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 265 'sext' 'tmp_147_cast' <Predicate = (!exitcond4)> <Delay = 0.00>
+ST_44 : Operation 266 [1/1] (1.82ns)   --->   "%tmp_130 = add i10 %tmp_147_cast, %tmp_52_cast" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 266 'add' 'tmp_130' <Predicate = (!exitcond4)> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_44 : Operation 267 [1/1] (0.00ns)   --->   "%tmp_131 = trunc i10 %tmp_130 to i9" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 267 'trunc' 'tmp_131' <Predicate = (!exitcond4)> <Delay = 0.00>
+ST_44 : Operation 268 [1/1] (0.00ns)   --->   "%p_shl5_cast = call i14 @_ssdm_op_BitConcatenate.i14.i9.i5(i9 %tmp_131, i5 0)" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 268 'bitconcatenate' 'p_shl5_cast' <Predicate = (!exitcond4)> <Delay = 0.00>
+ST_44 : Operation 269 [1/1] (0.00ns)   --->   "%tmp_132 = call i12 @_ssdm_op_BitConcatenate.i12.i10.i2(i10 %tmp_130, i2 0)" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 269 'bitconcatenate' 'tmp_132' <Predicate = (!exitcond4)> <Delay = 0.00>
+ST_44 : Operation 270 [1/1] (0.00ns)   --->   "%p_shl6_cast = sext i12 %tmp_132 to i14" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 270 'sext' 'p_shl6_cast' <Predicate = (!exitcond4)> <Delay = 0.00>
+ST_44 : Operation 271 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp_133 = sub i14 %p_shl5_cast, %p_shl6_cast" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 271 'sub' 'tmp_133' <Predicate = (!exitcond4)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.89> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_44 : Operation 272 [1/1] (3.84ns) (root node of TernaryAdder)   --->   "%tmp_134 = add i14 %tmp_133, %tmp_64_cast" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 272 'add' 'tmp_134' <Predicate = (!exitcond4)> <Delay = 3.84> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.89> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_44 : Operation 273 [1/1] (0.00ns)   --->   "%tmp_152_cast = zext i14 %tmp_134 to i64" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 273 'zext' 'tmp_152_cast' <Predicate = (!exitcond4)> <Delay = 0.00>
+ST_44 : Operation 274 [1/1] (0.00ns)   --->   "%conv1_buff_addr_5 = getelementptr [4704 x float]* @conv1_buff, i64 0, i64 %tmp_152_cast" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 274 'getelementptr' 'conv1_buff_addr_5' <Predicate = (!exitcond4)> <Delay = 0.00>
+ST_44 : Operation 275 [1/1] (0.00ns)   --->   "br label %.preheader15"   --->   Operation 275 'br' <Predicate = (exitcond4)> <Delay = 0.00>
+
+State 45 <SV = 31> <Delay = 6.95>
+ST_45 : Operation 276 [1/1] (0.00ns)   --->   "%tmp_141_cast = zext i6 %tmp_124 to i9" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 276 'zext' 'tmp_141_cast' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 277 [1/1] (0.00ns)   --->   "%tmp_125 = call i8 @_ssdm_op_BitConcatenate.i8.i6.i2(i6 %tmp_124, i2 0)" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 277 'bitconcatenate' 'tmp_125' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 278 [1/1] (0.00ns)   --->   "%p_shl9_cast = zext i8 %tmp_125 to i9" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 278 'zext' 'p_shl9_cast' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 279 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp_126 = add i9 %tmp_141_cast, %p_shl9_cast" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 279 'add' 'tmp_126' <Predicate = true> <Delay = 0.00> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.89> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_45 : Operation 280 [1/1] (3.69ns) (root node of TernaryAdder)   --->   "%tmp_127 = add i9 %tmp_126, %tmp_41_cast" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 280 'add' 'tmp_127' <Predicate = true> <Delay = 3.69> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.89> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_45 : Operation 281 [1/1] (0.00ns)   --->   "%tmp_144_cast = zext i9 %tmp_127 to i64" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 281 'zext' 'tmp_144_cast' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 282 [1/1] (0.00ns)   --->   "%W_CONV1_addr = getelementptr [150 x float]* @W_CONV1, i64 0, i64 %tmp_144_cast" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 282 'getelementptr' 'W_CONV1_addr' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 283 [2/2] (3.25ns)   --->   "%W_CONV1_load = load float* %W_CONV1_addr, align 4" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 283 'load' 'W_CONV1_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1176> <RAM>
+
+State 46 <SV = 32> <Delay = 3.25>
+ST_46 : Operation 284 [1/2] (3.25ns)   --->   "%W_CONV1_load = load float* %W_CONV1_addr, align 4" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 284 'load' 'W_CONV1_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1176> <RAM>
+
+State 47 <SV = 33> <Delay = 5.70>
+ST_47 : Operation 285 [4/4] (5.70ns)   --->   "%tmp_68 = fmul float %pic_in_load, %W_CONV1_load" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 285 'fmul' 'tmp_68' <Predicate = true> <Delay = 5.70> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 48 <SV = 34> <Delay = 5.70>
+ST_48 : Operation 286 [3/4] (5.70ns)   --->   "%tmp_68 = fmul float %pic_in_load, %W_CONV1_load" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 286 'fmul' 'tmp_68' <Predicate = true> <Delay = 5.70> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 49 <SV = 35> <Delay = 5.70>
+ST_49 : Operation 287 [2/4] (5.70ns)   --->   "%tmp_68 = fmul float %pic_in_load, %W_CONV1_load" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 287 'fmul' 'tmp_68' <Predicate = true> <Delay = 5.70> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_49 : Operation 288 [2/2] (3.25ns)   --->   "%conv1_buff_load_5 = load float* %conv1_buff_addr_5, align 4" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 288 'load' 'conv1_buff_load_5' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1176> <RAM>
+
+State 50 <SV = 36> <Delay = 5.70>
+ST_50 : Operation 289 [1/4] (5.70ns)   --->   "%tmp_68 = fmul float %pic_in_load, %W_CONV1_load" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 289 'fmul' 'tmp_68' <Predicate = true> <Delay = 5.70> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_50 : Operation 290 [1/2] (3.25ns)   --->   "%conv1_buff_load_5 = load float* %conv1_buff_addr_5, align 4" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 290 'load' 'conv1_buff_load_5' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1176> <RAM>
+
+State 51 <SV = 37> <Delay = 7.25>
+ST_51 : Operation 291 [5/5] (7.25ns)   --->   "%tmp_69 = fadd float %conv1_buff_load_5, %tmp_68" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 291 'fadd' 'tmp_69' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 52 <SV = 38> <Delay = 7.25>
+ST_52 : Operation 292 [4/5] (7.25ns)   --->   "%tmp_69 = fadd float %conv1_buff_load_5, %tmp_68" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 292 'fadd' 'tmp_69' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 53 <SV = 39> <Delay = 7.25>
+ST_53 : Operation 293 [3/5] (7.25ns)   --->   "%tmp_69 = fadd float %conv1_buff_load_5, %tmp_68" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 293 'fadd' 'tmp_69' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 54 <SV = 40> <Delay = 7.25>
+ST_54 : Operation 294 [2/5] (7.25ns)   --->   "%tmp_69 = fadd float %conv1_buff_load_5, %tmp_68" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 294 'fadd' 'tmp_69' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 55 <SV = 41> <Delay = 7.25>
+ST_55 : Operation 295 [1/5] (7.25ns)   --->   "%tmp_69 = fadd float %conv1_buff_load_5, %tmp_68" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 295 'fadd' 'tmp_69' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 56 <SV = 42> <Delay = 3.25>
+ST_56 : Operation 296 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([13 x i8]* @p_str3) nounwind" [../2C_prj/lenet5/conv.cpp:47]   --->   Operation 296 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_56 : Operation 297 [1/1] (3.25ns)   --->   "store float %tmp_69, float* %conv1_buff_addr_5, align 4" [../2C_prj/lenet5/conv.cpp:48]   --->   Operation 297 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1176> <RAM>
+ST_56 : Operation 298 [1/1] (0.00ns)   --->   "br label %.preheader14" [../2C_prj/lenet5/conv.cpp:47]   --->   Operation 298 'br' <Predicate = true> <Delay = 0.00>
+
+State 57 <SV = 26> <Delay = 2.34>
+ST_57 : Operation 299 [1/1] (0.00ns)   --->   "%r1 = phi i5 [ %r_4, %.preheader13.loopexit ], [ 0, %.preheader13.preheader ]"   --->   Operation 299 'phi' 'r1' <Predicate = true> <Delay = 0.00>
+ST_57 : Operation 300 [1/1] (1.36ns)   --->   "%exitcond3 = icmp eq i5 %r1, -4" [../2C_prj/lenet5/conv.cpp:55]   --->   Operation 300 'icmp' 'exitcond3' <Predicate = true> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_57 : Operation 301 [1/1] (0.00ns)   --->   "%empty_41 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 28, i64 28, i64 28) nounwind"   --->   Operation 301 'speclooptripcount' 'empty_41' <Predicate = true> <Delay = 0.00>
+ST_57 : Operation 302 [1/1] (1.78ns)   --->   "%r_4 = add i5 %r1, 1" [../2C_prj/lenet5/conv.cpp:55]   --->   Operation 302 'add' 'r_4' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_57 : Operation 303 [1/1] (0.00ns)   --->   "br i1 %exitcond3, label %.preheader10.preheader, label %.preheader12.preheader" [../2C_prj/lenet5/conv.cpp:55]   --->   Operation 303 'br' <Predicate = true> <Delay = 0.00>
+ST_57 : Operation 304 [1/1] (0.00ns)   --->   "%tmp_39_cast = zext i5 %r1 to i10" [../2C_prj/lenet5/conv.cpp:56]   --->   Operation 304 'zext' 'tmp_39_cast' <Predicate = (!exitcond3)> <Delay = 0.00>
+ST_57 : Operation 305 [1/1] (1.76ns)   --->   "br label %.preheader12" [../2C_prj/lenet5/conv.cpp:56]   --->   Operation 305 'br' <Predicate = (!exitcond3)> <Delay = 1.76>
+ST_57 : Operation 306 [1/1] (1.76ns)   --->   "br label %.preheader10" [../2C_prj/lenet5/conv.cpp:65]   --->   Operation 306 'br' <Predicate = (exitcond3)> <Delay = 1.76>
+
+State 58 <SV = 27> <Delay = 2.34>
+ST_58 : Operation 307 [1/1] (0.00ns)   --->   "%c2 = phi i5 [ 0, %.preheader12.preheader ], [ %c_4, %.preheader12.loopexit ]"   --->   Operation 307 'phi' 'c2' <Predicate = true> <Delay = 0.00>
+ST_58 : Operation 308 [1/1] (1.36ns)   --->   "%exitcond2 = icmp eq i5 %c2, -4" [../2C_prj/lenet5/conv.cpp:56]   --->   Operation 308 'icmp' 'exitcond2' <Predicate = true> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_58 : Operation 309 [1/1] (0.00ns)   --->   "%empty_42 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 28, i64 28, i64 28) nounwind"   --->   Operation 309 'speclooptripcount' 'empty_42' <Predicate = true> <Delay = 0.00>
+ST_58 : Operation 310 [1/1] (1.78ns)   --->   "%c_4 = add i5 %c2, 1" [../2C_prj/lenet5/conv.cpp:56]   --->   Operation 310 'add' 'c_4' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_58 : Operation 311 [1/1] (0.00ns)   --->   "br i1 %exitcond2, label %.preheader13.loopexit, label %.preheader11.preheader" [../2C_prj/lenet5/conv.cpp:56]   --->   Operation 311 'br' <Predicate = true> <Delay = 0.00>
+ST_58 : Operation 312 [1/1] (0.00ns)   --->   "%tmp_46_cast = zext i5 %c2 to i14" [../2C_prj/lenet5/conv.cpp:58]   --->   Operation 312 'zext' 'tmp_46_cast' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_58 : Operation 313 [1/1] (1.76ns)   --->   "br label %.preheader11" [../2C_prj/lenet5/conv.cpp:58]   --->   Operation 313 'br' <Predicate = (!exitcond2)> <Delay = 1.76>
+ST_58 : Operation 314 [1/1] (0.00ns)   --->   "br label %.preheader13"   --->   Operation 314 'br' <Predicate = (exitcond2)> <Delay = 0.00>
+
+State 59 <SV = 28> <Delay = 7.58>
+ST_59 : Operation 315 [1/1] (0.00ns)   --->   "%chl_out3 = phi i3 [ %chl_out, %._crit_edge ], [ 0, %.preheader11.preheader ]"   --->   Operation 315 'phi' 'chl_out3' <Predicate = true> <Delay = 0.00>
+ST_59 : Operation 316 [1/1] (1.13ns)   --->   "%exitcond1 = icmp eq i3 %chl_out3, -2" [../2C_prj/lenet5/conv.cpp:58]   --->   Operation 316 'icmp' 'exitcond1' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_59 : Operation 317 [1/1] (0.00ns)   --->   "%empty_43 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 6, i64 6, i64 6) nounwind"   --->   Operation 317 'speclooptripcount' 'empty_43' <Predicate = true> <Delay = 0.00>
+ST_59 : Operation 318 [1/1] (1.65ns)   --->   "%chl_out = add i3 %chl_out3, 1" [../2C_prj/lenet5/conv.cpp:58]   --->   Operation 318 'add' 'chl_out' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_59 : Operation 319 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %.preheader12.loopexit, label %._crit_edge" [../2C_prj/lenet5/conv.cpp:58]   --->   Operation 319 'br' <Predicate = true> <Delay = 0.00>
+ST_59 : Operation 320 [1/1] (0.00ns)   --->   "%tmp_87 = call i8 @_ssdm_op_BitConcatenate.i8.i3.i5(i3 %chl_out3, i5 0)" [../2C_prj/lenet5/conv.cpp:58]   --->   Operation 320 'bitconcatenate' 'tmp_87' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_59 : Operation 321 [1/1] (0.00ns)   --->   "%p_shl13_cast = zext i8 %tmp_87 to i9" [../2C_prj/lenet5/conv.cpp:58]   --->   Operation 321 'zext' 'p_shl13_cast' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_59 : Operation 322 [1/1] (0.00ns)   --->   "%tmp_88 = call i5 @_ssdm_op_BitConcatenate.i5.i3.i2(i3 %chl_out3, i2 0)" [../2C_prj/lenet5/conv.cpp:58]   --->   Operation 322 'bitconcatenate' 'tmp_88' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_59 : Operation 323 [1/1] (0.00ns)   --->   "%p_shl14_cast = zext i5 %tmp_88 to i9" [../2C_prj/lenet5/conv.cpp:59]   --->   Operation 323 'zext' 'p_shl14_cast' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_59 : Operation 324 [1/1] (1.91ns)   --->   "%tmp_89 = sub i9 %p_shl13_cast, %p_shl14_cast" [../2C_prj/lenet5/conv.cpp:59]   --->   Operation 324 'sub' 'tmp_89' <Predicate = (!exitcond1)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_59 : Operation 325 [1/1] (0.00ns)   --->   "%tmp_107_cast = sext i9 %tmp_89 to i10" [../2C_prj/lenet5/conv.cpp:59]   --->   Operation 325 'sext' 'tmp_107_cast' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_59 : Operation 326 [1/1] (1.82ns)   --->   "%tmp_90 = add i10 %tmp_107_cast, %tmp_39_cast" [../2C_prj/lenet5/conv.cpp:59]   --->   Operation 326 'add' 'tmp_90' <Predicate = (!exitcond1)> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_59 : Operation 327 [1/1] (0.00ns)   --->   "%tmp_91 = trunc i10 %tmp_90 to i9" [../2C_prj/lenet5/conv.cpp:59]   --->   Operation 327 'trunc' 'tmp_91' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_59 : Operation 328 [1/1] (0.00ns)   --->   "%p_shl11_cast = call i14 @_ssdm_op_BitConcatenate.i14.i9.i5(i9 %tmp_91, i5 0)" [../2C_prj/lenet5/conv.cpp:59]   --->   Operation 328 'bitconcatenate' 'p_shl11_cast' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_59 : Operation 329 [1/1] (0.00ns)   --->   "%tmp_92 = call i12 @_ssdm_op_BitConcatenate.i12.i10.i2(i10 %tmp_90, i2 0)" [../2C_prj/lenet5/conv.cpp:59]   --->   Operation 329 'bitconcatenate' 'tmp_92' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_59 : Operation 330 [1/1] (0.00ns)   --->   "%p_shl12_cast = sext i12 %tmp_92 to i14" [../2C_prj/lenet5/conv.cpp:59]   --->   Operation 330 'sext' 'p_shl12_cast' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_59 : Operation 331 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp_93 = sub i14 %p_shl11_cast, %p_shl12_cast" [../2C_prj/lenet5/conv.cpp:59]   --->   Operation 331 'sub' 'tmp_93' <Predicate = (!exitcond1)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.89> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_59 : Operation 332 [1/1] (3.84ns) (root node of TernaryAdder)   --->   "%tmp_94 = add i14 %tmp_93, %tmp_46_cast" [../2C_prj/lenet5/conv.cpp:59]   --->   Operation 332 'add' 'tmp_94' <Predicate = (!exitcond1)> <Delay = 3.84> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.89> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_59 : Operation 333 [1/1] (0.00ns)   --->   "%tmp_112_cast = zext i14 %tmp_94 to i64" [../2C_prj/lenet5/conv.cpp:59]   --->   Operation 333 'zext' 'tmp_112_cast' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_59 : Operation 334 [1/1] (0.00ns)   --->   "%conv1_buff_addr = getelementptr [4704 x float]* @conv1_buff, i64 0, i64 %tmp_112_cast" [../2C_prj/lenet5/conv.cpp:59]   --->   Operation 334 'getelementptr' 'conv1_buff_addr' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_59 : Operation 335 [1/1] (0.00ns)   --->   "br label %.preheader12"   --->   Operation 335 'br' <Predicate = (exitcond1)> <Delay = 0.00>
+
+State 60 <SV = 29> <Delay = 3.25>
+ST_60 : Operation 336 [1/1] (0.00ns)   --->   "%tmp_54 = zext i3 %chl_out3 to i64" [../2C_prj/lenet5/conv.cpp:59]   --->   Operation 336 'zext' 'tmp_54' <Predicate = true> <Delay = 0.00>
+ST_60 : Operation 337 [2/2] (3.25ns)   --->   "%conv1_buff_load = load float* %conv1_buff_addr, align 4" [../2C_prj/lenet5/conv.cpp:59]   --->   Operation 337 'load' 'conv1_buff_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1176> <RAM>
+ST_60 : Operation 338 [1/1] (0.00ns)   --->   "%B_CONV1_addr = getelementptr inbounds [6 x float]* @B_CONV1, i64 0, i64 %tmp_54" [../2C_prj/lenet5/conv.cpp:59]   --->   Operation 338 'getelementptr' 'B_CONV1_addr' <Predicate = true> <Delay = 0.00>
+ST_60 : Operation 339 [2/2] (2.32ns)   --->   "%B_CONV1_load = load float* %B_CONV1_addr, align 4" [../2C_prj/lenet5/conv.cpp:59]   --->   Operation 339 'load' 'B_CONV1_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1176> <RAM>
+
+State 61 <SV = 30> <Delay = 3.25>
+ST_61 : Operation 340 [1/2] (3.25ns)   --->   "%conv1_buff_load = load float* %conv1_buff_addr, align 4" [../2C_prj/lenet5/conv.cpp:59]   --->   Operation 340 'load' 'conv1_buff_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1176> <RAM>
+ST_61 : Operation 341 [1/2] (2.32ns)   --->   "%B_CONV1_load = load float* %B_CONV1_addr, align 4" [../2C_prj/lenet5/conv.cpp:59]   --->   Operation 341 'load' 'B_CONV1_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1176> <RAM>
+
+State 62 <SV = 31> <Delay = 7.25>
+ST_62 : Operation 342 [5/5] (7.25ns)   --->   "%tmp_55 = fadd float %conv1_buff_load, %B_CONV1_load" [../2C_prj/lenet5/conv.cpp:59]   --->   Operation 342 'fadd' 'tmp_55' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 63 <SV = 32> <Delay = 7.25>
+ST_63 : Operation 343 [4/5] (7.25ns)   --->   "%tmp_55 = fadd float %conv1_buff_load, %B_CONV1_load" [../2C_prj/lenet5/conv.cpp:59]   --->   Operation 343 'fadd' 'tmp_55' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 64 <SV = 33> <Delay = 7.25>
+ST_64 : Operation 344 [3/5] (7.25ns)   --->   "%tmp_55 = fadd float %conv1_buff_load, %B_CONV1_load" [../2C_prj/lenet5/conv.cpp:59]   --->   Operation 344 'fadd' 'tmp_55' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 65 <SV = 34> <Delay = 7.25>
+ST_65 : Operation 345 [2/5] (7.25ns)   --->   "%tmp_55 = fadd float %conv1_buff_load, %B_CONV1_load" [../2C_prj/lenet5/conv.cpp:59]   --->   Operation 345 'fadd' 'tmp_55' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 66 <SV = 35> <Delay = 7.25>
+ST_66 : Operation 346 [1/5] (7.25ns)   --->   "%tmp_55 = fadd float %conv1_buff_load, %B_CONV1_load" [../2C_prj/lenet5/conv.cpp:59]   --->   Operation 346 'fadd' 'tmp_55' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 67 <SV = 36> <Delay = 7.76>
+ST_67 : Operation 347 [1/1] (0.00ns)   --->   "%tmp_55_to_int = bitcast float %tmp_55 to i32" [../2C_prj/lenet5/conv.cpp:60]   --->   Operation 347 'bitcast' 'tmp_55_to_int' <Predicate = true> <Delay = 0.00>
+ST_67 : Operation 348 [1/1] (0.00ns)   --->   "%tmp_73 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %tmp_55_to_int, i32 23, i32 30)" [../2C_prj/lenet5/conv.cpp:60]   --->   Operation 348 'partselect' 'tmp_73' <Predicate = true> <Delay = 0.00>
+ST_67 : Operation 349 [1/1] (0.00ns)   --->   "%tmp_95 = trunc i32 %tmp_55_to_int to i23" [../2C_prj/lenet5/conv.cpp:60]   --->   Operation 349 'trunc' 'tmp_95' <Predicate = true> <Delay = 0.00>
+ST_67 : Operation 350 [1/1] (1.55ns)   --->   "%notlhs = icmp ne i8 %tmp_73, -1" [../2C_prj/lenet5/conv.cpp:60]   --->   Operation 350 'icmp' 'notlhs' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_67 : Operation 351 [1/1] (2.44ns)   --->   "%notrhs = icmp eq i23 %tmp_95, 0" [../2C_prj/lenet5/conv.cpp:60]   --->   Operation 351 'icmp' 'notrhs' <Predicate = true> <Delay = 2.44> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_67 : Operation 352 [1/1] (0.00ns) (grouped into LUT with out node tmp_58)   --->   "%tmp_75 = or i1 %notrhs, %notlhs" [../2C_prj/lenet5/conv.cpp:60]   --->   Operation 352 'or' 'tmp_75' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_67 : Operation 353 [1/1] (6.78ns)   --->   "%tmp_76 = fcmp ogt float %tmp_55, 0.000000e+00" [../2C_prj/lenet5/conv.cpp:60]   --->   Operation 353 'fcmp' 'tmp_76' <Predicate = true> <Delay = 6.78> <Core = "FCmp">   --->   Core 110 'FCmp' <Latency = 0> <II = 1> <Delay = 6.78> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_67 : Operation 354 [1/1] (0.00ns) (grouped into LUT with out node tmp_58)   --->   "%tmp_77 = and i1 %tmp_75, %tmp_76" [../2C_prj/lenet5/conv.cpp:60]   --->   Operation 354 'and' 'tmp_77' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_67 : Operation 355 [1/1] (0.97ns) (out node of the LUT)   --->   "%tmp_58 = select i1 %tmp_77, float %tmp_55, float 0.000000e+00" [../2C_prj/lenet5/conv.cpp:60]   --->   Operation 355 'select' 'tmp_58' <Predicate = true> <Delay = 0.97> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+State 68 <SV = 37> <Delay = 3.25>
+ST_68 : Operation 356 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([13 x i8]* @p_str4) nounwind" [../2C_prj/lenet5/conv.cpp:58]   --->   Operation 356 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_68 : Operation 357 [1/1] (3.25ns)   --->   "store float %tmp_58, float* %conv1_buff_addr, align 4" [../2C_prj/lenet5/conv.cpp:60]   --->   Operation 357 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1176> <RAM>
+ST_68 : Operation 358 [1/1] (0.00ns)   --->   "br label %.preheader11" [../2C_prj/lenet5/conv.cpp:58]   --->   Operation 358 'br' <Predicate = true> <Delay = 0.00>
+
+State 69 <SV = 27> <Delay = 8.75>
+ST_69 : Operation 359 [1/1] (0.00ns)   --->   "%r4 = phi i5 [ %r_5, %4 ], [ 0, %.preheader10.preheader ]"   --->   Operation 359 'phi' 'r4' <Predicate = true> <Delay = 0.00>
+ST_69 : Operation 360 [1/1] (1.36ns)   --->   "%tmp_38 = icmp ult i5 %r4, -4" [../2C_prj/lenet5/conv.cpp:65]   --->   Operation 360 'icmp' 'tmp_38' <Predicate = true> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_69 : Operation 361 [1/1] (0.00ns)   --->   "%empty_44 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 14, i64 14, i64 14) nounwind"   --->   Operation 361 'speclooptripcount' 'empty_44' <Predicate = true> <Delay = 0.00>
+ST_69 : Operation 362 [1/1] (0.00ns)   --->   "br i1 %tmp_38, label %.preheader9.preheader, label %burst.wr.header.preheader" [../2C_prj/lenet5/conv.cpp:65]   --->   Operation 362 'br' <Predicate = true> <Delay = 0.00>
+ST_69 : Operation 363 [1/1] (0.00ns)   --->   "%tmp_40_cast = zext i5 %r4 to i10" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 363 'zext' 'tmp_40_cast' <Predicate = (tmp_38)> <Delay = 0.00>
+ST_69 : Operation 364 [1/1] (0.00ns)   --->   "%tmp_42 = or i5 %r4, 1" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 364 'or' 'tmp_42' <Predicate = (tmp_38)> <Delay = 0.00>
+ST_69 : Operation 365 [1/1] (0.00ns)   --->   "%tmp_43_cast = zext i5 %tmp_42 to i10" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 365 'zext' 'tmp_43_cast' <Predicate = (tmp_38)> <Delay = 0.00>
+ST_69 : Operation 366 [1/1] (0.00ns)   --->   "%tmp_85 = call i4 @_ssdm_op_PartSelect.i4.i5.i32.i32(i5 %r4, i32 1, i32 4)" [../2C_prj/lenet5/conv.cpp:66]   --->   Operation 366 'partselect' 'tmp_85' <Predicate = (tmp_38)> <Delay = 0.00>
+ST_69 : Operation 367 [1/1] (0.00ns)   --->   "%tmp_44_cast = zext i4 %tmp_85 to i9" [../2C_prj/lenet5/conv.cpp:66]   --->   Operation 367 'zext' 'tmp_44_cast' <Predicate = (tmp_38)> <Delay = 0.00>
+ST_69 : Operation 368 [1/1] (1.76ns)   --->   "br label %.preheader9" [../2C_prj/lenet5/conv.cpp:66]   --->   Operation 368 'br' <Predicate = (tmp_38)> <Delay = 1.76>
+ST_69 : Operation 369 [1/1] (8.75ns)   --->   "%FM_DDR_BUFF2_wr_req = call i1 @_ssdm_op_WriteReq.m_axi.floatP(float* %FM_DDR_BUFF2, i32 1176) nounwind" [../2C_prj/lenet5/conv.cpp:73]   --->   Operation 369 'writereq' 'FM_DDR_BUFF2_wr_req' <Predicate = (!tmp_38)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_69 : Operation 370 [1/1] (1.76ns)   --->   "br label %burst.wr.header" [../2C_prj/lenet5/conv.cpp:73]   --->   Operation 370 'br' <Predicate = (!tmp_38)> <Delay = 1.76>
+
+State 70 <SV = 28> <Delay = 2.34>
+ST_70 : Operation 371 [1/1] (0.00ns)   --->   "%c5 = phi i5 [ %c_5, %3 ], [ 0, %.preheader9.preheader ]"   --->   Operation 371 'phi' 'c5' <Predicate = true> <Delay = 0.00>
+ST_70 : Operation 372 [1/1] (1.36ns)   --->   "%tmp_45 = icmp ult i5 %c5, -4" [../2C_prj/lenet5/conv.cpp:66]   --->   Operation 372 'icmp' 'tmp_45' <Predicate = true> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_70 : Operation 373 [1/1] (0.00ns)   --->   "%empty_45 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 14, i64 14, i64 14) nounwind"   --->   Operation 373 'speclooptripcount' 'empty_45' <Predicate = true> <Delay = 0.00>
+ST_70 : Operation 374 [1/1] (0.00ns)   --->   "br i1 %tmp_45, label %.preheader.preheader, label %4" [../2C_prj/lenet5/conv.cpp:66]   --->   Operation 374 'br' <Predicate = true> <Delay = 0.00>
+ST_70 : Operation 375 [1/1] (0.00ns)   --->   "%tmp_47_cast = zext i5 %c5 to i14" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 375 'zext' 'tmp_47_cast' <Predicate = (tmp_45)> <Delay = 0.00>
+ST_70 : Operation 376 [1/1] (0.00ns)   --->   "%tmp_48 = or i5 %c5, 1" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 376 'or' 'tmp_48' <Predicate = (tmp_45)> <Delay = 0.00>
+ST_70 : Operation 377 [1/1] (0.00ns)   --->   "%tmp_49_cast = zext i5 %tmp_48 to i14" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 377 'zext' 'tmp_49_cast' <Predicate = (tmp_45)> <Delay = 0.00>
+ST_70 : Operation 378 [1/1] (0.00ns)   --->   "%tmp_86 = call i4 @_ssdm_op_PartSelect.i4.i5.i32.i32(i5 %c5, i32 1, i32 4)" [../2C_prj/lenet5/conv.cpp:68]   --->   Operation 378 'partselect' 'tmp_86' <Predicate = (tmp_45)> <Delay = 0.00>
+ST_70 : Operation 379 [1/1] (0.00ns)   --->   "%tmp_53_cast = zext i4 %tmp_86 to i12" [../2C_prj/lenet5/conv.cpp:68]   --->   Operation 379 'zext' 'tmp_53_cast' <Predicate = (tmp_45)> <Delay = 0.00>
+ST_70 : Operation 380 [1/1] (1.76ns)   --->   "br label %.preheader" [../2C_prj/lenet5/conv.cpp:68]   --->   Operation 380 'br' <Predicate = (tmp_45)> <Delay = 1.76>
+ST_70 : Operation 381 [1/1] (1.78ns)   --->   "%r_5 = add i5 %r4, 2" [../2C_prj/lenet5/conv.cpp:65]   --->   Operation 381 'add' 'r_5' <Predicate = (!tmp_45)> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_70 : Operation 382 [1/1] (0.00ns)   --->   "br label %.preheader10" [../2C_prj/lenet5/conv.cpp:65]   --->   Operation 382 'br' <Predicate = (!tmp_45)> <Delay = 0.00>
+
+State 71 <SV = 29> <Delay = 7.57>
+ST_71 : Operation 383 [1/1] (0.00ns)   --->   "%chl_out6 = phi i3 [ %chl_out_2, %2 ], [ 0, %.preheader.preheader ]"   --->   Operation 383 'phi' 'chl_out6' <Predicate = true> <Delay = 0.00>
+ST_71 : Operation 384 [1/1] (1.13ns)   --->   "%exitcond = icmp eq i3 %chl_out6, -2" [../2C_prj/lenet5/conv.cpp:68]   --->   Operation 384 'icmp' 'exitcond' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_71 : Operation 385 [1/1] (0.00ns)   --->   "%empty_46 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 6, i64 6, i64 6) nounwind"   --->   Operation 385 'speclooptripcount' 'empty_46' <Predicate = true> <Delay = 0.00>
+ST_71 : Operation 386 [1/1] (1.65ns)   --->   "%chl_out_2 = add i3 %chl_out6, 1" [../2C_prj/lenet5/conv.cpp:68]   --->   Operation 386 'add' 'chl_out_2' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_71 : Operation 387 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %3, label %2" [../2C_prj/lenet5/conv.cpp:68]   --->   Operation 387 'br' <Predicate = true> <Delay = 0.00>
+ST_71 : Operation 388 [1/1] (0.00ns)   --->   "%tmp_98 = call i8 @_ssdm_op_BitConcatenate.i8.i3.i5(i3 %chl_out6, i5 0)" [../2C_prj/lenet5/conv.cpp:68]   --->   Operation 388 'bitconcatenate' 'tmp_98' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_71 : Operation 389 [1/1] (0.00ns)   --->   "%p_shl23_cast = zext i8 %tmp_98 to i9" [../2C_prj/lenet5/conv.cpp:68]   --->   Operation 389 'zext' 'p_shl23_cast' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_71 : Operation 390 [1/1] (0.00ns)   --->   "%tmp_99 = call i5 @_ssdm_op_BitConcatenate.i5.i3.i2(i3 %chl_out6, i2 0)" [../2C_prj/lenet5/conv.cpp:68]   --->   Operation 390 'bitconcatenate' 'tmp_99' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_71 : Operation 391 [1/1] (0.00ns)   --->   "%p_shl24_cast = zext i5 %tmp_99 to i9" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 391 'zext' 'p_shl24_cast' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_71 : Operation 392 [1/1] (1.91ns)   --->   "%tmp_100 = sub i9 %p_shl23_cast, %p_shl24_cast" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 392 'sub' 'tmp_100' <Predicate = (!exitcond)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_71 : Operation 393 [1/1] (0.00ns)   --->   "%tmp_117_cast = sext i9 %tmp_100 to i10" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 393 'sext' 'tmp_117_cast' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_71 : Operation 394 [1/1] (1.82ns)   --->   "%tmp_101 = add i10 %tmp_117_cast, %tmp_40_cast" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 394 'add' 'tmp_101' <Predicate = (!exitcond)> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_71 : Operation 395 [1/1] (0.00ns)   --->   "%tmp_102 = trunc i10 %tmp_101 to i9" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 395 'trunc' 'tmp_102' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_71 : Operation 396 [1/1] (0.00ns)   --->   "%p_shl21_cast = call i14 @_ssdm_op_BitConcatenate.i14.i9.i5(i9 %tmp_102, i5 0)" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 396 'bitconcatenate' 'p_shl21_cast' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_71 : Operation 397 [1/1] (0.00ns)   --->   "%tmp_103 = call i12 @_ssdm_op_BitConcatenate.i12.i10.i2(i10 %tmp_101, i2 0)" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 397 'bitconcatenate' 'tmp_103' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_71 : Operation 398 [1/1] (0.00ns)   --->   "%p_shl22_cast = sext i12 %tmp_103 to i14" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 398 'sext' 'p_shl22_cast' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_71 : Operation 399 [1/1] (1.81ns)   --->   "%tmp_104 = sub i14 %p_shl21_cast, %p_shl22_cast" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 399 'sub' 'tmp_104' <Predicate = (!exitcond)> <Delay = 1.81> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_71 : Operation 400 [1/1] (1.82ns)   --->   "%tmp_107 = add i10 %tmp_117_cast, %tmp_43_cast" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 400 'add' 'tmp_107' <Predicate = (!exitcond)> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_71 : Operation 401 [1/1] (0.00ns)   --->   "%tmp_108 = trunc i10 %tmp_107 to i9" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 401 'trunc' 'tmp_108' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_71 : Operation 402 [1/1] (0.00ns)   --->   "%p_shl19_cast = call i14 @_ssdm_op_BitConcatenate.i14.i9.i5(i9 %tmp_108, i5 0)" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 402 'bitconcatenate' 'p_shl19_cast' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_71 : Operation 403 [1/1] (0.00ns)   --->   "%tmp_109 = call i12 @_ssdm_op_BitConcatenate.i12.i10.i2(i10 %tmp_107, i2 0)" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 403 'bitconcatenate' 'tmp_109' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_71 : Operation 404 [1/1] (0.00ns)   --->   "%p_shl20_cast = sext i12 %tmp_109 to i14" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 404 'sext' 'p_shl20_cast' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_71 : Operation 405 [1/1] (1.81ns)   --->   "%tmp_110 = sub i14 %p_shl19_cast, %p_shl20_cast" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 405 'sub' 'tmp_110' <Predicate = (!exitcond)> <Delay = 1.81> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_71 : Operation 406 [1/1] (0.00ns)   --->   "%tmp_113 = call i7 @_ssdm_op_BitConcatenate.i7.i3.i4(i3 %chl_out6, i4 0)" [../2C_prj/lenet5/conv.cpp:68]   --->   Operation 406 'bitconcatenate' 'tmp_113' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_71 : Operation 407 [1/1] (0.00ns)   --->   "%p_shl17_cast = zext i7 %tmp_113 to i8" [../2C_prj/lenet5/conv.cpp:68]   --->   Operation 407 'zext' 'p_shl17_cast' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_71 : Operation 408 [1/1] (0.00ns)   --->   "%tmp_114 = call i4 @_ssdm_op_BitConcatenate.i4.i3.i1(i3 %chl_out6, i1 false)" [../2C_prj/lenet5/conv.cpp:68]   --->   Operation 408 'bitconcatenate' 'tmp_114' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_71 : Operation 409 [1/1] (0.00ns)   --->   "%p_shl18_cast = zext i4 %tmp_114 to i8" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 409 'zext' 'p_shl18_cast' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_71 : Operation 410 [1/1] (1.87ns)   --->   "%tmp_115 = sub i8 %p_shl17_cast, %p_shl18_cast" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 410 'sub' 'tmp_115' <Predicate = (!exitcond)> <Delay = 1.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_71 : Operation 411 [1/1] (0.00ns)   --->   "%tmp_132_cast = sext i8 %tmp_115 to i9" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 411 'sext' 'tmp_132_cast' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_71 : Operation 412 [1/1] (1.91ns)   --->   "%tmp_116 = add i9 %tmp_132_cast, %tmp_44_cast" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 412 'add' 'tmp_116' <Predicate = (!exitcond)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_71 : Operation 413 [1/1] (0.00ns)   --->   "%tmp_117 = trunc i9 %tmp_116 to i8" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 413 'trunc' 'tmp_117' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_71 : Operation 414 [1/1] (0.00ns)   --->   "%p_shl15_cast = call i12 @_ssdm_op_BitConcatenate.i12.i8.i4(i8 %tmp_117, i4 0)" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 414 'bitconcatenate' 'p_shl15_cast' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_71 : Operation 415 [1/1] (0.00ns)   --->   "%tmp_118 = call i10 @_ssdm_op_BitConcatenate.i10.i9.i1(i9 %tmp_116, i1 false)" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 415 'bitconcatenate' 'tmp_118' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_71 : Operation 416 [1/1] (0.00ns)   --->   "%p_shl16_cast = sext i10 %tmp_118 to i12" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 416 'sext' 'p_shl16_cast' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_71 : Operation 417 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp_119 = sub i12 %p_shl15_cast, %p_shl16_cast" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 417 'sub' 'tmp_119' <Predicate = (!exitcond)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.89> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_71 : Operation 418 [1/1] (3.78ns) (root node of TernaryAdder)   --->   "%tmp_120 = add i12 %tmp_119, %tmp_53_cast" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 418 'add' 'tmp_120' <Predicate = (!exitcond)> <Delay = 3.78> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.89> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_71 : Operation 419 [1/1] (1.78ns)   --->   "%c_5 = add i5 %c5, 2" [../2C_prj/lenet5/conv.cpp:66]   --->   Operation 419 'add' 'c_5' <Predicate = (exitcond)> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_71 : Operation 420 [1/1] (0.00ns)   --->   "br label %.preheader9" [../2C_prj/lenet5/conv.cpp:66]   --->   Operation 420 'br' <Predicate = (exitcond)> <Delay = 0.00>
+
+State 72 <SV = 30> <Delay = 5.06>
+ST_72 : Operation 421 [1/1] (1.81ns)   --->   "%tmp_105 = add i14 %tmp_104, %tmp_47_cast" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 421 'add' 'tmp_105' <Predicate = true> <Delay = 1.81> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_72 : Operation 422 [1/1] (0.00ns)   --->   "%tmp_122_cast = zext i14 %tmp_105 to i64" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 422 'zext' 'tmp_122_cast' <Predicate = true> <Delay = 0.00>
+ST_72 : Operation 423 [1/1] (0.00ns)   --->   "%conv1_buff_addr_1 = getelementptr [4704 x float]* @conv1_buff, i64 0, i64 %tmp_122_cast" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 423 'getelementptr' 'conv1_buff_addr_1' <Predicate = true> <Delay = 0.00>
+ST_72 : Operation 424 [1/1] (1.81ns)   --->   "%tmp_106 = add i14 %tmp_104, %tmp_49_cast" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 424 'add' 'tmp_106' <Predicate = true> <Delay = 1.81> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_72 : Operation 425 [1/1] (0.00ns)   --->   "%tmp_123_cast = zext i14 %tmp_106 to i64" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 425 'zext' 'tmp_123_cast' <Predicate = true> <Delay = 0.00>
+ST_72 : Operation 426 [1/1] (0.00ns)   --->   "%conv1_buff_addr_2 = getelementptr [4704 x float]* @conv1_buff, i64 0, i64 %tmp_123_cast" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 426 'getelementptr' 'conv1_buff_addr_2' <Predicate = true> <Delay = 0.00>
+ST_72 : Operation 427 [1/1] (1.81ns)   --->   "%tmp_111 = add i14 %tmp_110, %tmp_47_cast" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 427 'add' 'tmp_111' <Predicate = true> <Delay = 1.81> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_72 : Operation 428 [1/1] (1.81ns)   --->   "%tmp_112 = add i14 %tmp_110, %tmp_49_cast" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 428 'add' 'tmp_112' <Predicate = true> <Delay = 1.81> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_72 : Operation 429 [2/2] (3.25ns)   --->   "%conv1_buff_load_1 = load float* %conv1_buff_addr_1, align 8" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 429 'load' 'conv1_buff_load_1' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1176> <RAM>
+ST_72 : Operation 430 [2/2] (3.25ns)   --->   "%conv1_buff_load_2 = load float* %conv1_buff_addr_2, align 4" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 430 'load' 'conv1_buff_load_2' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1176> <RAM>
+
+State 73 <SV = 31> <Delay = 3.25>
+ST_73 : Operation 431 [1/2] (3.25ns)   --->   "%conv1_buff_load_1 = load float* %conv1_buff_addr_1, align 8" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 431 'load' 'conv1_buff_load_1' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1176> <RAM>
+ST_73 : Operation 432 [1/2] (3.25ns)   --->   "%conv1_buff_load_2 = load float* %conv1_buff_addr_2, align 4" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 432 'load' 'conv1_buff_load_2' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1176> <RAM>
+
+State 74 <SV = 32> <Delay = 7.25>
+ST_74 : Operation 433 [5/5] (7.25ns)   --->   "%tmp_60 = fadd float %conv1_buff_load_1, %conv1_buff_load_2" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 433 'fadd' 'tmp_60' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 75 <SV = 33> <Delay = 7.25>
+ST_75 : Operation 434 [4/5] (7.25ns)   --->   "%tmp_60 = fadd float %conv1_buff_load_1, %conv1_buff_load_2" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 434 'fadd' 'tmp_60' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 76 <SV = 34> <Delay = 7.25>
+ST_76 : Operation 435 [3/5] (7.25ns)   --->   "%tmp_60 = fadd float %conv1_buff_load_1, %conv1_buff_load_2" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 435 'fadd' 'tmp_60' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 77 <SV = 35> <Delay = 7.25>
+ST_77 : Operation 436 [1/1] (0.00ns)   --->   "%tmp_128_cast = zext i14 %tmp_111 to i64" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 436 'zext' 'tmp_128_cast' <Predicate = true> <Delay = 0.00>
+ST_77 : Operation 437 [1/1] (0.00ns)   --->   "%conv1_buff_addr_3 = getelementptr [4704 x float]* @conv1_buff, i64 0, i64 %tmp_128_cast" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 437 'getelementptr' 'conv1_buff_addr_3' <Predicate = true> <Delay = 0.00>
+ST_77 : Operation 438 [2/5] (7.25ns)   --->   "%tmp_60 = fadd float %conv1_buff_load_1, %conv1_buff_load_2" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 438 'fadd' 'tmp_60' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_77 : Operation 439 [2/2] (3.25ns)   --->   "%conv1_buff_load_3 = load float* %conv1_buff_addr_3, align 8" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 439 'load' 'conv1_buff_load_3' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1176> <RAM>
+
+State 78 <SV = 36> <Delay = 7.25>
+ST_78 : Operation 440 [1/5] (7.25ns)   --->   "%tmp_60 = fadd float %conv1_buff_load_1, %conv1_buff_load_2" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 440 'fadd' 'tmp_60' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_78 : Operation 441 [1/2] (3.25ns)   --->   "%conv1_buff_load_3 = load float* %conv1_buff_addr_3, align 8" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 441 'load' 'conv1_buff_load_3' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1176> <RAM>
+
+State 79 <SV = 37> <Delay = 7.25>
+ST_79 : Operation 442 [5/5] (7.25ns)   --->   "%tmp_61 = fadd float %tmp_60, %conv1_buff_load_3" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 442 'fadd' 'tmp_61' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 80 <SV = 38> <Delay = 7.25>
+ST_80 : Operation 443 [4/5] (7.25ns)   --->   "%tmp_61 = fadd float %tmp_60, %conv1_buff_load_3" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 443 'fadd' 'tmp_61' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 81 <SV = 39> <Delay = 7.25>
+ST_81 : Operation 444 [3/5] (7.25ns)   --->   "%tmp_61 = fadd float %tmp_60, %conv1_buff_load_3" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 444 'fadd' 'tmp_61' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 82 <SV = 40> <Delay = 7.25>
+ST_82 : Operation 445 [1/1] (0.00ns)   --->   "%tmp_129_cast = zext i14 %tmp_112 to i64" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 445 'zext' 'tmp_129_cast' <Predicate = true> <Delay = 0.00>
+ST_82 : Operation 446 [1/1] (0.00ns)   --->   "%conv1_buff_addr_4 = getelementptr [4704 x float]* @conv1_buff, i64 0, i64 %tmp_129_cast" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 446 'getelementptr' 'conv1_buff_addr_4' <Predicate = true> <Delay = 0.00>
+ST_82 : Operation 447 [2/5] (7.25ns)   --->   "%tmp_61 = fadd float %tmp_60, %conv1_buff_load_3" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 447 'fadd' 'tmp_61' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_82 : Operation 448 [2/2] (3.25ns)   --->   "%conv1_buff_load_4 = load float* %conv1_buff_addr_4, align 4" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 448 'load' 'conv1_buff_load_4' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1176> <RAM>
+
+State 83 <SV = 41> <Delay = 7.25>
+ST_83 : Operation 449 [1/5] (7.25ns)   --->   "%tmp_61 = fadd float %tmp_60, %conv1_buff_load_3" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 449 'fadd' 'tmp_61' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_83 : Operation 450 [1/2] (3.25ns)   --->   "%conv1_buff_load_4 = load float* %conv1_buff_addr_4, align 4" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 450 'load' 'conv1_buff_load_4' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1176> <RAM>
+
+State 84 <SV = 42> <Delay = 7.25>
+ST_84 : Operation 451 [5/5] (7.25ns)   --->   "%tmp_65 = fadd float %tmp_61, %conv1_buff_load_4" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 451 'fadd' 'tmp_65' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 85 <SV = 43> <Delay = 7.25>
+ST_85 : Operation 452 [4/5] (7.25ns)   --->   "%tmp_65 = fadd float %tmp_61, %conv1_buff_load_4" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 452 'fadd' 'tmp_65' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 86 <SV = 44> <Delay = 7.25>
+ST_86 : Operation 453 [3/5] (7.25ns)   --->   "%tmp_65 = fadd float %tmp_61, %conv1_buff_load_4" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 453 'fadd' 'tmp_65' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 87 <SV = 45> <Delay = 7.25>
+ST_87 : Operation 454 [2/5] (7.25ns)   --->   "%tmp_65 = fadd float %tmp_61, %conv1_buff_load_4" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 454 'fadd' 'tmp_65' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 88 <SV = 46> <Delay = 7.25>
+ST_88 : Operation 455 [1/5] (7.25ns)   --->   "%tmp_65 = fadd float %tmp_61, %conv1_buff_load_4" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 455 'fadd' 'tmp_65' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 89 <SV = 47> <Delay = 5.70>
+ST_89 : Operation 456 [4/4] (5.70ns)   --->   "%tmp_66 = fmul float %tmp_65, 2.500000e-01" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 456 'fmul' 'tmp_66' <Predicate = true> <Delay = 5.70> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 90 <SV = 48> <Delay = 5.70>
+ST_90 : Operation 457 [3/4] (5.70ns)   --->   "%tmp_66 = fmul float %tmp_65, 2.500000e-01" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 457 'fmul' 'tmp_66' <Predicate = true> <Delay = 5.70> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 91 <SV = 49> <Delay = 5.70>
+ST_91 : Operation 458 [2/4] (5.70ns)   --->   "%tmp_66 = fmul float %tmp_65, 2.500000e-01" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 458 'fmul' 'tmp_66' <Predicate = true> <Delay = 5.70> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 92 <SV = 50> <Delay = 5.70>
+ST_92 : Operation 459 [1/4] (5.70ns)   --->   "%tmp_66 = fmul float %tmp_65, 2.500000e-01" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 459 'fmul' 'tmp_66' <Predicate = true> <Delay = 5.70> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 93 <SV = 51> <Delay = 3.25>
+ST_93 : Operation 460 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([13 x i8]* @p_str5) nounwind" [../2C_prj/lenet5/conv.cpp:68]   --->   Operation 460 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_93 : Operation 461 [1/1] (0.00ns)   --->   "%tmp_137_cast = zext i12 %tmp_120 to i64" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 461 'zext' 'tmp_137_cast' <Predicate = true> <Delay = 0.00>
+ST_93 : Operation 462 [1/1] (0.00ns)   --->   "%conv_out1_addr = getelementptr [1176 x float]* @conv_out1, i64 0, i64 %tmp_137_cast" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 462 'getelementptr' 'conv_out1_addr' <Predicate = true> <Delay = 0.00>
+ST_93 : Operation 463 [1/1] (3.25ns)   --->   "store float %tmp_66, float* %conv_out1_addr, align 4" [../2C_prj/lenet5/conv.cpp:69]   --->   Operation 463 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1176> <RAM>
+ST_93 : Operation 464 [1/1] (0.00ns)   --->   "br label %.preheader" [../2C_prj/lenet5/conv.cpp:68]   --->   Operation 464 'br' <Predicate = true> <Delay = 0.00>
+
+State 94 <SV = 28> <Delay = 3.25>
+ST_94 : Operation 465 [1/1] (0.00ns)   --->   "%indvar4 = phi i11 [ %indvar_next6, %burst.wr.body ], [ 0, %burst.wr.header.preheader ]" [../2C_prj/lenet5/conv.cpp:73]   --->   Operation 465 'phi' 'indvar4' <Predicate = true> <Delay = 0.00>
+ST_94 : Operation 466 [1/1] (1.88ns)   --->   "%exitcond16 = icmp eq i11 %indvar4, -872" [../2C_prj/lenet5/conv.cpp:73]   --->   Operation 466 'icmp' 'exitcond16' <Predicate = true> <Delay = 1.88> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_94 : Operation 467 [1/1] (0.00ns)   --->   "%empty_47 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1176, i64 1176, i64 1176) nounwind"   --->   Operation 467 'speclooptripcount' 'empty_47' <Predicate = true> <Delay = 0.00>
+ST_94 : Operation 468 [1/1] (1.63ns)   --->   "%indvar_next6 = add i11 %indvar4, 1" [../2C_prj/lenet5/conv.cpp:73]   --->   Operation 468 'add' 'indvar_next6' <Predicate = true> <Delay = 1.63> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_94 : Operation 469 [1/1] (0.00ns)   --->   "br i1 %exitcond16, label %memcpy.tail, label %burst.wr.body" [../2C_prj/lenet5/conv.cpp:73]   --->   Operation 469 'br' <Predicate = true> <Delay = 0.00>
+ST_94 : Operation 470 [1/1] (0.00ns)   --->   "%indvar5 = zext i11 %indvar4 to i64" [../2C_prj/lenet5/conv.cpp:73]   --->   Operation 470 'zext' 'indvar5' <Predicate = (!exitcond16)> <Delay = 0.00>
+ST_94 : Operation 471 [1/1] (0.00ns)   --->   "%conv_out1_addr_2 = getelementptr [1176 x float]* @conv_out1, i64 0, i64 %indvar5" [../2C_prj/lenet5/conv.cpp:73]   --->   Operation 471 'getelementptr' 'conv_out1_addr_2' <Predicate = (!exitcond16)> <Delay = 0.00>
+ST_94 : Operation 472 [2/2] (3.25ns)   --->   "%conv_out1_load = load float* %conv_out1_addr_2, align 4" [../2C_prj/lenet5/conv.cpp:73]   --->   Operation 472 'load' 'conv_out1_load' <Predicate = (!exitcond16)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1176> <RAM>
+
+State 95 <SV = 29> <Delay = 3.25>
+ST_95 : Operation 473 [1/2] (3.25ns)   --->   "%conv_out1_load = load float* %conv_out1_addr_2, align 4" [../2C_prj/lenet5/conv.cpp:73]   --->   Operation 473 'load' 'conv_out1_load' <Predicate = (!exitcond16)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 1176> <RAM>
+
+State 96 <SV = 30> <Delay = 8.75>
+ST_96 : Operation 474 [1/1] (0.00ns)   --->   "%burstwrite_rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @burstwrite_OC_region) nounwind" [../2C_prj/lenet5/conv.cpp:73]   --->   Operation 474 'specregionbegin' 'burstwrite_rbegin' <Predicate = (!exitcond16)> <Delay = 0.00>
+ST_96 : Operation 475 [1/1] (0.00ns)   --->   "%empty_48 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str16) nounwind" [../2C_prj/lenet5/conv.cpp:73]   --->   Operation 475 'specpipeline' 'empty_48' <Predicate = (!exitcond16)> <Delay = 0.00>
+ST_96 : Operation 476 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([34 x i8]* @memcpy_OC_FM_DDR_BUF)" [../2C_prj/lenet5/conv.cpp:73]   --->   Operation 476 'specloopname' <Predicate = (!exitcond16)> <Delay = 0.00>
+ST_96 : Operation 477 [1/1] (8.75ns)   --->   "call void @_ssdm_op_Write.m_axi.floatP(float* %FM_DDR_BUFF2, float %conv_out1_load, i4 -1) nounwind" [../2C_prj/lenet5/conv.cpp:73]   --->   Operation 477 'write' <Predicate = (!exitcond16)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_96 : Operation 478 [1/1] (0.00ns)   --->   "%burstwrite_rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([18 x i8]* @burstwrite_OC_region, i32 %burstwrite_rbegin) nounwind" [../2C_prj/lenet5/conv.cpp:73]   --->   Operation 478 'specregionend' 'burstwrite_rend' <Predicate = (!exitcond16)> <Delay = 0.00>
+ST_96 : Operation 479 [1/1] (0.00ns)   --->   "br label %burst.wr.header" [../2C_prj/lenet5/conv.cpp:73]   --->   Operation 479 'br' <Predicate = (!exitcond16)> <Delay = 0.00>
+
+State 97 <SV = 29> <Delay = 8.75>
+ST_97 : Operation 480 [5/5] (8.75ns)   --->   "%FM_DDR_BUFF2_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %FM_DDR_BUFF2) nounwind" [../2C_prj/lenet5/conv.cpp:73]   --->   Operation 480 'writeresp' 'FM_DDR_BUFF2_wr_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 98 <SV = 30> <Delay = 8.75>
+ST_98 : Operation 481 [4/5] (8.75ns)   --->   "%FM_DDR_BUFF2_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %FM_DDR_BUFF2) nounwind" [../2C_prj/lenet5/conv.cpp:73]   --->   Operation 481 'writeresp' 'FM_DDR_BUFF2_wr_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 99 <SV = 31> <Delay = 8.75>
+ST_99 : Operation 482 [3/5] (8.75ns)   --->   "%FM_DDR_BUFF2_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %FM_DDR_BUFF2) nounwind" [../2C_prj/lenet5/conv.cpp:73]   --->   Operation 482 'writeresp' 'FM_DDR_BUFF2_wr_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 100 <SV = 32> <Delay = 8.75>
+ST_100 : Operation 483 [2/5] (8.75ns)   --->   "%FM_DDR_BUFF2_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %FM_DDR_BUFF2) nounwind" [../2C_prj/lenet5/conv.cpp:73]   --->   Operation 483 'writeresp' 'FM_DDR_BUFF2_wr_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 101 <SV = 33> <Delay = 8.75>
+ST_101 : Operation 484 [1/5] (8.75ns)   --->   "%FM_DDR_BUFF2_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %FM_DDR_BUFF2) nounwind" [../2C_prj/lenet5/conv.cpp:73]   --->   Operation 484 'writeresp' 'FM_DDR_BUFF2_wr_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_101 : Operation 485 [1/1] (0.00ns)   --->   "ret void" [../2C_prj/lenet5/conv.cpp:74]   --->   Operation 485 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'BIAS' (../2C_prj/lenet5/conv.cpp:38) [14]  (8.75 ns)
+
+ <State 2>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'BIAS' (../2C_prj/lenet5/conv.cpp:38) [14]  (8.75 ns)
+
+ <State 3>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'BIAS' (../2C_prj/lenet5/conv.cpp:38) [14]  (8.75 ns)
+
+ <State 4>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'BIAS' (../2C_prj/lenet5/conv.cpp:38) [14]  (8.75 ns)
+
+ <State 5>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'BIAS' (../2C_prj/lenet5/conv.cpp:38) [14]  (8.75 ns)
+
+ <State 6>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'BIAS' (../2C_prj/lenet5/conv.cpp:38) [14]  (8.75 ns)
+
+ <State 7>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'BIAS' (../2C_prj/lenet5/conv.cpp:38) [14]  (8.75 ns)
+
+ <State 8>: 1.65ns
+The critical path consists of the following:
+	'phi' operation ('indvar', ../2C_prj/lenet5/conv.cpp:38) with incoming values : ('indvar_next', ../2C_prj/lenet5/conv.cpp:38) [17]  (0 ns)
+	'add' operation ('indvar_next', ../2C_prj/lenet5/conv.cpp:38) [20]  (1.65 ns)
+
+ <State 9>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'BIAS' (../2C_prj/lenet5/conv.cpp:38) [27]  (8.75 ns)
+
+ <State 10>: 2.32ns
+The critical path consists of the following:
+	'getelementptr' operation ('B_CONV1_addr_1', ../2C_prj/lenet5/conv.cpp:38) [28]  (0 ns)
+	'store' operation (../2C_prj/lenet5/conv.cpp:38) of variable 'BIAS_read', ../2C_prj/lenet5/conv.cpp:38 on array 'B_CONV1' [29]  (2.32 ns)
+
+ <State 11>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'FM_DDR_BUFF1' (../2C_prj/lenet5/conv.cpp:39) [33]  (8.75 ns)
+
+ <State 12>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'FM_DDR_BUFF1' (../2C_prj/lenet5/conv.cpp:39) [33]  (8.75 ns)
+
+ <State 13>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'FM_DDR_BUFF1' (../2C_prj/lenet5/conv.cpp:39) [33]  (8.75 ns)
+
+ <State 14>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'FM_DDR_BUFF1' (../2C_prj/lenet5/conv.cpp:39) [33]  (8.75 ns)
+
+ <State 15>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'FM_DDR_BUFF1' (../2C_prj/lenet5/conv.cpp:39) [33]  (8.75 ns)
+
+ <State 16>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'FM_DDR_BUFF1' (../2C_prj/lenet5/conv.cpp:39) [33]  (8.75 ns)
+
+ <State 17>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'FM_DDR_BUFF1' (../2C_prj/lenet5/conv.cpp:39) [33]  (8.75 ns)
+
+ <State 18>: 1.88ns
+The critical path consists of the following:
+	'phi' operation ('indvar8', ../2C_prj/lenet5/conv.cpp:39) with incoming values : ('indvar_next4', ../2C_prj/lenet5/conv.cpp:39) [36]  (0 ns)
+	'icmp' operation ('exitcond14', ../2C_prj/lenet5/conv.cpp:39) [37]  (1.88 ns)
+
+ <State 19>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'FM_DDR_BUFF1' (../2C_prj/lenet5/conv.cpp:39) [46]  (8.75 ns)
+
+ <State 20>: 3.25ns
+The critical path consists of the following:
+	'getelementptr' operation ('pic_in_addr_1', ../2C_prj/lenet5/conv.cpp:39) [47]  (0 ns)
+	'store' operation (../2C_prj/lenet5/conv.cpp:39) of variable 'FM_DDR_BUFF1_read', ../2C_prj/lenet5/conv.cpp:39 on array 'pic_in' [48]  (3.25 ns)
+
+ <State 21>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'WEIGHT' (../2C_prj/lenet5/conv.cpp:40) [52]  (8.75 ns)
+
+ <State 22>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'WEIGHT' (../2C_prj/lenet5/conv.cpp:40) [52]  (8.75 ns)
+
+ <State 23>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'WEIGHT' (../2C_prj/lenet5/conv.cpp:40) [52]  (8.75 ns)
+
+ <State 24>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'WEIGHT' (../2C_prj/lenet5/conv.cpp:40) [52]  (8.75 ns)
+
+ <State 25>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'WEIGHT' (../2C_prj/lenet5/conv.cpp:40) [52]  (8.75 ns)
+
+ <State 26>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'WEIGHT' (../2C_prj/lenet5/conv.cpp:40) [52]  (8.75 ns)
+
+ <State 27>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'WEIGHT' (../2C_prj/lenet5/conv.cpp:40) [52]  (8.75 ns)
+
+ <State 28>: 6.74ns
+The critical path consists of the following:
+	'phi' operation ('phi_urem') with incoming values : ('idx_urem') [57]  (0 ns)
+	'add' operation ('tmp_78', ../2C_prj/lenet5/conv.cpp:40) [78]  (1.78 ns)
+	'select' operation ('tmp_57', ../2C_prj/lenet5/conv.cpp:40) [79]  (1.22 ns)
+	'mul' operation ('mul', ../2C_prj/lenet5/conv.cpp:40) [81]  (3.74 ns)
+
+ <State 29>: 3.2ns
+The critical path consists of the following:
+	'urem' operation ('tmp_63', ../2C_prj/lenet5/conv.cpp:40) [90]  (3.2 ns)
+
+ <State 30>: 3.2ns
+The critical path consists of the following:
+	'urem' operation ('tmp_63', ../2C_prj/lenet5/conv.cpp:40) [90]  (3.2 ns)
+
+ <State 31>: 3.2ns
+The critical path consists of the following:
+	'urem' operation ('tmp_63', ../2C_prj/lenet5/conv.cpp:40) [90]  (3.2 ns)
+
+ <State 32>: 3.2ns
+The critical path consists of the following:
+	'urem' operation ('tmp_63', ../2C_prj/lenet5/conv.cpp:40) [90]  (3.2 ns)
+
+ <State 33>: 3.2ns
+The critical path consists of the following:
+	'urem' operation ('tmp_63', ../2C_prj/lenet5/conv.cpp:40) [90]  (3.2 ns)
+
+ <State 34>: 3.2ns
+The critical path consists of the following:
+	'urem' operation ('tmp_63', ../2C_prj/lenet5/conv.cpp:40) [90]  (3.2 ns)
+
+ <State 35>: 3.2ns
+The critical path consists of the following:
+	'urem' operation ('tmp_63', ../2C_prj/lenet5/conv.cpp:40) [90]  (3.2 ns)
+
+ <State 36>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'WEIGHT' (../2C_prj/lenet5/conv.cpp:40) [69]  (8.75 ns)
+
+ <State 37>: 3.25ns
+The critical path consists of the following:
+	'getelementptr' operation ('W_CONV1_addr_1', ../2C_prj/lenet5/conv.cpp:40) [94]  (0 ns)
+	'store' operation (../2C_prj/lenet5/conv.cpp:40) of variable 'WEIGHT_read', ../2C_prj/lenet5/conv.cpp:40 on array 'W_CONV1' [95]  (3.25 ns)
+
+ <State 38>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('kr') with incoming values : ('kr', ../2C_prj/lenet5/conv.cpp:42) [101]  (1.77 ns)
+
+ <State 39>: 2.11ns
+The critical path consists of the following:
+	'icmp' operation ('exitcond8', ../2C_prj/lenet5/conv.cpp:42) [103]  (1.13 ns)
+	blocking operation 0.978 ns on control path)
+
+ <State 40>: 2.11ns
+The critical path consists of the following:
+	'icmp' operation ('exitcond7', ../2C_prj/lenet5/conv.cpp:43) [113]  (1.13 ns)
+	blocking operation 0.978 ns on control path)
+
+ <State 41>: 2.34ns
+The critical path consists of the following:
+	'icmp' operation ('exitcond6', ../2C_prj/lenet5/conv.cpp:44) [122]  (1.36 ns)
+	blocking operation 0.978 ns on control path)
+
+ <State 42>: 5.03ns
+The critical path consists of the following:
+	'phi' operation ('c') with incoming values : ('c', ../2C_prj/lenet5/conv.cpp:45) [131]  (0 ns)
+	'add' operation ('tmp_62', ../2C_prj/lenet5/conv.cpp:48) [137]  (1.78 ns)
+	'getelementptr' operation ('pic_in_addr', ../2C_prj/lenet5/conv.cpp:48) [140]  (0 ns)
+	'load' operation ('pic_in_load', ../2C_prj/lenet5/conv.cpp:48) on array 'pic_in' [142]  (3.25 ns)
+
+ <State 43>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('pic_in_load', ../2C_prj/lenet5/conv.cpp:48) on array 'pic_in' [142]  (3.25 ns)
+
+ <State 44>: 7.58ns
+The critical path consists of the following:
+	'phi' operation ('chl_out') with incoming values : ('chl_out', ../2C_prj/lenet5/conv.cpp:47) [145]  (0 ns)
+	'sub' operation ('tmp_129', ../2C_prj/lenet5/conv.cpp:48) [168]  (1.92 ns)
+	'add' operation ('tmp_130', ../2C_prj/lenet5/conv.cpp:48) [170]  (1.82 ns)
+	'sub' operation ('tmp_133', ../2C_prj/lenet5/conv.cpp:48) [175]  (0 ns)
+	'add' operation ('tmp_134', ../2C_prj/lenet5/conv.cpp:48) [176]  (3.84 ns)
+
+ <State 45>: 6.95ns
+The critical path consists of the following:
+	'add' operation ('tmp_126', ../2C_prj/lenet5/conv.cpp:48) [162]  (0 ns)
+	'add' operation ('tmp_127', ../2C_prj/lenet5/conv.cpp:48) [163]  (3.7 ns)
+	'getelementptr' operation ('W_CONV1_addr', ../2C_prj/lenet5/conv.cpp:48) [165]  (0 ns)
+	'load' operation ('W_CONV1_load', ../2C_prj/lenet5/conv.cpp:48) on array 'W_CONV1' [179]  (3.25 ns)
+
+ <State 46>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('W_CONV1_load', ../2C_prj/lenet5/conv.cpp:48) on array 'W_CONV1' [179]  (3.25 ns)
+
+ <State 47>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_68', ../2C_prj/lenet5/conv.cpp:48) [180]  (5.7 ns)
+
+ <State 48>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_68', ../2C_prj/lenet5/conv.cpp:48) [180]  (5.7 ns)
+
+ <State 49>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_68', ../2C_prj/lenet5/conv.cpp:48) [180]  (5.7 ns)
+
+ <State 50>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_68', ../2C_prj/lenet5/conv.cpp:48) [180]  (5.7 ns)
+
+ <State 51>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_69', ../2C_prj/lenet5/conv.cpp:48) [182]  (7.26 ns)
+
+ <State 52>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_69', ../2C_prj/lenet5/conv.cpp:48) [182]  (7.26 ns)
+
+ <State 53>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_69', ../2C_prj/lenet5/conv.cpp:48) [182]  (7.26 ns)
+
+ <State 54>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_69', ../2C_prj/lenet5/conv.cpp:48) [182]  (7.26 ns)
+
+ <State 55>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_69', ../2C_prj/lenet5/conv.cpp:48) [182]  (7.26 ns)
+
+ <State 56>: 3.25ns
+The critical path consists of the following:
+	'store' operation (../2C_prj/lenet5/conv.cpp:48) of variable 'tmp_69', ../2C_prj/lenet5/conv.cpp:48 on array 'conv1_buff' [183]  (3.25 ns)
+
+ <State 57>: 2.34ns
+The critical path consists of the following:
+	'icmp' operation ('exitcond3', ../2C_prj/lenet5/conv.cpp:55) [197]  (1.36 ns)
+	blocking operation 0.978 ns on control path)
+
+ <State 58>: 2.34ns
+The critical path consists of the following:
+	'icmp' operation ('exitcond2', ../2C_prj/lenet5/conv.cpp:56) [206]  (1.36 ns)
+	blocking operation 0.978 ns on control path)
+
+ <State 59>: 7.58ns
+The critical path consists of the following:
+	'phi' operation ('chl_out') with incoming values : ('chl_out', ../2C_prj/lenet5/conv.cpp:58) [214]  (0 ns)
+	'sub' operation ('tmp_89', ../2C_prj/lenet5/conv.cpp:59) [226]  (1.92 ns)
+	'add' operation ('tmp_90', ../2C_prj/lenet5/conv.cpp:59) [228]  (1.82 ns)
+	'sub' operation ('tmp_93', ../2C_prj/lenet5/conv.cpp:59) [233]  (0 ns)
+	'add' operation ('tmp_94', ../2C_prj/lenet5/conv.cpp:59) [234]  (3.84 ns)
+
+ <State 60>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('conv1_buff_load', ../2C_prj/lenet5/conv.cpp:59) on array 'conv1_buff' [237]  (3.25 ns)
+
+ <State 61>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('conv1_buff_load', ../2C_prj/lenet5/conv.cpp:59) on array 'conv1_buff' [237]  (3.25 ns)
+
+ <State 62>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_55', ../2C_prj/lenet5/conv.cpp:59) [240]  (7.26 ns)
+
+ <State 63>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_55', ../2C_prj/lenet5/conv.cpp:59) [240]  (7.26 ns)
+
+ <State 64>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_55', ../2C_prj/lenet5/conv.cpp:59) [240]  (7.26 ns)
+
+ <State 65>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_55', ../2C_prj/lenet5/conv.cpp:59) [240]  (7.26 ns)
+
+ <State 66>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_55', ../2C_prj/lenet5/conv.cpp:59) [240]  (7.26 ns)
+
+ <State 67>: 7.77ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_76', ../2C_prj/lenet5/conv.cpp:60) [247]  (6.79 ns)
+	'and' operation ('tmp_77', ../2C_prj/lenet5/conv.cpp:60) [248]  (0 ns)
+	'select' operation ('tmp_58', ../2C_prj/lenet5/conv.cpp:60) [249]  (0.978 ns)
+
+ <State 68>: 3.25ns
+The critical path consists of the following:
+	'store' operation (../2C_prj/lenet5/conv.cpp:60) of variable 'tmp_58', ../2C_prj/lenet5/conv.cpp:60 on array 'conv1_buff' [250]  (3.25 ns)
+
+ <State 69>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'FM_DDR_BUFF2' (../2C_prj/lenet5/conv.cpp:73) [352]  (8.75 ns)
+
+ <State 70>: 2.34ns
+The critical path consists of the following:
+	'icmp' operation ('tmp_45', ../2C_prj/lenet5/conv.cpp:66) [272]  (1.36 ns)
+	blocking operation 0.978 ns on control path)
+
+ <State 71>: 7.57ns
+The critical path consists of the following:
+	'phi' operation ('chl_out') with incoming values : ('chl_out', ../2C_prj/lenet5/conv.cpp:68) [283]  (0 ns)
+	'sub' operation ('tmp_115', ../2C_prj/lenet5/conv.cpp:69) [324]  (1.87 ns)
+	'add' operation ('tmp_116', ../2C_prj/lenet5/conv.cpp:69) [326]  (1.92 ns)
+	'sub' operation ('tmp_119', ../2C_prj/lenet5/conv.cpp:69) [331]  (0 ns)
+	'add' operation ('tmp_120', ../2C_prj/lenet5/conv.cpp:69) [332]  (3.79 ns)
+
+ <State 72>: 5.07ns
+The critical path consists of the following:
+	'add' operation ('tmp_105', ../2C_prj/lenet5/conv.cpp:69) [302]  (1.81 ns)
+	'getelementptr' operation ('conv1_buff_addr_1', ../2C_prj/lenet5/conv.cpp:69) [304]  (0 ns)
+	'load' operation ('conv1_buff_load_1', ../2C_prj/lenet5/conv.cpp:69) on array 'conv1_buff' [335]  (3.25 ns)
+
+ <State 73>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('conv1_buff_load_1', ../2C_prj/lenet5/conv.cpp:69) on array 'conv1_buff' [335]  (3.25 ns)
+
+ <State 74>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_60', ../2C_prj/lenet5/conv.cpp:69) [337]  (7.26 ns)
+
+ <State 75>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_60', ../2C_prj/lenet5/conv.cpp:69) [337]  (7.26 ns)
+
+ <State 76>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_60', ../2C_prj/lenet5/conv.cpp:69) [337]  (7.26 ns)
+
+ <State 77>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_60', ../2C_prj/lenet5/conv.cpp:69) [337]  (7.26 ns)
+
+ <State 78>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_60', ../2C_prj/lenet5/conv.cpp:69) [337]  (7.26 ns)
+
+ <State 79>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_61', ../2C_prj/lenet5/conv.cpp:69) [339]  (7.26 ns)
+
+ <State 80>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_61', ../2C_prj/lenet5/conv.cpp:69) [339]  (7.26 ns)
+
+ <State 81>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_61', ../2C_prj/lenet5/conv.cpp:69) [339]  (7.26 ns)
+
+ <State 82>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_61', ../2C_prj/lenet5/conv.cpp:69) [339]  (7.26 ns)
+
+ <State 83>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_61', ../2C_prj/lenet5/conv.cpp:69) [339]  (7.26 ns)
+
+ <State 84>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_65', ../2C_prj/lenet5/conv.cpp:69) [341]  (7.26 ns)
+
+ <State 85>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_65', ../2C_prj/lenet5/conv.cpp:69) [341]  (7.26 ns)
+
+ <State 86>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_65', ../2C_prj/lenet5/conv.cpp:69) [341]  (7.26 ns)
+
+ <State 87>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_65', ../2C_prj/lenet5/conv.cpp:69) [341]  (7.26 ns)
+
+ <State 88>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_65', ../2C_prj/lenet5/conv.cpp:69) [341]  (7.26 ns)
+
+ <State 89>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_66', ../2C_prj/lenet5/conv.cpp:69) [342]  (5.7 ns)
+
+ <State 90>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_66', ../2C_prj/lenet5/conv.cpp:69) [342]  (5.7 ns)
+
+ <State 91>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_66', ../2C_prj/lenet5/conv.cpp:69) [342]  (5.7 ns)
+
+ <State 92>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_66', ../2C_prj/lenet5/conv.cpp:69) [342]  (5.7 ns)
+
+ <State 93>: 3.25ns
+The critical path consists of the following:
+	'getelementptr' operation ('conv_out1_addr', ../2C_prj/lenet5/conv.cpp:69) [334]  (0 ns)
+	'store' operation (../2C_prj/lenet5/conv.cpp:69) of variable 'tmp_66', ../2C_prj/lenet5/conv.cpp:69 on array 'conv_out1' [343]  (3.25 ns)
+
+ <State 94>: 3.25ns
+The critical path consists of the following:
+	'phi' operation ('indvar4', ../2C_prj/lenet5/conv.cpp:73) with incoming values : ('indvar_next6', ../2C_prj/lenet5/conv.cpp:73) [355]  (0 ns)
+	'getelementptr' operation ('conv_out1_addr_2', ../2C_prj/lenet5/conv.cpp:73) [365]  (0 ns)
+	'load' operation ('conv_out1_load', ../2C_prj/lenet5/conv.cpp:73) on array 'conv_out1' [366]  (3.25 ns)
+
+ <State 95>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('conv_out1_load', ../2C_prj/lenet5/conv.cpp:73) on array 'conv_out1' [366]  (3.25 ns)
+
+ <State 96>: 8.75ns
+The critical path consists of the following:
+	bus write on port 'FM_DDR_BUFF2' (../2C_prj/lenet5/conv.cpp:73) [367]  (8.75 ns)
+
+ <State 97>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'FM_DDR_BUFF2' (../2C_prj/lenet5/conv.cpp:73) [371]  (8.75 ns)
+
+ <State 98>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'FM_DDR_BUFF2' (../2C_prj/lenet5/conv.cpp:73) [371]  (8.75 ns)
+
+ <State 99>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'FM_DDR_BUFF2' (../2C_prj/lenet5/conv.cpp:73) [371]  (8.75 ns)
+
+ <State 100>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'FM_DDR_BUFF2' (../2C_prj/lenet5/conv.cpp:73) [371]  (8.75 ns)
+
+ <State 101>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'FM_DDR_BUFF2' (../2C_prj/lenet5/conv.cpp:73) [371]  (8.75 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+	State 64
+	State 65
+	State 66
+	State 67
+	State 68
+	State 69
+	State 70
+	State 71
+	State 72
+	State 73
+	State 74
+	State 75
+	State 76
+	State 77
+	State 78
+	State 79
+	State 80
+	State 81
+	State 82
+	State 83
+	State 84
+	State 85
+	State 86
+	State 87
+	State 88
+	State 89
+	State 90
+	State 91
+	State 92
+	State 93
+	State 94
+	State 95
+	State 96
+	State 97
+	State 98
+	State 99
+	State 100
+	State 101
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
